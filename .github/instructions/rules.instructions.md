@@ -59,7 +59,7 @@ Mục tiêu chính: Xây dựng hệ thống tự động sinh caption du lịch
   - Xử lý batch size = 1 trước, sau đó mở rộng nếu cần
   - Có comment rõ ràng giải thích từng bước
   - Lưu ý rằng output của DAM hiện tại là tiếng Anh
-- Sau mỗi module, mỗi bước hoặc 1 phần code quan trọng, bạn hãy giải thích các bước bạn đã làm, nhưng phần đã làm được, rồi viết lệnh commit git và push lên nhánh GitHub
+- Sau mỗi module, mỗi bước hoặc 1 phần code quan trọng, bạn hãy giải thích các bước bạn đã làm, nhưng phần đã làm được, sau đó viết lệnh commit và push lên nhánh GitHub, bạn chỉ gợi ý câu lệnh còn việc commit và push để tôi tự thực hiện.
 - Trường hợp bạn viết file test, sau khi test xong hãy xóa file test đó đi để giữ repo gọn gàng
 - Hạn chết tối đa việc tạo ra các file .md không cần thiết trong repo, chỉ cần file readme chính và các file hướng dẫn quan trọng
 - Trong code/ comment, file readme hoặc file hướng dẫn tuyệt đối không được thêm icons

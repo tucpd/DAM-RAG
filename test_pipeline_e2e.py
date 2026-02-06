@@ -8,6 +8,7 @@ from pathlib import Path
 from PIL import Image
 import numpy as np
 from dotenv import load_dotenv
+from time import time
 
 # Load environment variables từ .env
 load_dotenv()
@@ -26,6 +27,7 @@ def test_end_to_end_pipeline(image_path):
     print("END-TO-END PIPELINE TEST")
     print("="*70)
     
+    start_time_set = time()
     # =================================================================
     # Setup
     # =================================================================
@@ -60,12 +62,16 @@ def test_end_to_end_pipeline(image_path):
     print(f"Image loaded: {image_path}")
     print(f"  Size: {image.size}")
     
+    end_time_set = time()
+    print(f"\nSetup completed in {end_time_set - start_time_set:.2f} seconds")
+    
     # =================================================================
     # PIPELINE EXECUTION
     # =================================================================
     print("\n" + "="*70)
     print("PIPELINE EXECUTION")
     print("="*70)
+    start_time_exe = time()
     
     # Step 1: DAM - Generate caption
     print("\n[STEP 1] DAM - Generating detailed caption...")
@@ -96,6 +102,7 @@ def test_end_to_end_pipeline(image_path):
             print(f"  {i}. {name} - Distance: {dist:.4f}")
     
     # Step 4: Synthesis - Tạo travel caption
+    start_time_cap = time()
     print("\n[STEP 4] Synthesizing final travel caption...")
     print("(Using local LLM...)")
     
@@ -104,6 +111,8 @@ def test_end_to_end_pipeline(image_path):
         retrieved_knowledge=results,
         style="informative"
     )
+    end_time_cap = time()
+    print(f"\nCaption synthesized in {end_time_cap - start_time_cap:.2f} seconds")
     
     # =================================================================
     # RESULTS
@@ -121,7 +130,8 @@ def test_end_to_end_pipeline(image_path):
     print(f"Style: {final_result['style']}")
     
     print("\nPipeline completed successfully!")
-    
+    end_time_exe = time()
+    print(f"\nExecution completed in {end_time_exe - start_time_exe:.2f} seconds")
     return final_result
 
 
@@ -172,18 +182,95 @@ def test_with_custom_region(image_path):
 
 if __name__ == "__main__":
     import sys
-    # Đường dẫn ảnh
-    image_path = "data/knowledge_base/Angkor_Wat/Angkor_Wat_14993680.jpg"
+    from glob import glob
+    
+    # Danh sách ảnh test từ các địa điểm khác nhau
+    test_images = [
+        "data/knowledge_base/Ha_Long_Bay/img_0004.jpg",
+        "data/knowledge_base/Taj_Mahal/img_0005.jpg",
+        "data/knowledge_base/Eiffel_Tower/img_0003.jpg",
+        "data/knowledge_base/Great_Wall_of_China/img_0002.jpg",
+        "data/knowledge_base/Angkor_Wat/img_0001.jpg",
+    ]
+    
+    # Lọc ra những ảnh có tồn tại
+    import os
+    available_images = [img for img in test_images if os.path.exists(img)]
+    
+    if not available_images:
+        print("Không tìm thấy ảnh nào trong danh sách!")
+        sys.exit(1)
+    
+    print("="*70)
+    print(f"TESTING WITH {len(available_images)} IMAGES")
+    print("="*70)
+    for i, img in enumerate(available_images, 1):
+        landmark_name = img.split('/')[-2].replace('_', ' ')
+        print(f"  {i}. {landmark_name}: {img}")
+    print()
     
     # Run tests
-    try:
-        # Test 1: Full image
-        result = test_end_to_end_pipeline(image_path)
+    results = []
+    total_start = time()
+    
+    for idx, image_path in enumerate(available_images, 1):
+        landmark_name = image_path.split('/')[-2].replace('_', ' ')
         
-        # Test 2: Custom region (optional)
-        # test_with_custom_region(image_path)
-    except Exception as e:
-        print(f"\nError: {e}")
-        import traceback
-        traceback.print_exc()
+        print(f"\n{'='*70}")
+        print(f"TEST {idx}/{len(available_images)}: {landmark_name}")
+        print(f"{'='*70}\n")
+        
+        try:
+            start_time = time()
+            result = test_end_to_end_pipeline(image_path)
+            end_time = time()
+            
+            results.append({
+                'landmark': landmark_name,
+                'image': image_path,
+                'time': end_time - start_time,
+                'success': True,
+                'caption': result['caption'][:100] + '...' if len(result['caption']) > 100 else result['caption']
+            })
+            
+        except Exception as e:
+            print(f"\nError testing {image_path}: {e}")
+            import traceback
+            traceback.print_exc()
+            results.append({
+                'landmark': landmark_name,
+                'image': image_path,
+                'time': 0,
+                'success': False,
+                'error': str(e)
+            })
+    
+    total_end = time()
+    
+    # Summary
+    print("\n" + "="*70)
+    print("TEST SUMMARY")
+    print("="*70)
+    
+    successful = sum(1 for r in results if r['success'])
+    print(f"\nTotal tests: {len(results)}")
+    print(f"Successful: {successful}")
+    print(f"Failed: {len(results) - successful}")
+    print(f"\nTotal time: {total_end - total_start:.2f} seconds")
+    print(f"Average time per image: {(total_end - total_start) / len(results):.2f} seconds")
+    
+    print("\n" + "-"*70)
+    print("DETAILED RESULTS:")
+    print("-"*70)
+    for i, r in enumerate(results, 1):
+        if r['success']:
+            print(f"\n{i}. {r['landmark']}")
+            print(f"   Time: {r['time']:.2f}s")
+            print(f"   Caption: {r['caption']}")
+        else:
+            print(f"\n{i}. {r['landmark']}")
+            print(f"   Status: FAILED")
+            print(f"   Error: {r.get('error', 'Unknown error')}")
+    
+    print("\n" + "="*70)
 

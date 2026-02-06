@@ -5,6 +5,7 @@ Local LLM Synthesizer
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from typing import List, Dict, Optional
+import warnings
 
 
 class LocalLLMSynthesizer:
@@ -17,8 +18,10 @@ class LocalLLMSynthesizer:
         self,
         model_name: str = "Qwen/Qwen2.5-7B-Instruct",
         device: str = "cuda",
-        max_new_tokens: int = 300,
-        temperature: float = 0.7
+        max_new_tokens: int = 200,
+        temperature: float = 0.3,
+        use_flash_attn: bool = False,
+        use_compile: bool = True
     ):
         """
         Args:
@@ -26,13 +29,18 @@ class LocalLLMSynthesizer:
             device: cuda hoặc cpu
             max_new_tokens: Số token tối đa sinh ra
             temperature: Temperature cho generation
+            use_flash_attn: Sử dụng Flash Attention 2
+            use_compile: Sử dụng torch.compile
         """
         print(f"Loading local LLM: {model_name}")
         print(f"Device: {device}")
+        print(f"Optimizations: Flash-Attn={use_flash_attn}, Compile={use_compile}")
         
         self.device = device
         self.max_new_tokens = max_new_tokens
         self.temperature = temperature
+        self.use_flash_attn = use_flash_attn
+        self.use_compile = use_compile
         
         # Load tokenizer
         self.tokenizer = AutoTokenizer.from_pretrained(
@@ -40,13 +48,30 @@ class LocalLLMSynthesizer:
             trust_remote_code=True
         )
         
-        # Load model
+        # Load model với tối ưu
+        load_kwargs = {
+            "torch_dtype": torch.float16 if device == "cuda" else torch.float32,
+            "device_map": "auto",
+            "trust_remote_code": True
+        }
+        
+        # Thêm Flash Attention 2 nếu có
+        if use_flash_attn and device == "cuda":
+            try:
+                load_kwargs["attn_implementation"] = "flash_attention_2"
+                print("Enabling Flash Attention 2...")
+            except Exception:
+                warnings.warn("Flash Attention 2 not available, using default attention")
+        
         self.model = AutoModelForCausalLM.from_pretrained(
             model_name,
-            torch_dtype=torch.float16 if device == "cuda" else torch.float32,
-            device_map="auto",
-            trust_remote_code=True
+            **load_kwargs
         )
+        
+        # Apply torch.compile
+        if use_compile and device == "cuda":
+            print("Applying torch.compile (first run will be slow)...")
+            self.model = torch.compile(self.model, mode="reduce-overhead")
         
         print(f"Model loaded successfully")
     
@@ -78,17 +103,26 @@ class LocalLLMSynthesizer:
             knowledge_text += "\n"
         
         if style == "informative":
-            system_prompt = "You are a professional travel guide writer. Create engaging and informative captions for travel photos."
-            
-            user_prompt = f"""Based on the following information, write a travel caption (80-200 words):
+            system_prompt = (
+                "You are a friendly, knowledgeable travel guide who writes clear, natural captions "
+                "for travel photos. Your tone is conversational and helpful, like chatting with a traveler."
+            )
+    
+            user_prompt = f"""Write a natural, engaging travel caption (80-200 words) based on this information:
 
 IMAGE DESCRIPTION:
 {dam_caption}
 
-RELATED LANDMARKS:
+RELATED INFORMATION:
 {knowledge_text}
 
-Write an informative, engaging caption suitable for travelers. Focus on what is visually present and provide historical/cultural context if the image matches a known landmark. Keep it concise and interesting. Write in English only.
+Guidelines:
+- Write in a natural, conversational tone — as if you're speaking directly to a traveler.
+- Keep it concise, interesting, and easy to read.
+- Avoid overly flowery, poetic, or exaggerated language.
+- Focus on what is actually visible in the photo first, then naturally weave in relevant historical or cultural context.
+- Sound genuine and helpful, not like a brochure.
+- Write in English only.
 
 TRAVEL CAPTION:"""
         
@@ -96,13 +130,13 @@ TRAVEL CAPTION:"""
             system_prompt = "You are a friendly travel blogger."
             user_prompt = f"""Write a casual travel caption based on:
 
-IMAGE: {dam_caption}
+                            IMAGE: {dam_caption}
 
-CONTEXT: {knowledge_text}
+                            CONTEXT: {knowledge_text}
 
-Write a short, friendly caption (80-150 words) like sharing with friends.
+                            Write a short, friendly caption (80-150 words) like sharing with friends.
 
-CAPTION:"""
+                            CAPTION:"""
         
         return system_prompt, user_prompt
     
@@ -148,15 +182,29 @@ CAPTION:"""
             max_length=2048
         ).to(self.device)
         
-        # Generate
+        # Generate với tối ưu config
         with torch.no_grad():
+            generation_config = {
+                "max_new_tokens": self.max_new_tokens,
+                "pad_token_id": self.tokenizer.eos_token_id,
+                "use_cache": True,  # KV cache cho tốc độ
+            }
+            
+            # Chế độ sampling tùy theo temperature
+            if self.temperature > 0.01:
+                generation_config.update({
+                    "do_sample": True,
+                    "temperature": self.temperature,
+                    "top_p": 0.9,
+                    "top_k": 50
+                })
+            else:
+                # Greedy decoding nhanh hơn
+                generation_config["do_sample"] = False
+            
             outputs = self.model.generate(
                 **inputs,
-                max_new_tokens=self.max_new_tokens,
-                temperature=self.temperature,
-                do_sample=True,
-                top_p=0.9,
-                pad_token_id=self.tokenizer.eos_token_id
+                **generation_config
             )
         
         # Decode
