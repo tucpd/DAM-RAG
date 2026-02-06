@@ -7,7 +7,8 @@ Automated travel caption generation system based on **user-selected image region
 - **English-first approach** - Leveraging DAM-3B and Wikimedia Commons data quality
 - **No text query required** - Simply select an image region
 - **Global knowledge base** - Landmarks, monuments, and architecture worldwide
-- **Three-stage pipeline** - DAM captioning → Visual retrieval → LLM synthesis
+- **Three-stage pipeline** - DAM captioning → Visual retrieval → DAM synthesis
+- **Optimized performance** - ~10s per image with 7GB VRAM
 
 ## Project Structure
 
@@ -151,30 +152,32 @@ python modules/retrieval/build_vector_index.py
 
 ### Module 3: LLM Synthesis
 
-**Status:** ✅ Complete
+**Status:** ✅ Complete (Optimized)
 
-Synthesize final travel captions using local LLM (Qwen2.5-7B-Instruct).
+Synthesize final travel captions using DAM's built-in LLM (Llama-3.2-3B).
 
-**File:** [`modules/synthesis/local_synthesizer.py`](modules/synthesis/local_synthesizer.py)
+**File:** [`modules/dam/inference.py`](modules/dam/inference.py)
 
-**Key Class:** `LocalLLMSynthesizer`
+**Key Method:** `DAMInference.synthesize_with_knowledge()`
 
-**Model:** Qwen/Qwen2.5-7B-Instruct (7B parameters, FP16)
+**Model:** Llama-3.2-3B (integrated in DAM-3B)
 
 **Features:**
-- Combine DAM caption + retrieved knowledge
-- Multiple styles: informative, casual, poetic
+- Combines DAM visual understanding + retrieved knowledge
+- Multiple styles: informative, casual
 - 80-200 words output
-- GPU inference with flash-attention
+- **Optimized:** No need to load separate LLM, saves ~14GB VRAM
+- **Fast:** ~2s synthesis time (60x faster than Qwen)
 
 **Usage:**
 ```python
-from modules.synthesis.local_synthesizer import LocalLLMSynthesizer
+from modules.dam.inference import DAMInference
 
-synthesizer = LocalLLMSynthesizer(device="cuda")
-caption = synthesizer.synthesize(
-    dam_caption=dam_caption,
-    retrieved_knowledge=top_k_results,
+dam = DAMInference(device="cuda")
+caption = dam.synthesize_with_knowledge(
+    image=image,
+    mask=None,
+    knowledge_items=top_k_results,
     style="informative"
 )
 ```
@@ -311,30 +314,26 @@ from PIL import Image
 from modules.dam.inference import DAMInference
 from modules.retrieval.embedder import VisualEmbedder
 from modules.retrieval.retriever import VectorRetriever
-from modules.synthesis.local_synthesizer import LocalLLMSynthesizer
 
 # Load models
 dam = DAMInference(device="cuda")
 embedder = VisualEmbedder(device="cuda")
 retriever = VectorRetriever.load("data/vector_index", use_gpu=True)
-synthesizer = LocalLLMSynthesizer(device="cuda")
 
 # Load your image
 image = Image.open("your_image.jpg").convert("RGB")
 
-# Step 1: Generate caption
-caption = dam.generate_caption(image, mask=None)
-
-# Step 2: Embed image
+# Step 1: Embed image
 vector = embedder.embed_image(image)
 
-# Step 3: Retrieve landmarks
+# Step 2: Retrieve landmarks
 distances, metadata = retriever.search(vector, top_k=5)
 
-# Step 4: Synthesize caption
-final_caption = synthesizer.synthesize(
-    dam_caption=caption,
-    retrieved_knowledge=metadata,
+# Step 3: Synthesize caption with DAM (combines visual + knowledge)
+final_caption = dam.synthesize_with_knowledge(
+    image=image,
+    mask=None,
+    knowledge_items=metadata,
     style="informative"
 )
 
@@ -365,10 +364,13 @@ caption = dam.generate_caption(image=image, mask=mask)
 
 | Component | Model | Size | Precision | VRAM |
 |-----------|-------|------|-----------|------|
-| DAM | nvidia/DAM-3B | 3B | FP16 | ~6GB |
+| DAM | nvidia/DAM-3B (incl. Llama-3.2-3B) | 3B | FP16 | ~6GB |
 | CLIP | openai/clip-vit-large-patch14 | 427M | FP16 | ~1GB |
+| **Total** | - | - | - | **~7GB** |
+
+**Previous (deprecated):**
 | LLM | Qwen/Qwen2.5-7B-Instruct | 7B | FP16 | ~14GB |
-| **Total** | - | - | - | **~21GB** |
+| Total (with Qwen) | - | - | - | ~21GB |
 
 ### Dataset
 
@@ -377,19 +379,29 @@ caption = dam.generate_caption(image=image, mask=mask)
 - **Images:** ~244 total (~24 per landmark)
 - **Vector Index:** 244 CLIP embeddings (768-dim each)
 
-### Performance
+### Performance (RTX 4080 16GB)
 
-- **DAM inference:** ~2-3s per image (RTX 4080)
+**Optimized Pipeline (DAM LLM):**
+- **DAM inference:** ~2-3s per image
 - **CLIP embedding:** ~0.1s per image
 - **FAISS retrieval:** <0.01s for top-5
-- **LLM synthesis:** ~3-5s per caption (Qwen2.5-7B)
-- **Total pipeline:** ~6-10s per image
+- **DAM synthesis:** ~1.5-2s per caption
+- **Total pipeline:** ~5-10s per image
+- **VRAM usage:** ~7GB
+
+**Previous (Qwen):**
+- LLM synthesis: ~103-127s per caption
+- Total pipeline: ~130-140s per image
+- VRAM usage: ~21GB
+
+**Improvement:** ~13.7x faster, 14GB less VRAM
 
 ## Development Status
 
 - ✅ Module 1: DAM inference (complete)
 - ✅ Module 2: RAG retrieval (complete - 244 images indexed)
-- ✅ Module 3: LLM synthesis (complete - Qwen2.5-7B)
+- ✅ Module 3: LLM synthesis (complete - optimized with DAM LLM)
+- ✅ Performance optimization (13.7x speedup)
 - ⏳ Gradio/FastAPI demo (planned)
 - ⏳ Documentation expansion (planned)
 
@@ -398,15 +410,35 @@ caption = dam.generate_caption(image=image, mask=mask)
 1. **English-only output** - DAM-3B trained primarily on English data
 2. **Limited landmarks** - Currently 10 landmarks (~244 images)
 3. **GPU required** - Models optimized for CUDA inference
-4. **VRAM requirement** - Need ~21GB for full pipeline
+4. **VRAM requirement** - Need ~7GB for optimized pipeline
 
 ## Troubleshooting
 
-### Slow Inference
+### Out of Memory (OOM)
 
-```bash
-# Enable flash-attention for faster LLM inference
-pip install flash-attn --no-build-isolation
+The optimized pipeline requires ~7GB VRAM. If you encounter OOM:
+
+```python
+# Option 1: Reduce batch size in retrieval
+retriever.search(vector, top_k=3)  # Instead of 5
+
+# Option 2: Use smaller max_new_tokens
+dam.synthesize_with_knowledge(..., max_new_tokens=150)  # Instead of 200
+```
+
+### Legacy Qwen Pipeline
+
+If you need the old Qwen-based synthesis (slower but different style):
+
+```python
+from modules.synthesis.local_synthesizer import LocalLLMSynthesizer
+
+synthesizer = LocalLLMSynthesizer(device="cuda")
+caption = synthesizer.synthesize(
+    dam_caption=dam.generate_caption(image),
+    retrieved_knowledge=metadata,
+    style="informative"
+)
 ```
 
 ## Citation

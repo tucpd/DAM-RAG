@@ -174,3 +174,138 @@ class DAMInference:
             results.append(caption)
         
         return results
+    
+    def _format_knowledge(self, knowledge_items: list) -> str:
+        """
+        Format retrieved knowledge thành text dễ đọc
+        
+        Args:
+            knowledge_items: List[Dict] từ FAISS retrieval
+                [{'name': 'Taj Mahal', 'location': 'Agra, India', 
+                  'description': '...', 'year_built': '1632'}, ...]
+        
+        Returns:
+            Formatted knowledge text
+        """
+        if not knowledge_items:
+            return "No specific landmark information available."
+        
+        knowledge_text = ""
+        for i, item in enumerate(knowledge_items, 1):
+            name = item.get('name', item.get('landmark', 'Unknown'))
+            location = item.get('location', '')
+            
+            # Header
+            if location:
+                knowledge_text += f"{i}. {name} ({location})\n"
+            else:
+                knowledge_text += f"{i}. {name}\n"
+            
+            # Details
+            if 'description' in item and item['description']:
+                desc = item['description'][:300]  # Giới hạn độ dài
+                knowledge_text += f"   - {desc}\n"
+            
+            if 'year_built' in item and item['year_built']:
+                knowledge_text += f"   - Built: {item['year_built']}\n"
+            
+            if 'style' in item and item['style']:
+                knowledge_text += f"   - Architectural style: {item['style']}\n"
+            
+            knowledge_text += "\n"
+        
+        return knowledge_text.strip()
+    
+    def _build_travel_prompt(self, knowledge_text: str, style: str = "informative") -> str:
+        """
+        Xây dựng prompt để inject knowledge vào DAM
+        
+        Args:
+            knowledge_text: Formatted knowledge string
+            style: 'informative' hoặc 'casual'
+        
+        Returns:
+            Query string với <image> placeholder
+        """
+        if style == "informative":
+            query = f"""<image>
+Based on the image and the following landmark information:
+
+{knowledge_text}
+
+Write a detailed, engaging travel caption (80-200 words) that:
+- Describes what is visually present in the image
+- Incorporates relevant historical and cultural context from the landmark information above
+- Provides helpful insights for travelers
+- Uses a professional yet inviting tone
+
+Travel Caption:"""
+        
+        elif style == "casual":
+            query = f"""<image>
+Check out this amazing view! Here's some cool info about this place:
+
+{knowledge_text}
+
+Write a friendly, enthusiastic travel caption (80-150 words) that shares what you see and some interesting facts. Make it sound like you're telling a friend about your trip!
+
+Caption:"""
+        
+        else:
+            # Default informative
+            query = f"""<image>
+Landmark information:
+{knowledge_text}
+
+Write a travel caption (80-200 words) describing the image and incorporating the landmark context.
+
+Caption:"""
+        
+        return query
+    
+    def synthesize_with_knowledge(
+        self,
+        image: Union[str, Path, Image.Image, np.ndarray],
+        mask: Optional[Union[np.ndarray, Image.Image]] = None,
+        knowledge_items: list = None,
+        style: str = "informative",
+        max_new_tokens: int = 200,
+        temperature: float = 0.3,
+        top_p: float = 0.9,
+        **kwargs
+    ) -> str:
+        """
+        Tổng hợp travel caption với retrieved knowledge sử dụng DAM LLM
+        
+        Args:
+            image: Ảnh input
+            mask: Binary mask cho vùng cần mô tả (None = toàn ảnh)
+            knowledge_items: List[Dict] từ FAISS retrieval
+                [{'name': 'Taj Mahal', 'description': '...', ...}, ...]
+            style: 'informative' hoặc 'casual'
+            max_new_tokens: Số token tối đa (200 ~ 150 từ)
+            temperature: Temperature cho generation (0.3 = balanced)
+            top_p: Top-p sampling
+            **kwargs: Các tham số khác
+        
+        Returns:
+            Travel caption đã tổng hợp với knowledge
+        """
+        # Format knowledge
+        knowledge_text = self._format_knowledge(knowledge_items or [])
+        
+        # Build travel prompt
+        travel_query = self._build_travel_prompt(knowledge_text, style)
+        
+        # Generate caption với DAM LLM
+        caption = self.generate_caption(
+            image=image,
+            mask=mask,
+            query=travel_query,
+            max_new_tokens=max_new_tokens,
+            temperature=temperature,
+            top_p=top_p,
+            **kwargs
+        )
+        
+        return caption

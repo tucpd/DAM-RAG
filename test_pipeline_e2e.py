@@ -16,8 +16,7 @@ load_dotenv()
 from modules.dam.inference import DAMInference
 from modules.retrieval.embedder import VisualEmbedder
 from modules.retrieval.retriever import VectorRetriever
-# from modules.synthesis.llm_synthesizer import LLMSynthesizer  # Gemini
-from modules.synthesis.local_synthesizer import LocalLLMSynthesizer  # Local LLM
+# from modules.synthesis.local_synthesizer import LocalLLMSynthesizer  # Replaced by DAM LLM 
 
 def test_end_to_end_pipeline(image_path):
     """
@@ -49,14 +48,14 @@ def test_end_to_end_pipeline(image_path):
     retriever = VectorRetriever.load("data/vector_index", use_gpu=True if device == "cuda" else False)
     print(f"FAISS retriever loaded ({retriever.index.ntotal} vectors, {len(retriever.metadata)} metadata)")
     
-    print("\n[4/5] Loading LLM synthesizer...")
-    synthesizer = LocalLLMSynthesizer(device=device)
-    print("Local LLM synthesizer loaded")
+    # print("\n[4/5] Loading LLM synthesizer...")
+    # synthesizer = LocalLLMSynthesizer(device=device)
+    # print("Local LLM synthesizer loaded")
     
     # =================================================================
     # 2. Load test image
     # =================================================================
-    print("\n[5/5] Loading test image...")
+    print("\n[4/4] Loading test image...")
     
     image = Image.open(image_path).convert("RGB")
     print(f"Image loaded: {image_path}")
@@ -104,12 +103,15 @@ def test_end_to_end_pipeline(image_path):
     # Step 4: Synthesis - Tạo travel caption
     start_time_cap = time()
     print("\n[STEP 4] Synthesizing final travel caption...")
-    print("(Using local LLM...)")
+    print("(Using DAM LLM - Llama-3.2-3B)")
     
-    final_result = synthesizer.synthesize(
-        dam_caption=dam_caption,
-        retrieved_knowledge=results,
-        style="informative"
+    final_caption = dam.synthesize_with_knowledge(
+        image=image,
+        mask=None,  # Full image
+        knowledge_items=results,
+        style="informative",
+        max_new_tokens=200,
+        temperature=0.3
     )
     end_time_cap = time()
     print(f"\nCaption synthesized in {end_time_cap - start_time_cap:.2f} seconds")
@@ -120,19 +122,27 @@ def test_end_to_end_pipeline(image_path):
     print("\n" + "="*70)
     print("FINAL TRAVEL CAPTION")
     print("="*70)
-    print(final_result['caption'])
+    print(final_caption)
     
     print("\n" + "="*70)
     print("METADATA")
     print("="*70)
     print(f"Image: {image_path}")
-    print(f"Retrieved landmarks: {', '.join(final_result['retrieved_landmarks'])}")
-    print(f"Style: {final_result['style']}")
+    landmark_names = [item.get('name', item.get('landmark', 'Unknown')) for item in results]
+    print(f"Retrieved landmarks: {', '.join(landmark_names)}")
+    print(f"Style: informative")
+    print(f"DAM Caption (initial): {dam_caption[:100]}...")
     
     print("\nPipeline completed successfully!")
     end_time_exe = time()
     print(f"\nExecution completed in {end_time_exe - start_time_exe:.2f} seconds")
-    return final_result
+    
+    return {
+        'caption': final_caption,
+        'dam_caption': dam_caption,
+        'retrieved_landmarks': landmark_names,
+        'style': 'informative'
+    }
 
 
 def test_with_custom_region(image_path):
