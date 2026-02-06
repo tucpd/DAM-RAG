@@ -46,7 +46,7 @@ class VectorRetriever:
         # Metadata storage
         self.metadata = []
         
-        print(f"✓ FAISS index initialized (dim={embed_dim}, GPU={self.use_gpu})")
+        print(f"FAISS index initialized (dim={embed_dim}, GPU={self.use_gpu})")
     
     def add_vectors(
         self,
@@ -72,7 +72,7 @@ class VectorRetriever:
         # Add metadata
         self.metadata.extend(metadata)
         
-        print(f"✓ Đã thêm {len(vectors)} vectors vào index (total: {self.index.ntotal})")
+        print(f"Đã thêm {len(vectors)} vectors vào index (total: {self.index.ntotal})")
     
     def search(
         self,
@@ -127,7 +127,7 @@ class VectorRetriever:
         with open(save_path / "metadata.json", 'w', encoding='utf-8') as f:
             json.dump(self.metadata, f, ensure_ascii=False, indent=2)
         
-        print(f"✓ Đã lưu index tại: {save_dir}")
+        print(f"Đã lưu index tại: {save_dir}")
     
     @classmethod
     def load(cls, load_dir: str, use_gpu: bool = True) -> 'VectorRetriever':
@@ -164,7 +164,7 @@ class VectorRetriever:
         with open(load_path / "metadata.json", 'r', encoding='utf-8') as f:
             retriever.metadata = json.load(f)
         
-        print(f"✓ Đã load index: {retriever.index.ntotal} vectors")
+        print(f"Đã load index: {retriever.index.ntotal} vectors")
         return retriever
 
 
@@ -216,7 +216,7 @@ def main():
     
     # Test search again
     distances2, results2 = retriever_loaded.search(query, top_k=5)
-    print(f"\n✓ Load thành công, kết quả giống nhau: {np.allclose(distances, distances2)}")
+    print(f"\nLoad thành công, kết quả giống nhau: {np.allclose(distances, distances2)}")
 
 
 if __name__ == "__main__":
