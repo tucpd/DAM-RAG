@@ -14,44 +14,122 @@ from modules.retrieval.embedder import VisualEmbedder
 from modules.retrieval.retriever import VectorRetriever
 
 
-def collect_all_images(knowledge_base_dir: str = "data/knowledge_base"):
+def collect_all_images(
+    images_dir: str = "data/images",
+    metadata_dir: str = "data/metadata"
+):
     """
-    Thu thập tất cả ảnh từ knowledge base
+    Thu thap tat ca anh tu knowledge base
+    
+    Args:
+        images_dir: Thu muc chua anh (data/images/{Landmark}/)
+        metadata_dir: Thu muc chua metadata (data/metadata/{Landmark}/)
     
     Returns:
         List of dicts: {'image_path': str, 'landmark': str, 'metadata': dict}
     """
-    kb_path = Path(knowledge_base_dir)
+    images_path = Path(images_dir)
+    metadata_path = Path(metadata_dir)
     all_images = []
     
-    for landmark_dir in kb_path.iterdir():
-        if not landmark_dir.is_dir():
+    # Tim tat ca landmark folders trong thu muc metadata
+    if not metadata_path.exists():
+        print(f"Metadata directory not found: {metadata_dir}")
+        return all_images
+    
+    landmark_dirs = sorted([
+        d for d in metadata_path.iterdir() if d.is_dir()
+    ])
+    
+    for landmark_meta_dir in landmark_dirs:
+        landmark_name = landmark_meta_dir.name
+        
+        # Thu muc chua anh tuong ung
+        img_dir = images_path / landmark_name
+        
+        # Load metadata tu landmark folder
+        metadata_map = {}  # page_id hoac image_name -> metadata
+        
+        # Uu tien metadata.jsonl (format moi, co nhieu thong tin hon)
+        jsonl_file = landmark_meta_dir / "metadata.jsonl"
+        json_file = landmark_meta_dir / "metadata.json"
+        
+        if jsonl_file.exists():
+            with open(jsonl_file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        meta = json.loads(line)
+                        # Map theo image_path (ten file)
+                        img_path = meta.get('image_path', meta.get('local_path', ''))
+                        if img_path:
+                            img_name = Path(img_path).name
+                            metadata_map[img_name] = meta
+                        # Map theo page_id
+                        page_id = meta.get('page_id', '')
+                        if page_id:
+                            metadata_map[f"pid_{page_id}"] = meta
+                    except json.JSONDecodeError:
+                        continue
+        
+        elif json_file.exists():
+            with open(json_file, 'r', encoding='utf-8') as f:
+                try:
+                    metadata_list = json.load(f)
+                    for meta in metadata_list:
+                        img_path = meta.get('image', meta.get('image_path', ''))
+                        if img_path:
+                            img_name = Path(img_path).name
+                            metadata_map[img_name] = meta
+                except (json.JSONDecodeError, TypeError):
+                    pass
+        
+        # Load landmark_info.json (thong tin chi tiet tu Wikipedia)
+        landmark_info = {}
+        info_file = landmark_meta_dir / "landmark_info.json"
+        if info_file.exists():
+            with open(info_file, 'r', encoding='utf-8') as f:
+                try:
+                    landmark_info = json.load(f)
+                except (json.JSONDecodeError, TypeError):
+                    pass
+        
+        # Tim tat ca anh trong thu muc images/Landmark_Name/
+        if not img_dir.exists():
             continue
         
-        landmark_name = landmark_dir.name
+        img_files = sorted(
+            list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png"))
+        )
         
-        # Load metadata
-        metadata_file = landmark_dir / "metadata.json"
-        if metadata_file.exists():
-            with open(metadata_file, 'r', encoding='utf-8') as f:
-                metadata_list = json.load(f)
-        else:
-            metadata_list = []
-        
-        # Tìm tất cả ảnh
-        for img_file in landmark_dir.glob("*.jpg"):
-            # Tìm metadata tương ứng
-            img_metadata = None
-            for meta in metadata_list:
-                if Path(meta.get('image', '')).name == img_file.name:
-                    img_metadata = meta
-                    break
+        for img_file in img_files:
+            img_name = img_file.name
             
+            # Tim metadata tuong ung
+            img_metadata = metadata_map.get(img_name)
+            
+            # Thu tim theo page_id trong ten file (format: Landmark_pageID.jpg)
+            if img_metadata is None:
+                parts = img_name.replace('.jpg', '').replace('.png', '').rsplit('_', 1)
+                if len(parts) == 2:
+                    pid_key = f"pid_{parts[1]}"
+                    img_metadata = metadata_map.get(pid_key)
+            
+            # Neu khong co metadata, tao metadata co ban tu landmark_info
             if img_metadata is None:
                 img_metadata = {
-                    'landmark': landmark_name,
-                    'image': str(img_file)
+                    'landmark': landmark_name.replace('_', ' '),
+                    'name': landmark_name.replace('_', ' '),
+                    'image_path': str(img_file),
                 }
+                # Gop thong tin tu landmark_info
+                for key in ['location', 'country', 'year_built', 'architect', 
+                            'style', 'height', 'unesco_status', 'visitors_per_year',
+                            'significance', 'description', 'coordinates']:
+                    if key in landmark_info and landmark_info[key]:
+                        img_metadata[key] = landmark_info[key]
             
             all_images.append({
                 'image_path': str(img_file),
@@ -63,7 +141,8 @@ def collect_all_images(knowledge_base_dir: str = "data/knowledge_base"):
 
 
 def build_vector_index(
-    knowledge_base_dir: str = "data/knowledge_base",
+    images_dir: str = "data/images",
+    metadata_dir: str = "data/metadata",
     output_dir: str = "data/vector_index",
     device: str = "cuda",
     batch_size: int = 16
@@ -77,8 +156,12 @@ def build_vector_index(
     
     # 1. Collect all images
     print("\n[1/4] Collecting images...")
-    all_images = collect_all_images(knowledge_base_dir)
+    all_images = collect_all_images(images_dir, metadata_dir)
     print(f"Found {len(all_images)} images")
+    
+    if not all_images:
+        print("No images found! Check data/images/ and data/metadata/ directories.")
+        return None
     
     # Group by landmark
     landmarks_count = {}
@@ -89,6 +172,7 @@ def build_vector_index(
     print("\nImages per landmark:")
     for landmark, count in sorted(landmarks_count.items()):
         print(f"  {landmark}: {count} images")
+    print(f"\nTotal landmarks: {len(landmarks_count)}")
     
     # 2. Load embedder
     print("\n[2/4] Loading CLIP embedder...")
@@ -117,12 +201,14 @@ def build_vector_index(
                 
                 # Build metadata for retrieval
                 meta = item['metadata'].copy()
-                meta['name'] = item['landmark'].replace('_', ' ')
+                # Dam bao co truong 'name'
+                if 'name' not in meta:
+                    meta['name'] = item['landmark'].replace('_', ' ')
                 meta['image_path'] = item['image_path']
                 batch_metadata.append(meta)
                 
             except Exception as e:
-                print(f"\n⚠️  Failed to load {item['image_path']}: {e}")
+                print(f"\nFailed to load {item['image_path']}: {e}")
                 failed_count += 1
                 continue
         
@@ -160,9 +246,19 @@ def build_vector_index(
     # Save
     retriever.save(output_dir)
     
-    print(f"\nFull index saved to: {output_dir}")
+    print(f"\nIndex saved to: {output_dir}")
     print(f"   Total vectors: {retriever.index.ntotal}")
     print(f"   Total metadata: {len(retriever.metadata)}")
+    print(f"   Total landmarks: {len(landmarks_count)}")
+    
+    # In thong ke metadata quality
+    has_description = sum(1 for m in metadata_list if m.get('description'))
+    has_year = sum(1 for m in metadata_list if m.get('year_built'))
+    has_location = sum(1 for m in metadata_list if m.get('location'))
+    print(f"\n   Metadata quality:")
+    print(f"     With description: {has_description}/{len(metadata_list)}")
+    print(f"     With year_built: {has_year}/{len(metadata_list)}")
+    print(f"     With location: {has_location}/{len(metadata_list)}")
     
     return retriever
 
@@ -175,7 +271,6 @@ def test_retrieval(retriever, test_image_path: str, top_k: int = 5):
     
     print(f"\nQuery image: {test_image_path}")
     
-    # Load and embed query image
     embedder = VisualEmbedder(device="cuda")
     query_img = Image.open(test_image_path).convert('RGB')
     query_embedding = embedder.embed_image(query_img)
@@ -186,8 +281,17 @@ def test_retrieval(retriever, test_image_path: str, top_k: int = 5):
     print(f"\nTop-{top_k} results:")
     for i, (dist, meta) in enumerate(zip(distances, results), 1):
         landmark = meta.get('name', meta.get('landmark', 'Unknown'))
+        location = meta.get('location', '')
+        year = meta.get('year_built', '')
         img_path = Path(meta.get('image_path', '')).name
-        print(f"  {i}. {landmark} - {img_path} (Distance: {dist:.4f})")
+        
+        info_str = f"{landmark}"
+        if location:
+            info_str += f" ({location})"
+        if year:
+            info_str += f" [{year}]"
+        
+        print(f"  {i}. {info_str} - {img_path} (Distance: {dist:.4f})")
 
 
 if __name__ == "__main__":
@@ -195,19 +299,9 @@ if __name__ == "__main__":
     
     # Build vector index
     retriever = build_vector_index(
-        knowledge_base_dir="data/knowledge_base",
+        images_dir="data/images",
+        metadata_dir="data/metadata",
         output_dir="data/vector_index",
         device="cuda",
         batch_size=16
     )
-    
-    # Test với ảnh Angkor Wat
-    test_images = [
-        "data/knowledge_base/Angkor_Wat/img_0000.jpg",
-        "data/knowledge_base/Taj_Mahal/img_0000.jpg",
-        "data/knowledge_base/Eiffel_Tower/img_0000.jpg"
-    ]
-    
-    for test_img in test_images:
-        if Path(test_img).exists():
-            test_retrieval(retriever, test_img, top_k=5)

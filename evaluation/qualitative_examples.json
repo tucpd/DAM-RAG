@@ -1,0 +1,107 @@
+[
+  {
+    "landmark": "Ha_Long_Bay",
+    "image_file": "Ha_Long_Bay_124576580.jpg",
+    "image_path": "data/tests/Ha_Long_Bay/Ha_Long_Bay_124576580.jpg",
+    "perception_agent": {
+      "caption": "The water is a vast expanse of deep blue, with gentle ripples and small waves creating a textured surface. The water extends to the horizon, where it meets the sky, and is dotted with several boats.",
+      "word_count": 36,
+      "time": 0.7639551162719727,
+      "clipscore": 24.978694319725037,
+      "ku_score": 0.0
+    },
+    "knowledge_agent": {
+      "top1_name": "Hạ Long Bay",
+      "retrieved": {
+        "name": "Hạ Long Bay",
+        "location": "Northeastern Vietnam",
+        "country": "Vietnam",
+        "year_built": "1948",
+        "style": "",
+        "unesco_status": "World Heritage Site"
+      },
+      "distances": [
+        0.01792171038687229,
+        0.021164797246456146,
+        0.023977156728506088
+      ]
+    },
+    "narration_agent": {
+      "caption": "The image captures the breathtaking view of Hạ Long Bay, a renowned landmark in Northeastern Vietnam. The bay is a spectacle of nature's beauty, characterized by its thousands of limestone karsts that rise majestically from the water. The calm, deep blue waters of the bay provide a stark contrast to the rugged, rocky formations, creating a mesmerizing visual experience. The image is taken from a distance, allowing the viewer to appreciate the vastness of the bay and the serene, almost surreal atmosphere that it exudes. The landmark was built in 1948, a testament to the architectural prowess of the time, and is now a popular tourist destination, offering visitors a glimpse into the natural beauty and cultural heritage of Vietnam.",
+      "word_count": 120,
+      "time": 2.1463046073913574,
+      "clipscore": 23.379896581172943,
+      "ku_score": 1.0
+    }
+  },
+  {
+    "landmark": "Taj_Mahal",
+    "image_file": "Taj_Mahal_73871228.jpg",
+    "image_path": "data/tests/Taj_Mahal/Taj_Mahal_73871228.jpg",
+    "perception_agent": {
+      "caption": "The sky is predominantly overcast with a blanket of thick, gray clouds. There are subtle variations in the cloud density, with some areas appearing slightly lighter, indicating a mix of cloud types. The overall tone of the sky is muted, with no visible breaks or patches of blue sky.",
+      "word_count": 49,
+      "time": 0.7900791168212891,
+      "clipscore": 13.638022541999817,
+      "ku_score": 0.0
+    },
+    "knowledge_agent": {
+      "top1_name": "Taj Mahal",
+      "retrieved": {
+        "name": "Taj Mahal",
+        "location": "Agra, India",
+        "country": "India",
+        "year_built": "1631",
+        "style": "Islamic architecture",
+        "unesco_status": "World Heritage Site (since 1983)"
+      },
+      "distances": [
+        0.078682541847229,
+        0.08455514162778854,
+        0.09780523926019669
+      ]
+    },
+    "narration_agent": {
+      "caption": "The Taj Mahal, a renowned landmark in Agra, India, is a stunning example of Islamic architecture and a symbol of Mughal artistry. The image showcases the grand courtyard of the Taj Mahal, with its long, arched passageway and the Taj Mahal itself in the background. This majestic monument is a testament to the architectural prowess of the Mughal Empire and a symbol of love and devotion. The Taj Mahal is a must-visit destination for anyone interested in history, culture, and architecture.",
+      "word_count": 81,
+      "time": 1.555295705795288,
+      "clipscore": 16.645915806293488,
+      "ku_score": 0.6
+    }
+  },
+  {
+    "landmark": "Machu_Picchu",
+    "image_file": "Machu_Picchu_159379095.jpg",
+    "image_path": "data/tests/Machu_Picchu/Machu_Picchu_159379095.jpg",
+    "perception_agent": {
+      "caption": "The mountain features a rugged terrain with a mix of rocky outcrops and patches of green vegetation. The visible part of the mountain has a steep incline with a prominent stone structure built into the rock face. The structure includes a set of stone steps leading up to it. The mountain's surface is uneven, with various crevices and jagged edges.",
+      "word_count": 60,
+      "time": 0.964745283126831,
+      "clipscore": 18.442709743976593,
+      "ku_score": 0.0
+    },
+    "knowledge_agent": {
+      "top1_name": "Machu Picchu",
+      "retrieved": {
+        "name": "Machu Picchu",
+        "location": "Urubamba Province, Peru",
+        "country": "Peru",
+        "year_built": "1450",
+        "style": "",
+        "unesco_status": "World Heritage Site (since 1983)"
+      },
+      "distances": [
+        0.16380825638771057,
+        0.19269779324531555,
+        0.2009815126657486
+      ]
+    },
+    "narration_agent": {
+      "caption": "The ancient Inca citadel of Machu Picchu, located in the Urubamba Province of Peru, is a breathtaking sight to behold. The stone structures and terraces, carved into the mountainside, showcase the architectural prowess of the Incas. The ruins, dating back to the 15th century, are a testament to the rich history and culture of the region. For travelers, visiting Machu Picchu is a once-in-a-lifetime experience that offers a glimpse into the past and a deeper understanding of the Inca civilization.",
+      "word_count": 80,
+      "time": 1.633094072341919,
+      "clipscore": 24.96451437473297,
+      "ku_score": 0.5
+    }
+  }
+]
