@@ -74,7 +74,7 @@ class DAMInference:
         box: Optional[Tuple[int, int, int, int]] = None,
         query: str = "<image>\nDescribe the masked region in detail.",
         max_new_tokens: int = 256,
-        temperature: float = 0.7,
+        temperature: float = 0.4,
         top_p: float = 0.9,
         num_beams: int = 1,
         streaming: bool = False,
