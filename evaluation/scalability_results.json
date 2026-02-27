@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "date": "2026-02-26T16:20:47.169807",
+    "total_landmarks": 54
+  },
+  "scalability": [
+    {
+      "kb_size": 10,
+      "num_landmarks": 10,
+      "num_test_images": 30,
+      "kb_vectors": 146,
+      "ra_at_1": 0.9,
+      "ra_at_3": 0.9666666666666667,
+      "ra_at_5": 0.9666666666666667
+    },
+    {
+      "kb_size": 20,
+      "num_landmarks": 20,
+      "num_test_images": 60,
+      "kb_vectors": 276,
+      "ra_at_1": 0.8833333333333333,
+      "ra_at_3": 0.9333333333333333,
+      "ra_at_5": 0.9333333333333333
+    },
+    {
+      "kb_size": 54,
+      "num_landmarks": 54,
+      "num_test_images": 162,
+      "kb_vectors": 745,
+      "ra_at_1": 0.8765432098765432,
+      "ra_at_3": 0.9444444444444444,
+      "ra_at_5": 0.9567901234567902
+    }
+  ]
+}

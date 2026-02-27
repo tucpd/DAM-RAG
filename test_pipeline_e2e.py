@@ -9,6 +9,7 @@ from PIL import Image
 import numpy as np
 from dotenv import load_dotenv
 from time import time
+from datetime import datetime
 
 # Load environment variables từ .env
 load_dotenv()
@@ -17,6 +18,102 @@ from modules.dam.inference import DAMInference
 from modules.retrieval.embedder import VisualEmbedder
 from modules.retrieval.retriever import VectorRetriever
 # from modules.synthesis.local_synthesizer import LocalLLMSynthesizer  # Replaced by DAM LLM 
+
+def format_knowledge_text(knowledge_items):
+    """
+    Format retrieved knowledge thành text dễ đọc
+    """
+    if not knowledge_items:
+        return "No specific landmark information available."
+    
+    knowledge_text = ""
+    for i, item in enumerate(knowledge_items, 1):
+        name = item.get('name', item.get('landmark', 'Unknown'))
+        location = item.get('location', '')
+        
+        # Header
+        if location:
+            knowledge_text += f"{i}. {name} ({location})\n"
+        else:
+            knowledge_text += f"{i}. {name}\n"
+        
+        # Details
+        if 'description' in item and item['description']:
+            knowledge_text += f"   Description: {item['description']}\n"
+        
+        if 'year_built' in item and item['year_built']:
+            knowledge_text += f"   Year Built: {item['year_built']}\n"
+        
+        if 'style' in item and item['style']:
+            knowledge_text += f"   Style: {item['style']}\n"
+        
+        knowledge_text += "\n"
+    
+    return knowledge_text.strip()
+
+
+def save_results_to_file(image_path, dam_caption, knowledge_items, final_caption, output_dir="outputs"):
+    """
+    Lưu kết quả pipeline vào file txt
+    """
+    # Tạo output directory nếu chưa có
+    output_path = Path(output_dir)
+    output_path.mkdir(exist_ok=True)
+    
+    # Tạo tên file từ landmark và timestamp
+    landmark_name = Path(image_path).parent.name
+    image_name = Path(image_path).name
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"{landmark_name}_{timestamp}.txt"
+    
+    # Format knowledge
+    knowledge_text = format_knowledge_text(knowledge_items)
+    
+    # Tạo content
+    content = f"""{'='*70}
+DAM-RAG TRAVEL CAPTION RESULTS
+{'='*70}
+
+Generated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+
+{'='*70}
+IMAGE INFORMATION
+{'='*70}
+
+Image Path: {image_path}
+Image Name: {image_name}
+Landmark: {landmark_name.replace('_', ' ')}
+
+{'='*70}
+DAM CAPTION (Initial Visual Description)
+{'='*70}
+
+{dam_caption}
+
+{'='*70}
+RETRIEVED KNOWLEDGE (From Vector Database)
+{'='*70}
+
+{knowledge_text}
+
+{'='*70}
+FINAL CAPTION (Synthesized with Knowledge)
+{'='*70}
+
+{final_caption}
+
+{'='*70}
+END OF RESULTS
+{'='*70}
+"""
+    
+    # Save to file
+    output_file = output_path / filename
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(content)
+    
+    print(f"\n✓ Results saved to: {output_file}")
+    return output_file
 
 def test_end_to_end_pipeline(image_path):
     """
@@ -45,8 +142,9 @@ def test_end_to_end_pipeline(image_path):
     print("CLIP embedder loaded")
     
     print("\n[3/5] Loading FAISS retriever...")
-    retriever = VectorRetriever.load("data/vector_index", use_gpu=True if device == "cuda" else False)
-    print(f"FAISS retriever loaded ({retriever.index.ntotal} vectors, {len(retriever.metadata)} metadata)")
+    # Use CPU for FAISS to save VRAM on shared servers
+    retriever = VectorRetriever.load("data/vector_index", use_gpu=False)
+    print(f"FAISS retriever loaded (CPU mode - {retriever.index.ntotal} vectors, {len(retriever.metadata)} metadata)")
     
     # print("\n[4/5] Loading LLM synthesizer...")
     # synthesizer = LocalLLMSynthesizer(device=device)
@@ -137,6 +235,14 @@ def test_end_to_end_pipeline(image_path):
     end_time_exe = time()
     print(f"\nExecution completed in {end_time_exe - start_time_exe:.2f} seconds")
     
+    # Save results to file
+    save_results_to_file(
+        image_path=image_path,
+        dam_caption=dam_caption,
+        knowledge_items=results,
+        final_caption=final_caption
+    )
+    
     return {
         'caption': final_caption,
         'dam_caption': dam_caption,
@@ -158,8 +264,8 @@ def test_with_custom_region(image_path):
     # Load models
     dam = DAMInference(device=device)
     embedder = VisualEmbedder(device=device)
-    retriever = VectorRetriever.load("data/vector_index", use_gpu=True if device == "cuda" else False)
-    synthesizer = LocalLLMSynthesizer(device=device)
+    retriever = VectorRetriever.load("data/vector_index", use_gpu=False)  # CPU mode to save VRAM
+    # synthesizer = LocalLLMSynthesizer(device=device)
     
     # Load image
     image = Image.open(image_path).convert("RGB")
@@ -183,10 +289,10 @@ def test_with_custom_region(image_path):
     _, results = retriever.search(embedding, top_k=2)
     
     print("\n[4/4] Synthesis...")
-    final = synthesizer.synthesize_simple(caption, results)
+    # final = synthesizer.synthesize_simple(caption, results)
     
     print("\n" + "="*70)
-    print(final)
+    # print(final)
     print("="*70)
 
 
@@ -196,11 +302,11 @@ if __name__ == "__main__":
     
     # Danh sách ảnh test từ các địa điểm khác nhau
     test_images = [
-        "data/knowledge_base/Ha_Long_Bay/img_0004.jpg",
-        "data/knowledge_base/Taj_Mahal/img_0005.jpg",
-        "data/knowledge_base/Eiffel_Tower/img_0003.jpg",
-        "data/knowledge_base/Great_Wall_of_China/img_0002.jpg",
-        "data/knowledge_base/Angkor_Wat/img_0001.jpg",
+        "data/images/Ha_Long_Bay/Ha_Long_Bay_124576511.jpg",
+        "data/images/Taj_Mahal/Taj_Mahal_161821764.jpg",
+        "data/images/Colosseum/Colosseum_126815922.jpg",
+        "data/images/Machu_Picchu/Machu_Picchu_129953067.jpg",
+        "data/images/Great_Wall_of_China/Great_Wall_of_China_117434912.jpg",
     ]
     
     # Lọc ra những ảnh có tồn tại
