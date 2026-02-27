@@ -6,9 +6,10 @@ Automated travel caption generation system based on **user-selected image region
 
 - **English-first approach** - Leveraging DAM-3B and Wikimedia Commons data quality
 - **No text query required** - Simply select an image region
-- **Global knowledge base** - Landmarks, monuments, and architecture worldwide
-- **Three-stage pipeline** - DAM captioning → Visual retrieval → DAM synthesis
-- **Optimized performance** - ~10s per image with 7GB VRAM
+- **Global knowledge base** - 54 landmarks, 907 images across 6 continents
+- **Agentic pipeline** - Perception Agent -> Knowledge Agent -> Narration Agent
+- **Optimized performance** - ~1.8s per image with ~7GB VRAM
+- **Evaluation framework** - CLIPScore, KU-Score, RA@k metrics with 162 held-out test images
 
 ## Project Structure
 
@@ -16,25 +17,30 @@ Automated travel caption generation system based on **user-selected image region
 DAM-RAG/
 ├── modules/
 │   ├── dam/
-│   │   ├── inference.py          # DAM-3B wrapper for region captioning
-│   │   └── DAM/                  # DAM-3B model package
+│   │   ├── inference.py            # DAM-3B wrapper (captioning + synthesis)
+│   │   └── describe-anything/      # DAM-3B model package
 │   ├── retrieval/
-│   │   ├── crawler.py            # Wikimedia Commons crawler (10 landmarks)
-│   │   ├── embedder.py           # CLIP visual embedder (768-dim)
-│   │   ├── retriever.py          # FAISS vector similarity search
-│   │   └── build_vector_index.py # Build FAISS index from images
+│   │   ├── crawler.py              # Wikipedia + Wikidata + Wikimedia crawler (54 landmarks)
+│   │   ├── embedder.py             # CLIP visual embedder (768-dim)
+│   │   ├── retriever.py            # FAISS vector similarity search
+│   │   └── build_vector_index.py   # Build FAISS index with train/test split
 │   └── synthesis/
-│       ├── local_synthesizer.py  # Qwen2.5-7B caption synthesizer
-│       └── llm_synthesizer.py    # (Deprecated) Gemini API version
+│       ├── local_synthesizer.py    # Qwen2.5-7B synthesizer (deprecated)
+│       └── llm_synthesizer.py      # Gemini API version (deprecated)
+├── evaluation/
+│   ├── evaluate.py                 # Full evaluation: CLIPScore, KU-Score, RA@k
+│   ├── generate_qualitative_examples.py  # Generate examples for paper
+│   ├── results.json                # Evaluation results
+│   ├── scalability_results.json    # Scalability experiment results
+│   └── qualitative_examples.json   # Qualitative example outputs
 ├── data/
-│   ├── knowledge_base/           # Crawled images by landmark
-│   │   ├── Taj_Mahal/
-│   │   ├── Eiffel_Tower/
-│   │   └── ...                   # 10 landmarks total
-│   └── vector_index/             # FAISS index + metadata
-├── test_pipeline_e2e.py          # End-to-end pipeline test
-└── test_dam_simple.py            # Simple DAM test
-
+│   ├── images/                     # Crawled images (54 landmarks, ~907 images)
+│   ├── metadata/                   # Per-landmark structured metadata
+│   ├── tests/                      # Held-out test images (3 per landmark)
+│   └── vector_index/               # FAISS index + metadata (745 train vectors)
+├── split_test_data.py              # Train/test split script
+├── test_pipeline_e2e.py            # End-to-end pipeline test
+└── test_dam_simple.py              # Simple DAM test
 ```
 
 ## Module Details
@@ -74,15 +80,12 @@ Retrieve relevant landmark information using CLIP embeddings and FAISS vector se
 **Key Class:** `WikimediaCommonsCrawler`
 
 **Features:**
-- Crawl images from 10 famous landmarks
+- Crawl from 3 sources: Wikipedia API, Wikidata API, Wikimedia Commons
+- 54 landmarks across 6 regions (Asia, Europe, Americas, Middle East & Africa, Oceania, Natural Wonders)
 - Retry mechanism with exponential backoff
 - Rate limiting handling (429 errors)
-- Metadata extraction (name, description, year, style)
-
-**Landmarks:**
-- Taj Mahal, Great Wall of China, Eiffel Tower, Colosseum
-- Statue of Liberty, Machu Picchu, Angkor Wat, Burj Khalifa
-- Sydney Opera House, Ha Long Bay
+- Structured metadata: name, location, country, year_built, architect, style, UNESCO status, etc.
+- Skip-existing support for incremental updates
 
 **Run crawler:**
 ```bash
@@ -142,8 +145,10 @@ distances, metadata = retriever.search(query_vector, top_k=5)
 
 **Features:**
 - Collect images from all landmark folders
+- Train/test split support (3 test images per landmark)
 - Batch embedding with CLIP (batch_size=16)
 - Save FAISS index + metadata
+- Only indexes training images (no data leakage)
 
 **Run index builder:**
 ```bash
@@ -229,19 +234,27 @@ python modules/retrieval/crawler.py
 ```
 
 **Output:**
-- `data/knowledge_base/{landmark_name}/*.jpg` - Downloaded images
-- `data/knowledge_base/{landmark_name}/metadata.json` - Metadata for each landmark
+- `data/images/{landmark_name}/*.jpg` - Downloaded images
+- `data/metadata/{landmark_name}/landmark_info.json` - Structured metadata
+- `data/metadata/{landmark_name}/metadata.jsonl` - Per-image metadata
 
 **Expected structure:**
 ```
-data/knowledge_base/
-├── Taj_Mahal/
-│   ├── Taj_Mahal_12345.jpg
-│   ├── Taj_Mahal_67890.jpg
-│   └── metadata.json
-├── Eiffel_Tower/
+data/
+├── images/
+│   ├── Taj_Mahal/
+│   │   ├── Taj_Mahal_12345.jpg
+│   │   └── Taj_Mahal_67890.jpg
+│   ├── Eiffel_Tower/
+│   └── ... (54 landmarks)
+├── metadata/
+│   ├── Taj_Mahal/
+│   │   ├── landmark_info.json
+│   │   └── metadata.jsonl
 │   └── ...
-└── (8 more landmarks)
+└── tests/            # After running split_test_data.py
+    ├── Taj_Mahal/    # 3 test images per landmark
+    └── ...
 ```
 
 ### Step 2: Build Vector Index
@@ -259,12 +272,14 @@ python modules/retrieval/build_vector_index.py
 
 **Expected output:**
 ```
-Collecting images from knowledge base...
-Found 244 images across 10 landmarks
+Collecting images from data/images/...
+Found 907 images across 54 landmarks
+Excluding test images from data/tests/...
+Indexing 745 training images...
 
 Building FAISS index...
-Processing: 100%|██████████| 16/16 [00:04<00:00]
-Successfully built index with 244 vectors
+Processing: 100%|...| 47/47 [00:12<00:00]
+Successfully built index with 745 vectors
 ```
 
 ### Step 3: Run End-to-End Pipeline
@@ -374,20 +389,30 @@ caption = dam.generate_caption(image=image, mask=mask)
 
 ### Dataset
 
-- **Source:** Wikimedia Commons
-- **Landmarks:** 10 famous locations worldwide
-- **Images:** ~244 total (~24 per landmark)
-- **Vector Index:** 244 CLIP embeddings (768-dim each)
+- **Source:** Wikipedia + Wikidata + Wikimedia Commons
+- **Landmarks:** 54 across 6 geographic regions
+- **Images:** 907 total (745 train + 162 test)
+- **Train/Test Split:** 3 images per landmark held out for evaluation
+- **Vector Index:** 745 CLIP embeddings (768-dim, L2 distance)
+- **Metadata:** Up to 15 structured fields per landmark
 
 ### Performance (RTX 4080 16GB)
 
 **Optimized Pipeline (DAM LLM):**
-- **DAM inference:** ~2-3s per image
+- **DAM inference:** ~0.8-1.2s per image
 - **CLIP embedding:** ~0.1s per image
 - **FAISS retrieval:** <0.01s for top-5
-- **DAM synthesis:** ~1.5-2s per caption
-- **Total pipeline:** ~5-10s per image
+- **DAM synthesis:** ~0.5-0.8s per caption
+- **Total pipeline:** ~1.8s per image
 - **VRAM usage:** ~7GB
+
+**Evaluation Results (162 test images):**
+
+| Method | CLIPScore | KU-Score | RA@1 | Time (s/img) |
+|--------|-----------|----------|------|------|
+| DAM-Only | 21.63 | 0.01 | -- | 0.99 |
+| Text-Query RAG | 19.11 | 0.35 | 33.9% | 2.94 |
+| **DAM-RAG (Ours)** | **23.35** | **0.60** | **87.7%** | **1.84** |
 
 **Previous (Qwen):**
 - LLM synthesis: ~103-127s per caption
@@ -398,19 +423,22 @@ caption = dam.generate_caption(image=image, mask=mask)
 
 ## Development Status
 
-- ✅ Module 1: DAM inference (complete)
-- ✅ Module 2: RAG retrieval (complete - 244 images indexed)
-- ✅ Module 3: LLM synthesis (complete - optimized with DAM LLM)
-- ✅ Performance optimization (13.7x speedup)
-- ⏳ Gradio/FastAPI demo (planned)
-- ⏳ Documentation expansion (planned)
+- Module 1: DAM inference (Perception Agent)
+- Module 2: RAG retrieval (Knowledge Agent -- 54 landmarks, 745 indexed images)
+- Module 3: LLM synthesis (Narration Agent -- backbone sharing with DAM)
+- Data expansion: 54 landmarks, 907 images from Wikimedia Commons
+- Evaluation framework: CLIPScore, KU-Score, RA@k with train/test split
+- Name normalization for landmark matching
+- Scalability analysis across KB sizes
+- Gradio/FastAPI demo (planned)
 
 ## Known Limitations
 
 1. **English-only output** - DAM-3B trained primarily on English data
-2. **Limited landmarks** - Currently 10 landmarks (~244 images)
+2. **Visual similarity confusion** - Architecturally similar landmarks (e.g., multiple waterfalls) can be confused by CLIP
 3. **GPU required** - Models optimized for CUDA inference
 4. **VRAM requirement** - Need ~7GB for optimized pipeline
+5. **Static knowledge base** - Requires manual re-crawling for updates
 
 ## Troubleshooting
 
