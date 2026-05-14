@@ -1,0 +1,1319 @@
+{
+  "meta": {
+    "date": "2026-05-10T03:18:20.485475",
+    "device": "cuda",
+    "num_landmarks": 54,
+    "num_test_images": 162
+  },
+  "summary": {
+    "LLaVA-1.6-ZeroShot": {
+      "num_samples": 162,
+      "clipscore_mean": 22.225756083189705,
+      "clipscore_std": 5.238690621510452,
+      "ku_score_mean": 0.2347736625514403,
+      "ku_score_std": 0.23588693105937517,
+      "time_mean": 2.9548302668112294,
+      "time_std": 0.31321604729370434
+    }
+  },
+  "detailed_results": {
+    "LLaVA-1.6-ZeroShot": [
+      {
+        "landmark": "Abu_Simbel",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Abu_Simbel/Abu_Simbel_10814818.jpg",
+        "caption": "The image captures a serene scene on the Nile River in Egypt. Dominating the center of the frame is a large, white paddle steamer, a common mode of transportation on the Nile during the 19th and early 20th centuries. The steamer is adorned with a blue and white striped awning, providing shade for the passengers on the upper deck. The boat is moving from the left to the right of the frame, leaving a trail of ripples in its wake.\n\nThe steamer is not alone on the river. In the distance, you can see the rocky cliffs that line the river, a testament to the geological history of the region. The cliffs are a mix of brown and green, with patches of vegetation clinging to their surface.\n\nThe sky above is a clear blue, suggesting a sunny day. The calm water of the Nile reflect",
+        "clipscore": 27.67207622528076,
+        "ku_score": 0.25,
+        "time": 3.2778100967407227
+      },
+      {
+        "landmark": "Abu_Simbel",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Abu_Simbel/Abu_Simbel_1899325.jpg",
+        "caption": "The image captures a serene scene in a Middle Eastern city. The landmark in the image is a white bird, perched confidently on a green pole. The bird, with its distinctive white plumage and orange beak, stands out against the backdrop of the city.\n\nThe cityscape is bustling with life. A variety of vehicles, including cars and trucks, are scattered throughout the scene, suggesting a busy street. The buildings in the background, adorned with blue and white awnings, add a touch of color to the scene.\n\nThe image also includes a few people, adding a human element to the scene. They are seen walking on the sidewalk, going about their day.\n\nThe sky above is a clear blue, suggesting a sunny day. The overall atmosphere of the image is peaceful and vibrant, capturing the essence of city life in the Middle East.",
+        "clipscore": 29.210209846496582,
+        "ku_score": 0.0,
+        "time": 3.207332134246826
+      },
+      {
+        "landmark": "Abu_Simbel",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Abu_Simbel/Abu_Simbel_38318398.jpg",
+        "caption": "The image captures a vibrant scene at a traditional Middle Eastern market. The market is characterized by its blue and white color scheme, with a prominent blue archway serving as the entrance. The archway is adorned with a red and white striped awning, adding a pop of color to the scene.\n\nInside the market, you can see a variety of fresh produce on display. The most striking feature is a large pile of oranges, their bright color contrasting with the blue and white of the market. The oranges are stacked in a pyramid-like structure, drawing the eye and inviting customers to take a closer look.\n\nThe market is located in a region where the Arabic language is spoken, as indicated by the Arabic text on the awning. This suggests that the market is likely situated in a Middle Eastern country, where such markets are a common sight.\n\nThe image also captures a person",
+        "clipscore": 25.423890352249146,
+        "ku_score": 0.0,
+        "time": 3.2428863048553467
+      },
+      {
+        "landmark": "Acropolis_of_Athens",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Acropolis_of_Athens/Acropolis_of_Athens_126008565.jpg",
+        "caption": "The image captures the ancient ruins of the Temple of Jupiter, located in Baalbek, Lebanon. The ruins, a testament to the grandeur of the past, are composed of large stone columns and walls, their once-magnificent structures now reduced to rubble. The perspective of the photo is from a low angle, looking up at the ruins, emphasizing their imposing size and the passage of time. The surrounding landscape is a mix of rocky cliffs and lush greenery, with a few trees dotting the scene. The image is a poignant reminder of the transient nature of human achievements and the enduring power of nature.",
+        "clipscore": 14.439955353736877,
+        "ku_score": 0.0,
+        "time": 2.6005988121032715
+      },
+      {
+        "landmark": "Acropolis_of_Athens",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Acropolis_of_Athens/Acropolis_of_Athens_126008578.jpg",
+        "caption": "The image captures the grandeur of the Parthenon, a renowned ancient Greek temple located on the Acropolis of Athens, Greece. The temple, constructed from white marble, stands majestically against the backdrop of a cloudy sky. Its Doric columns, a distinctive feature of ancient Greek architecture, rise to meet the heavens, while the friezes and metopes, adorned with intricate carvings, add to its historical significance. The perspective of the photo is from a low angle, looking up towards the temple, emphasizing its imposing stature. The surrounding landscape is dotted with other ancient ruins, providing a sense of the historical context in which the Parthenon was built. The image is a testament to the architectural prowess of ancient Greece and the enduring allure of its historical landmarks.",
+        "clipscore": 23.702886700630188,
+        "ku_score": 0.6666666666666666,
+        "time": 2.8609888553619385
+      },
+      {
+        "landmark": "Acropolis_of_Athens",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Acropolis_of_Athens/Acropolis_of_Athens_177605429.jpg",
+        "caption": "The image captures the majestic Acropolis of Athens, a renowned landmark in Greece. The Acropolis, a UNESCO World Heritage Site, is a complex of ancient buildings situated on a rocky outcrop above the city of Athens. The most famous structure on the Acropolis is the Parthenon, a Doric temple dedicated to the goddess Athena. The Parthenon, constructed from white marble, stands out against the backdrop of the city and the surrounding landscape. The image is taken from a high vantage point, offering a panoramic view of the Acropolis and the city below. The sky above is a deep blue, dotted with clouds, adding a serene atmosphere to the scene. The image beautifully encapsulates the historical and cultural significance of the Acropolis, a testament to the architectural prowess of ancient Greece.",
+        "clipscore": 23.556704819202423,
+        "ku_score": 0.6666666666666666,
+        "time": 3.0404388904571533
+      },
+      {
+        "landmark": "Alhambra",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Alhambra/Alhambra_156888856.jpg",
+        "caption": "The image captures the grandeur of the Alhambra, a renowned landmark nestled in the heart of Granada, Spain. The Alhambra, a sprawling complex of palaces, fortresses, and gardens, stands as a testament to the architectural prowess of the Nasrid dynasty that ruled Granada from the 13th to the 16th century.\n\nThe photo is taken from a high vantage point, offering a panoramic view of the courtyard. The courtyard is a bustling hub of activity, with people milling about, their figures dwarfed by the imposing structures that surround them. The buildings, constructed from white stone, are adorned with intricate geometric patterns and Arabic calligraphy, reflecting the rich cultural heritage of the region.\n\nThe arches and domes that punctuate the scene add",
+        "clipscore": 25.549551844596863,
+        "ku_score": 0.6,
+        "time": 3.2899067401885986
+      },
+      {
+        "landmark": "Alhambra",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Alhambra/Alhambra_156888857.jpg",
+        "caption": "The image captures the grandeur of the Alhambra, a renowned landmark nestled in the heart of Granada, Spain. The Alhambra, a sprawling complex of palaces, fortresses, and gardens, is viewed from a high vantage point, offering a panoramic view of its architectural splendor.\n\nThe central focus of the image is the Patio of the Lions, a courtyard that was once the royal court of the Nasrid sultans. The patio is characterized by its intricate geometric patterns and the four lion statues that stand majestically in the center. These statues, made of light-colored stone, are a testament to the craftsmanship of the period.\n\nThe archway in the background, adorned with intricate carvings and geometric patterns, adds to the overall aesthetic of the Alhambra",
+        "clipscore": 22.37021028995514,
+        "ku_score": 0.4,
+        "time": 3.0684332847595215
+      },
+      {
+        "landmark": "Alhambra",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Alhambra/Alhambra_156888888.jpg",
+        "caption": "The image captures the grandeur of the Alcazar Cathedral in Seville, Spain. The perspective is from a low angle, looking up towards the cathedral, which is reflected in the water below. The cathedral's intricate Moorish architecture is clearly visible, with its arches and domes adorned with intricate tilework. The cathedral is nestled within a large courtyard, surrounded by lush greenery and a fountain. The sky above is a clear blue, suggesting a sunny day. The image beautifully encapsulates the historical and cultural significance of this landmark, which has stood as a testament to Seville's rich history for centuries.",
+        "clipscore": 23.83047342300415,
+        "ku_score": 0.2,
+        "time": 2.4947845935821533
+      },
+      {
+        "landmark": "Angkor_Wat",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Angkor_Wat/Angkor_Wat_14993680.jpg",
+        "caption": "The image captures the grandeur of the Hall of Supreme Harmony, a renowned landmark located in the Forbidden City in Beijing, China. The Hall of Supreme Harmony, also known as the Hall of Supreme Peace, is a large hall within the Forbidden City that was the primary ceremonial and political center of the Chinese imperial court.\n\nThe perspective of the image is from the outside, looking in through a window that frames the hall's entrance. The hall's grandeur is evident in the high ceiling and the long corridor that leads to the hall. The corridor is lined with columns, a common architectural feature in traditional Chinese palaces, which adds to the majesty of the hall.\n\nThe lighting in the image is dim, creating a sense of mystery and intrigue. This could be due to the time of day or the lighting conditions within the hall. The darkness outside contrasts",
+        "clipscore": 13.341821730136871,
+        "ku_score": 0.0,
+        "time": 3.229238748550415
+      },
+      {
+        "landmark": "Angkor_Wat",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Angkor_Wat/Angkor_Wat_181964737.jpg",
+        "caption": "The image captures a scene of historical significance, featuring a stone statue of a woman adorned with traditional Southeast Asian attire. The statue, carved from gray stone, is positioned on a pedestal, adding to its prominence. The woman is depicted in a standing pose, her hands resting gently on her hips, a pose that suggests confidence and poise.\n\nThe statue is set against a backdrop of a gray stone wall, which is intricately carved with floral designs, adding an element of artistry to the scene. The wall's gray color contrasts with the woman's attire, making her stand out.\n\nThe historical and cultural context of this image is significant. The traditional Southeast Asian attire worn by the woman suggests that the statue may have been created during a time when such attire was common in the region. The intricate carvings on the wall and the",
+        "clipscore": 31.324872374534607,
+        "ku_score": 0.0,
+        "time": 3.170692205429077
+      },
+      {
+        "landmark": "Angkor_Wat",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Angkor_Wat/Angkor_Wat_181964738.jpg",
+        "caption": "The image captures the majestic Angkor Wat temple complex in Cambodia. The temple, a testament to the architectural prowess of the Khmer Empire, stands tall against the backdrop of a clear sky. The temple's intricate carvings and detailed stonework are a marvel of craftsmanship, reflecting the rich cultural heritage of the region. The temple's grandeur is further accentuated by the surrounding lush greenery, which provides a stark contrast to the dark stone structure. The image is taken from a distance, allowing for a comprehensive view of the temple complex, its surroundings, and the sky above. The temple, with its historical and cultural significance, stands as a symbol of Cambodia's rich past and enduring legacy.",
+        "clipscore": 20.815789699554443,
+        "ku_score": 0.6,
+        "time": 2.703702926635742
+      },
+      {
+        "landmark": "Aurora_Borealis",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Aurora_Borealis/Aurora_Borealis_182301649.jpg",
+        "caption": "The image captures a breathtaking nighttime view of the city of Curan, a bustling urban center nestled in the heart of a mountainous region. The cityscape is a vibrant display of lights, with the glow of streetlights and the warm hues of illuminated buildings creating a mesmerizing spectacle against the backdrop of the night sky.\n\nThe city is encircled by a network of roads, their paths crisscrossing and intertwining like veins of a living organism. These roads, bathed in the soft glow of streetlights, serve as the arteries that pump life into the city.\n\nA notable landmark in the image is the Curan Cathedral, a majestic structure that stands tall against the night sky. Its architectural grandeur is a testament to the city's rich history and cultural heritage. The cathedral, with its",
+        "clipscore": 11.985071003437042,
+        "ku_score": 0.0,
+        "time": 3.0595223903656006
+      },
+      {
+        "landmark": "Aurora_Borealis",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Aurora_Borealis/Aurora_Borealis_182301786.jpg",
+        "caption": "The image captures a breathtaking night scene in a snowy forest. The forest is illuminated by a vibrant aurora, which is a natural light display caused by the collision of electrically charged particles from the sun that enter the earth's atmosphere. The aurora is predominantly green and red, with hints of blue and purple, creating a mesmerizing spectacle.\n\nThe forest itself is a mix of evergreen and deciduous trees, their branches heavy with snow. The evergreens, with their needle-like leaves, stand tall and unyielding, while the deciduous trees, with their broad, rounded canopies, are dusted with snow.\n\nIn the background, a mountain range stretches across the horizon, its peaks shrouded in darkness. The mountains provide a stark contrast to the brightly lit forest, adding depth and scale to the scene.\n\nThe image is",
+        "clipscore": 26.2111097574234,
+        "ku_score": 0.0,
+        "time": 3.0112550258636475
+      },
+      {
+        "landmark": "Aurora_Borealis",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Aurora_Borealis/Aurora_Borealis_72186423.jpg",
+        "caption": "The image captures the iconic Aurora Borealis, also known as the Northern Lights, in all its glory. The auroras are seen in the sky, their vibrant green and purple hues contrasting beautifully against the dark sky. The auroras are not alone; they are accompanied by a large white structure, which appears to be a radar dome. This structure is located on a pier, suggesting it might be part of a military or scientific installation. The pier extends into the water, providing a stark contrast to the natural beauty of the auroras. The image is taken from a distance, allowing for a comprehensive view of the auroras and the radar dome. The historical and cultural context of this image is not immediately apparent, but it could be a representation of the intersection of human technology and nature's beauty.",
+        "clipscore": 23.776663839817047,
+        "ku_score": 0.0,
+        "time": 2.914128303527832
+      },
+      {
+        "landmark": "Borobudur",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Borobudur/Borobudur_146898265.jpg",
+        "caption": "The image features a close-up view of a stone relief sculpture, which appears to be a historical monument. The sculpture is composed of multiple figures, possibly depicting a scene from a mythological or historical narrative. The figures are stylized with exaggerated features and are arranged in a way that suggests movement and interaction.\n\nThe relief is set within an architectural frame, which includes a series of decorative elements such as scrollwork and geometric patterns. The stone has a weathered appearance, indicating that the sculpture is old and has been exposed to the elements for a significant period.\n\nThe landmark is likely of cultural or historical significance, as suggested by the style of the relief and the architectural frame. The presence of such a monument suggests that the location may be a site of interest for tourists or locals interested in history and culture.\n\nWithout additional context, it is difficult to provide a specific historical or cultural context for the",
+        "clipscore": 29.73872721195221,
+        "ku_score": 0.0,
+        "time": 3.05452036857605
+      },
+      {
+        "landmark": "Borobudur",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Borobudur/Borobudur_173354834.jpg",
+        "caption": "The image captures the majestic Buddha of Kamakura, a renowned landmark located in Kamakura, Japan. The Buddha, a large stone statue, stands tall against the backdrop of a lush green landscape. The statue is intricately carved, showcasing the craftsmanship of the era it was created in. The Buddha's head is prominently featured in the foreground, with the rest of the statue visible in the background. The statue is a symbol of the Buddhist faith and is a testament to the rich cultural heritage of Japan. The surrounding greenery and the distant mountains add to the serene and peaceful atmosphere of the scene. The Buddha of Kamakura is a significant landmark, attracting visitors from around the world who come to witness its grandeur and learn about its historical and cultural significance.",
+        "clipscore": 17.842814326286316,
+        "ku_score": 0.25,
+        "time": 3.3303661346435547
+      },
+      {
+        "landmark": "Borobudur",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Borobudur/Borobudur_79353973.jpg",
+        "caption": "The image captures the majestic Angkor Wat temple complex in Cambodia, a renowned landmark known for its intricate architecture and historical significance. The temple, a marvel of ancient Khmer architecture, stands tall against the backdrop of a cloudy sky, its multiple levels and towers reaching towards the heavens. The temple is constructed from dark stone, giving it a solemn and imposing presence. The perspective of the photo is from a low angle, looking up at the temple, which enhances its grandeur and prominence. The image is a testament to the rich cultural heritage and architectural prowess of the Khmer Empire, which once ruled over the region.",
+        "clipscore": 15.943534672260284,
+        "ku_score": 0.25,
+        "time": 2.29711651802063
+      },
+      {
+        "landmark": "Brandenburg_Gate",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Brandenburg_Gate/Brandenburg_Gate_176343204.jpg",
+        "caption": "The image captures the iconic Brandenburg Gate, a neoclassical monument located in Berlin, Germany. The gate is illuminated with a blue light, and the words \"Bring them home now\" are prominently displayed in yellow. This phrase is a call for the repatriation of German citizens held in foreign prisons. The gate is set against a backdrop of a dark sky, with the city's lights twinkling in the distance. The image is taken from a low angle, which emphasizes the grandeur of the gate and its message. The historical and cultural context of the image is significant, as it reflects a contemporary political issue in a city that has a rich history of political activism and protest.",
+        "clipscore": 32.51203894615173,
+        "ku_score": 0.5,
+        "time": 2.500356435775757
+      },
+      {
+        "landmark": "Brandenburg_Gate",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Brandenburg_Gate/Brandenburg_Gate_176343206.jpg",
+        "caption": "The image captures the iconic Brandenburg Gate, a neoclassical monument located in Berlin, Germany. The gate is illuminated with a blue and white light, symbolizing the colors of the Israeli flag. The phrase \"Bring them home now\" is prominently displayed on the gate, a call for peace and the end of conflict. The gate is surrounded by people, some of whom are taking photographs, indicating the significance of the moment. The historical and cultural context of this image is the ongoing conflict between Israel and Palestine, with the Brandenburg Gate serving as a symbol of solidarity and peace.",
+        "clipscore": 34.57897901535034,
+        "ku_score": 0.5,
+        "time": 2.184842586517334
+      },
+      {
+        "landmark": "Brandenburg_Gate",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Brandenburg_Gate/Brandenburg_Gate_177205982.jpg",
+        "caption": "The image captures the iconic Brandenburg Gate, a neoclassical monument located in Berlin, Germany. The gate, a symbol of the city's history and culture, stands majestically in the center of the frame. It is a large, circular structure with four columns at its corners, each adorned with a statue of a person. The gate is encircled by a large plaza, where people can be seen walking around, adding a sense of life and activity to the scene.\n\nThe perspective of the photo is from a street corner, looking towards the gate. This angle provides a clear view of the gate and its surroundings, including a traffic light and a street sign. The sky above is a clear blue, suggesting a sunny day.\n\nThe Brandenburg Gate has a rich historical context. It was built in the early 19th century as a victory monument to commemorate the Prussian victory in the Napoleonic Wars.",
+        "clipscore": 23.796960711479187,
+        "ku_score": 0.5,
+        "time": 3.2347795963287354
+      },
+      {
+        "landmark": "Buckingham_Palace",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Buckingham_Palace/Buckingham_Palace_174885819.jpg",
+        "caption": "The image captures the grandeur of the Buckingham Palace, a renowned landmark in London, England. The palace, a large and imposing structure, stands majestically against the backdrop of a clear blue sky. The architectural style of the palace is a blend of Baroque and Neoclassical influences, with its ornate details and stately columns.\n\nIn the foreground of the image, a lush garden blooms with vibrant red flowers, adding a splash of color to the scene. The garden is meticulously maintained, reflecting the attention to detail that is characteristic of the palace's upkeep.\n\nThe perspective of the image is from a distance, allowing for a comprehensive view of the palace and its surroundings. This perspective also emphasizes the palace's prominence in the cityscape.\n\nThe image is a testament to the rich history and cultural heritage of",
+        "clipscore": 25.22568106651306,
+        "ku_score": 0.25,
+        "time": 3.121446371078491
+      },
+      {
+        "landmark": "Buckingham_Palace",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Buckingham_Palace/Buckingham_Palace_175168312.jpg",
+        "caption": "The image captures the grandeur of the Buckingham Palace, a renowned landmark in London, England. The palace, a large and imposing structure, stands majestically against the backdrop of a cloudy sky. Its white facade is punctuated by black accents, adding to its regal appearance. The palace is surrounded by a large courtyard, where people can be seen walking around, adding a sense of scale to the image. The perspective of the photo is from a distance, allowing for a comprehensive view of the palace and its surroundings. The image beautifully encapsulates the historical and cultural significance of this iconic landmark.",
+        "clipscore": 24.062973260879517,
+        "ku_score": 0.25,
+        "time": 2.393195152282715
+      },
+      {
+        "landmark": "Buckingham_Palace",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Buckingham_Palace/Buckingham_Palace_175168313.jpg",
+        "caption": "The image captures a lively scene at the Victoria Memorial in Kolkata, India. The Victoria Memorial, a grand structure made of white marble, stands majestically in the center of the frame. It is a significant landmark in Kolkata, dedicated to Queen Victoria, the Empress of India.\n\nThe memorial is surrounded by a large open space, which is bustling with activity. People can be seen walking around the memorial, some of them carrying backpacks, suggesting they might be tourists exploring the city. The sky above is a clear blue, dotted with fluffy white clouds, adding to the serene atmosphere of the scene.\n\nThe Victoria Memorial is a symbol of British colonial rule in India and is a testament to the architectural prowess of the British. It was built in 1921 to commemorate the 1911 Delhi Durbar, which was a grand",
+        "clipscore": 13.288801908493042,
+        "ku_score": 0.0,
+        "time": 3.2366604804992676
+      },
+      {
+        "landmark": "Burj_Khalifa",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Burj_Khalifa/Burj_Khalifa_102558622.jpg",
+        "caption": "The image captures the interior of the Oculus, a modern architectural marvel located in New York City. The Oculus is a transportation hub that serves as a central point for the city's subway system. The photograph is taken from a high angle, providing a comprehensive view of the space. The ceiling of the Oculus is a striking feature, adorned with a grid of white lights that cast a warm glow throughout the space. The floor is made of black stone, adding a touch of elegance to the otherwise industrial setting. The walls are made of glass, allowing natural light to flood the space and creating a sense of openness. The Oculus is a testament to the fusion of modern design and functionality, seamlessly integrating into the city's bustling urban landscape.",
+        "clipscore": 13.140147924423218,
+        "ku_score": 0.0,
+        "time": 2.875253915786743
+      },
+      {
+        "landmark": "Burj_Khalifa",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Burj_Khalifa/Burj_Khalifa_162449430.jpg",
+        "caption": "The image captures a breathtaking aerial view of the Dubai Fountain, a renowned landmark in Dubai, United Arab Emirates. The fountain, a spectacle of modern architecture, is nestled amidst a cityscape of towering skyscrapers. The fountain itself is a large, rectangular structure, adorned with a series of waterfalls and jets that shoot water up to 150 meters into the air. The water is a vibrant blue, contrasting beautifully with the surrounding city.\n\nThe cityscape in the background is a mix of modern and traditional architecture, with towering skyscrapers reaching for the sky. The fountain is centrally located, surrounded by a network of roads and buildings. The image is taken from a high vantage point, providing a panoramic view of the fountain and the city around it",
+        "clipscore": 20.028144121170044,
+        "ku_score": 0.25,
+        "time": 3.236797332763672
+      },
+      {
+        "landmark": "Burj_Khalifa",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Burj_Khalifa/Burj_Khalifa_95909332.jpg",
+        "caption": "The image captures the iconic Fountains of the Bellagio, a renowned landmark located in Las Vegas, Nevada. The fountains are illuminated at night, creating a spectacular display of water and light. The fountains are arranged in a semi-circle, with the central fountain being the largest and most prominent. The surrounding fountains are smaller and less prominent, creating a sense of depth and scale. The fountains are set against a backdrop of tall buildings, including the Paris Las Vegas Hotel and Casino, which is visible in the background. The image is taken from a low angle, looking up at the fountains, which enhances their grandeur and prominence. The reflection of the fountains on the water surface adds a mirror-like effect to the image. The image is a testament to the architectural and engineering prowess of the creators of this world-",
+        "clipscore": 15.169906616210938,
+        "ku_score": 0.0,
+        "time": 3.1577999591827393
+      },
+      {
+        "landmark": "Cappadocia",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Cappadocia/Cappadocia_148542311.jpg",
+        "caption": "The image captures a serene moment in a desert landscape. A man, dressed in a black jacket and pants, stands on a dirt path that meanders through the scene. He is pointing to the left, perhaps indicating something of interest off-frame. The path is flanked by a large, leafless tree on the right and a smaller one on the left, both standing stark against the clear blue sky.\n\nThe desert setting is characterized by sparse vegetation and a rugged terrain. In the distance, a rocky outcropping adds to the ruggedness of the landscape. The man's position on the path suggests he is in motion, perhaps walking or hiking.\n\nThe image does not provide any specific landmarks, but the overall scene could be a part of a larger desert landscape, possibly in a region known for its arid climate and sparse vegetation. The man's attire and the lack",
+        "clipscore": 26.478391885757446,
+        "ku_score": 0.0,
+        "time": 3.2360408306121826
+      },
+      {
+        "landmark": "Cappadocia",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Cappadocia/Cappadocia_1730846.jpg",
+        "caption": "In the image, a man is seen riding a donkey on a dirt road. The man is dressed in traditional Middle Eastern attire, complete with a white keffiyeh and a gray jacket. The donkey, a symbol of the region's rural life, is adorned with a colorful blanket. The backdrop of the image is a quaint village, characterized by white-washed houses with red roofs, a common sight in many Middle Eastern countries. The village is nestled amidst a landscape of dry, arid terrain, indicative of the region's harsh climate. The image captures a moment of everyday life in the Middle East, showcasing the resilience and adaptability of the people who call this region home.",
+        "clipscore": 27.442559599876404,
+        "ku_score": 0.0,
+        "time": 2.731332540512085
+      },
+      {
+        "landmark": "Cappadocia",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Cappadocia/Cappadocia_23475942.jpg",
+        "caption": "The image captures the majestic Stonehenge, a prehistoric monument located in Wiltshire, England. The monument is composed of a series of standing stones, each standing at varying heights, arranged in a circular pattern. The stones are made of a light-colored stone, possibly sarsen, and are set within earthworks and ditches. The perspective of the photo is from a low angle, looking up at the stones, which emphasizes their grandeur and the sense of mystery that surrounds this ancient landmark. The sky above is overcast, casting a soft light over the scene and enhancing the sense of timelessness. The image is a testament to the architectural prowess of the prehistoric people who built this monument, and it stands as a symbol of human ingenuity and the passage of time.",
+        "clipscore": 11.184515058994293,
+        "ku_score": 0.0,
+        "time": 2.772109270095825
+      },
+      {
+        "landmark": "Charles_Bridge",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Charles_Bridge/Charles_Bridge_173268787.jpg",
+        "caption": "The image captures the majestic Gothic-style church of Our Lady of the Assumption, also known as the Church of Our Lady of the Assumption, located in the heart of the city of Ghent, Belgium. The church, constructed from light-colored stone, stands tall against the backdrop of a clear blue sky. Its pointed arches and flying buttresses are characteristic of Gothic architecture, a style that flourished in Europe during the High and Late Middle Ages.\n\nThe church is nestled on a street corner, surrounded by a lush tree and a stone fence, adding to its charm. A staircase with a wrought iron railing leads up to the church, inviting visitors to explore its grandeur. The church's location in Ghent, a city rich in history and culture, makes it a significant landmark in the region.\n\nThe image is taken from a low angle, which emphasizes the",
+        "clipscore": 15.608769655227661,
+        "ku_score": 0.25,
+        "time": 3.2346038818359375
+      },
+      {
+        "landmark": "Charles_Bridge",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Charles_Bridge/Charles_Bridge_173268854.jpg",
+        "caption": "The image captures the historic and culturally rich city of Prague, Czech Republic. The focal point of the image is the Old Town Hall Tower, a prominent landmark in the city. The tower, constructed from stone, stands tall against the backdrop of a clear blue sky. The architecture of the tower is Gothic, a style that was prevalent in Europe during the late Middle Ages.\n\nThe tower is adorned with statues of saints and religious figures, a common feature in Gothic architecture. These statues, along with the intricate stonework, add to the tower's historical significance.\n\nIn the foreground of the image, a woman is seen walking on a cobblestone street, adding a sense of life and movement to the scene. The cobblestone street is characteristic of the Old Town Hall Tower's location, as many historic buildings in Prague are constructed on such streets.\n\nThe",
+        "clipscore": 15.955692529678345,
+        "ku_score": 0.5,
+        "time": 3.2320215702056885
+      },
+      {
+        "landmark": "Charles_Bridge",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Charles_Bridge/Charles_Bridge_173268906.jpg",
+        "caption": "The image captures the iconic Charles Bridge, a historic stone bridge that spans the Vltava River in Prague, Czech Republic. The bridge, constructed in the 14th century, is a symbol of the city's rich history and architectural prowess. It is a popular tourist destination, offering stunning views of the city's historic center and the river below. The bridge is adorned with statues of saints and other historical figures, adding to its cultural significance. The perspective of the photo is from a high vantage point, providing a panoramic view of the bridge and the river, with the city's historic buildings and churches visible in the background. The image beautifully encapsulates the essence of Prague's historic charm and architectural beauty.",
+        "clipscore": 20.40892392396927,
+        "ku_score": 0.5,
+        "time": 2.8035850524902344
+      },
+      {
+        "landmark": "Colosseum",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Colosseum/Colosseum_141838122.jpg",
+        "caption": "The image captures a close-up view of a section of a stone wall, revealing a rusty metal object embedded within it. The wall itself is composed of large, irregularly shaped stones, indicative of a traditional construction method. The rust on the metal object suggests it has been exposed to the elements for an extended period, possibly indicating a historical or cultural significance.\n\nWithout more context, it's difficult to determine the exact nature of the metal object or its significance. However, the presence of rust and the stone wall's construction method suggest it could be a part of a historical site or a traditional building. The rust could also indicate that the object has been removed from its original location and placed within the wall for preservation or display purposes.\n\nWithout additional information, it's not possible to provide a detailed historical or cultural context for this image. However, the presence of the rusty metal object within the stone wall certainly invites further investigation",
+        "clipscore": 28.468120098114014,
+        "ku_score": 0.0,
+        "time": 3.174201488494873
+      },
+      {
+        "landmark": "Colosseum",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Colosseum/Colosseum_169791162.jpg",
+        "caption": "The image captures the grandeur of the Colosseum, a renowned landmark in Rome, Italy. From a high vantage point, the viewer's perspective is directed towards the heart of the amphitheater, revealing its intricate architecture. The Colosseum, constructed from white stone, stands majestically against the backdrop of a clear blue sky. The amphitheater's circular shape is distinctive, with rows of arches and columns that once housed thousands of spectators. The perspective of the image offers a comprehensive view of the Colosseum, showcasing its scale and the way it has withstood the test of time. The image is a testament to the architectural prowess of the ancient Romans and the enduring allure of this world-renowned landmark.",
+        "clipscore": 24.632540345191956,
+        "ku_score": 0.5,
+        "time": 2.9118270874023438
+      },
+      {
+        "landmark": "Colosseum",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Colosseum/Colosseum_75574889.jpg",
+        "caption": "The image captures the majestic ruins of the ancient city of Carthage, located in Tunisia. The ruins, a testament to the city's rich history, are composed of large stone blocks that have been weathered by time. The perspective of the photo is from a high angle, providing a comprehensive view of the ruins. The stone blocks, varying in shades of brown and gray, are interspersed with small windows and arches, adding to the overall architectural grandeur of the site. The ruins are nestled amidst a backdrop of a clear blue sky, further enhancing the visual appeal of the scene. The image beautifully encapsulates the historical and cultural significance of Carthage, a city that once thrived with life and activity, now reduced to a pile of stone blocks.",
+        "clipscore": 14.175529778003693,
+        "ku_score": 0.0,
+        "time": 2.9474120140075684
+      },
+      {
+        "landmark": "Edinburgh_Castle",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Edinburgh_Castle/Edinburgh_Castle_108406911.jpg",
+        "caption": "The image captures the majestic Edinburgh Castle, a renowned landmark in Scotland. The castle, constructed from dark stone, stands atop a rocky outcrop, its multiple towers and battlements reaching towards the sky. The castle's architecture is a testament to the medieval period, with its crenellated battlements and turrets. The castle is nestled amidst lush greenery, with trees and grass enveloping the base of the rocky outcrop. The sky above is a clear blue, providing a stark contrast to the dark stone of the castle. The image is taken from a distance, allowing for a comprehensive view of the castle and its surroundings. The castle, with its historical and cultural significance, is a symbol of Scotland's rich heritage.",
+        "clipscore": 23.313938081264496,
+        "ku_score": 0.5,
+        "time": 2.5683610439300537
+      },
+      {
+        "landmark": "Edinburgh_Castle",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Edinburgh_Castle/Edinburgh_Castle_108406951.jpg",
+        "caption": "The image captures the majestic Edinburgh Castle, a historic landmark located in the heart of Edinburgh, Scotland. The castle, constructed from dark stone, stands tall against the backdrop of a cloudy sky. Its imposing structure is punctuated by multiple towers and battlements, a testament to its medieval origins. The castle is nestled on a hill, offering a panoramic view of the city below. The perspective of the photo is from a high vantage point, providing a sweeping view of the castle and the cityscape beyond. The image is a beautiful representation of the castle's historical significance and architectural grandeur.",
+        "clipscore": 25.267744064331055,
+        "ku_score": 0.25,
+        "time": 2.298215866088867
+      },
+      {
+        "landmark": "Edinburgh_Castle",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Edinburgh_Castle/Edinburgh_Castle_73229530.jpg",
+        "caption": "The image captures the majestic Edinburgh Castle, a historic landmark nestled in the heart of Scotland. The castle, constructed from dark stone, stands tall against the backdrop of a clear blue sky. Its distinctive round tower, a prominent feature of the castle, is adorned with a black roof that contrasts sharply with the stonework. The castle is surrounded by a moat, adding an element of grandeur to the structure.\n\nThe perspective of the photo is from a high vantage point, offering a panoramic view of the castle and the cityscape beyond. The castle is bustling with activity, as evidenced by the numerous people milling about on the cobblestone streets and the benches scattered throughout the area. The image beautifully encapsulates the blend of history and modernity that characterizes this iconic landmark.",
+        "clipscore": 22.624371945858,
+        "ku_score": 0.25,
+        "time": 2.97918701171875
+      },
+      {
+        "landmark": "Empire_State_Building",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Empire_State_Building/Empire_State_Building_151555222.jpg",
+        "caption": "The image captures the majestic Chrysler Building, a renowned Art Deco skyscraper located in New York City. The building stands tall against a backdrop of a clear blue sky, its multiple levels and rows of windows reflecting the sunlight. The Chrysler Building was completed in 1930 and is an iconic example of Art Deco architecture. It was designed by architect William Van Alen and engineer Stephen H. Halsey, and it was the tallest building in the world from its completion until 1970. The building's distinctive crown and spire, along with its intricate detailing, are characteristic of the Art Deco style. The Chrysler Building is a symbol of New York City's architectural prowess and a testament to the city's rich history.",
+        "clipscore": 16.844572126865387,
+        "ku_score": 0.25,
+        "time": 3.1440417766571045
+      },
+      {
+        "landmark": "Empire_State_Building",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Empire_State_Building/Empire_State_Building_159453829.jpg",
+        "caption": "The image captures the majestic Empire State Building, a renowned landmark in New York City, USA. The building's facade is a testament to Art Deco architecture, characterized by its large, rectangular windows and ornate detailing. The name \"Empire State Building\" is prominently displayed in gold letters at the top of the building, a nod to its iconic status. The building's location at the intersection of Fifth Avenue and West 34th Street is also clearly visible. The image is taken from a low angle, emphasizing the grandeur and height of the building, which was once the tallest in the world. The Empire State Building has been a symbol of New York City's resilience and innovation since its completion in 1931.",
+        "clipscore": 19.793088734149933,
+        "ku_score": 0.75,
+        "time": 2.641068935394287
+      },
+      {
+        "landmark": "Empire_State_Building",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Empire_State_Building/Empire_State_Building_159453833.jpg",
+        "caption": "The image captures the majestic Chrysler Building, a renowned Art Deco skyscraper located in New York City, USA. The building stands tall against a backdrop of a cloudy sky, its multiple levels and rows of windows reflecting the city's hustle and bustle. The Chrysler Building was completed in 1930 and is a prime example of Art Deco architecture, characterized by its geometric patterns, streamlined forms, and use of stainless steel.\n\nThe building was named after the Chrysler Corporation, which was a major sponsor of its construction. At the time of its completion, it was the tallest building in the world, a title it held until the construction of the Empire State Building in 1931. The Chrysler Building is now a symbol of New York City's architectural history and is a popular tourist attraction.\n\nThe Art Deco",
+        "clipscore": 21.235424280166626,
+        "ku_score": 0.75,
+        "time": 3.091697931289673
+      },
+      {
+        "landmark": "Forbidden_City",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Forbidden_City/Forbidden_City_53938856.jpg",
+        "caption": "The image captures the majestic Temple of Heaven, a renowned landmark located in Beijing, China. The temple, a testament to China's rich history and architectural prowess, is constructed from red bricks and white stone, with a distinctive golden roof that gleams under the sunlight. The temple's intricate design and vibrant colors make it a striking feature against the backdrop of the clear blue sky. The perspective of the photo is from a low angle, looking up at the temple, which enhances its grandeur and prominence. The temple is nestled amidst lush green trees, adding a touch of nature to the man-made marvel. The image beautifully encapsulates the essence of this worldwide landmark, offering a glimpse into its historical and cultural significance.",
+        "clipscore": 15.704253315925598,
+        "ku_score": 0.0,
+        "time": 2.8768818378448486
+      },
+      {
+        "landmark": "Forbidden_City",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Forbidden_City/Forbidden_City_53938926.jpg",
+        "caption": "In the heart of a bustling city, a man finds solace in his art. He is seated on a stone bench, engrossed in his work. His attire is a testament to his craft, with a gray hat perched on his head and a blue jacket adorning his shoulders. His hands are busy at work on a white canvas, which is being transformed by the strokes of a paintbrush.\n\nThe bench is strategically placed in front of a vibrant red building, which stands out against the backdrop of the city. This building is not just any structure, but a temple, a place of worship and reverence. The intricate details of the temple's architecture are a testament to the rich cultural heritage of the city.\n\nThe man's artwork is not just a simple act of creation, but a reflection of the city's history and culture. The juxtaposition",
+        "clipscore": 25.702348351478577,
+        "ku_score": 0.25,
+        "time": 3.1604998111724854
+      },
+      {
+        "landmark": "Forbidden_City",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Forbidden_City/Forbidden_City_53938943.jpg",
+        "caption": "The image captures the grandeur of the Temple of Heaven, a renowned landmark located in Beijing, China. The temple, a UNESCO World Heritage Site, is a complex of religious buildings situated in the southeastern part of central Beijing. The temple's architecture is characterized by its traditional Chinese design, featuring a series of halls and pavilions.\n\nThe perspective of the photo is from a low angle, looking up towards the temple, which enhances its imposing presence. The temple is surrounded by a large stone wall, adding to its historical and cultural significance. The sky above is overcast, casting a soft light over the scene and highlighting the intricate details of the temple's architecture.\n\nThe Temple of Heaven is not just a religious site but also a symbol of China's rich history and cultural heritage. It has been a place of worship for the Chinese emperors and is now a popular tour",
+        "clipscore": 19.69015747308731,
+        "ku_score": 0.25,
+        "time": 3.155259132385254
+      },
+      {
+        "landmark": "Fushimi_Inari_Taisha",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Fushimi_Inari_Taisha/Fushimi_Inari_Taisha_110478624.jpg",
+        "caption": "The image captures a vibrant scene from a traditional Japanese market. The market is bustling with a variety of goods, including an array of colorful kites and fans, which are the main focus of the image. These items are displayed in a way that suggests they are for sale, with prices written in Japanese yen.\n\nThe market is set against the backdrop of a red lantern, a common sight in traditional Japanese markets. These lanterns are often used to provide light during the evening hours and are a symbol of the rich cultural heritage of Japan.\n\nIn the background, there's a sign that reads \"Y100\", indicating that the market is located in a shopping district where prices are fixed at 100 yen. This suggests that the market is likely situated in a tourist area, where visitors can experience the authenticity of traditional Japanese markets.\n\nThe image also includes a sign that reads",
+        "clipscore": 28.880086541175842,
+        "ku_score": 0.25,
+        "time": 3.2481791973114014
+      },
+      {
+        "landmark": "Fushimi_Inari_Taisha",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Fushimi_Inari_Taisha/Fushimi_Inari_Taisha_142103646.jpg",
+        "caption": "The image captures a serene scene in a park, where two distinct orange poles stand side by side. The poles are adorned with black Chinese characters, adding a touch of cultural richness to the scene. The characters are written in a traditional Chinese script, which is known for its intricate and artistic style.\n\nThe poles are situated in a park setting, surrounded by lush green trees and foliage. The park appears to be a tranquil retreat from the hustle and bustle of city life, offering a peaceful environment for visitors to relax and enjoy nature.\n\nThe presence of the Chinese characters on the poles suggests that this could be a landmark or a point of interest in the park. It could be a monument, a memorial, or simply a decorative feature that adds to the cultural and historical significance of the park.\n\nWithout more context, it's difficult to determine the exact",
+        "clipscore": 23.25957715511322,
+        "ku_score": 0.0,
+        "time": 3.2462151050567627
+      },
+      {
+        "landmark": "Fushimi_Inari_Taisha",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Fushimi_Inari_Taisha/Fushimi_Inari_Taisha_57599224.jpg",
+        "caption": "The image captures a vibrant scene at a street vendor's stall in Japan. The stall is adorned with a variety of objects, each with its own story to tell. \n\nAt the heart of the scene is a large bowl filled with fresh apples, their red and green hues contrasting beautifully with the wooden table they rest on. The bowl is not just a container for the fruit, but also a canvas for the vendor's creativity. A sign in Japanese characters is attached to the bowl, perhaps indicating the price of the apples or the vendor's name.\n\nTo the right of the bowl, a wooden pole stands tall, supporting a sign that reads \"100 yen\". This could be a price tag for a specific item or a general indication of the prices at the stall.\n\nThe background of the image reveals more about the location. A stone wall can be",
+        "clipscore": 28.66976261138916,
+        "ku_score": 0.25,
+        "time": 3.17207407951355
+      },
+      {
+        "landmark": "Gardens_by_the_Bay",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Gardens_by_the_Bay/Gardens_by_the_Bay_132529425.jpg",
+        "caption": "The image captures the iconic Rain Vortex at Jewel Changi Airport in Singapore. This indoor waterfall is a marvel of modern architecture, featuring a series of cascading waterfalls that create a serene and calming atmosphere. The waterfalls are surrounded by lush greenery, including a variety of plants and trees, adding a touch of nature to the man-made structure. The Rain Vortex is a popular attraction at the airport, offering a unique experience for travelers and visitors alike. The image showcases the blend of technology and nature, a testament to Singapore's commitment to sustainability and innovation.",
+        "clipscore": 25.14333426952362,
+        "ku_score": 0.3333333333333333,
+        "time": 2.317615509033203
+      },
+      {
+        "landmark": "Gardens_by_the_Bay",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Gardens_by_the_Bay/Gardens_by_the_Bay_137279541.jpg",
+        "caption": "The image captures the iconic Dome of the Rock, a significant landmark located in the Old City of Jerusalem. The dome, a large, circular structure, is covered in a lattice-like pattern of glass panels, creating a unique and intricate design. The dome is nestled amidst lush greenery, with trees and shrubs surrounding it, adding a touch of nature to the urban landscape. The perspective of the photo is from a low angle, looking up towards the dome, emphasizing its grandeur and architectural beauty. The image is a testament to the rich history and cultural heritage of Jerusalem, showcasing one of its most famous landmarks.",
+        "clipscore": 11.003163456916809,
+        "ku_score": 0.0,
+        "time": 2.3774945735931396
+      },
+      {
+        "landmark": "Gardens_by_the_Bay",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Gardens_by_the_Bay/Gardens_by_the_Bay_89206006.jpg",
+        "caption": "The image captures a vibrant scene from a botanical garden. The garden is teeming with a variety of plants, including a large number of red and green plants that stand out prominently. Among these, a green sculpture with red accents catches the eye. The sculpture is shaped like a person, adding a whimsical touch to the garden.\n\nThe garden itself is nestled amidst lush greenery, with trees and bushes filling the background. The plants are arranged in a way that creates a sense of depth and perspective in the image.\n\nIn the background, there's a landmark that adds a historical and cultural context to the image. It's a temple, characterized by its traditional architecture. The temple's presence suggests that the garden might be located in a region with a rich cultural heritage.\n\nThe image is a beautiful representation of the harmony between nature and human-made structures,",
+        "clipscore": 28.84615659713745,
+        "ku_score": 0.0,
+        "time": 3.063446044921875
+      },
+      {
+        "landmark": "Giant_Causeway",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Giant_Causeway/Giant_Causeway_126869093.jpg",
+        "caption": "The image captures the majestic Sphinx of Babele, a natural rock formation located in the heart of Romania. The Sphinx, a mythical creature with the body of a lion and the head of a human, is a symbol of mystery and power. The rock formation is a striking feature, with its dark green color contrasting sharply with the surrounding landscape. The Sphinx is nestled amidst a lush green hillside, dotted with trees and shrubs, adding a touch of life to the otherwise stark landscape. The sky above is a clear blue, suggesting a sunny day. The image is taken from a distance, allowing for a comprehensive view of the Sphinx and its surroundings. The Sphinx, with its historical and cultural significance, stands as a testament to the rich heritage of Romania.",
+        "clipscore": 13.084100186824799,
+        "ku_score": 0.25,
+        "time": 2.888448476791382
+      },
+      {
+        "landmark": "Giant_Causeway",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Giant_Causeway/Giant_Causeway_80236307.jpg",
+        "caption": "The image depicts a scenic coastal landscape. In the foreground, there is a winding road that appears to be a part of a larger network of roads, possibly a coastal road or a mountain pass. The road is flanked by steep, grassy cliffs on both sides, with the sea visible in the distance. The sky is overcast, suggesting a cloudy day.\n\nIn the middle of the road, there is a person walking, carrying a backpack, and wearing a blue jacket. The person is facing away from the camera, and their presence adds a sense of scale to the image, emphasizing the vastness of the landscape.\n\nThe landmark in the image is a large, jagged cliff face that dominates the background. The cliff is covered with grass and appears to be a natural feature of the landscape. The cliff face is rugged and steep, with no visible man-",
+        "clipscore": 29.135408997535706,
+        "ku_score": 0.0,
+        "time": 2.814727306365967
+      },
+      {
+        "landmark": "Giant_Causeway",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Giant_Causeway/Giant_Causeway_95984455.jpg",
+        "caption": "The image captures the iconic Giant's Causeway, a renowned landmark located in Northern Ireland. The Causeway, a natural rock formation, is composed of hexagonal basalt columns that rise from the sea to the land. The perspective of the photo is from the sea, looking towards the land, providing a view of the Causeway's unique structure. The sky overhead is filled with clouds, casting a dramatic backdrop over the scene. The Causeway is a UNESCO World Heritage Site and is a testament to the geological history of the region. It is a popular tourist destination and a symbol of Ireland's rich cultural heritage.",
+        "clipscore": 26.631933450698853,
+        "ku_score": 0.5,
+        "time": 2.3675484657287598
+      },
+      {
+        "landmark": "Golden_Gate_Bridge",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Golden_Gate_Bridge/Golden_Gate_Bridge_183301084.jpg",
+        "caption": "The image captures the iconic Golden Gate Bridge, a renowned landmark in San Francisco, California. The bridge, a marvel of modern engineering, spans the width of the Golden Gate Strait, connecting San Francisco Bay to the Pacific Ocean. Its distinctive Art Deco design, characterized by its orange-red color and the intricate geometric patterns on its surface, makes it a symbol of the city's vibrant culture and history.\n\nThe bridge is seen from a distance, with the calm waters of the bay stretching out beneath it. The perspective of the photo suggests it was taken from a boat or a vantage point on the water, offering a unique view of this world-famous landmark. The bridge's location at the entrance to the strait makes it a crucial transportation link between the bay and the ocean, and its distinctive silhouette is a familiar sight to both locals and tourists alike.",
+        "clipscore": 22.95137345790863,
+        "ku_score": 0.3333333333333333,
+        "time": 3.237363815307617
+      },
+      {
+        "landmark": "Golden_Gate_Bridge",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Golden_Gate_Bridge/Golden_Gate_Bridge_183301385.jpg",
+        "caption": "The image captures the iconic Golden Gate Bridge, a renowned landmark in San Francisco, California. The bridge, painted in its signature red color, stands majestically against the backdrop of the clear blue sky. The perspective of the photo is from a high vantage point, providing a panoramic view of the bridge and the surrounding landscape.\n\nThe bridge is a suspension type, characterized by its two towering white pillars that support the red arches. The bridge spans the width of the Golden Gate Strait, connecting San Francisco Bay to the Pacific Ocean. It was completed in 1937 and has since become a symbol of the city's resilience and innovation.\n\nIn the foreground of the photo, several people can be seen standing on a hill overlooking the bridge. They appear to be tourists, taking in the breathtaking view of the bridge and the water below. The presence of",
+        "clipscore": 23.816655576229095,
+        "ku_score": 0.6666666666666666,
+        "time": 3.23176646232605
+      },
+      {
+        "landmark": "Golden_Gate_Bridge",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Golden_Gate_Bridge/Golden_Gate_Bridge_183301419.jpg",
+        "caption": "The image captures the iconic Golden Gate Bridge, a renowned landmark in San Francisco, California. The bridge, painted in a striking red color, stands majestically against the backdrop of the clear blue sky. The perspective of the photo is from a distance, allowing for a comprehensive view of the bridge and the surrounding landscape.\n\nThe bridge is a marvel of modern engineering, spanning the width of the Golden Gate Strait between San Francisco Bay and the Pacific Ocean. It was completed in 1937 and has since become a symbol of the city's resilience and innovation.\n\nIn the foreground of the photo, there are two people standing on a grassy area, possibly enjoying the view of the bridge. They are positioned in front of a sign that provides information about the bridge, adding a layer of context to the image.\n\nThe Golden Gate Bridge is not just a functional structure but also a cultural icon",
+        "clipscore": 23.394744098186493,
+        "ku_score": 0.6666666666666666,
+        "time": 3.237156391143799
+      },
+      {
+        "landmark": "Grand_Canyon",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Grand_Canyon/Grand_Canyon_51287677.jpg",
+        "caption": "The image captures the breathtaking view of the Grand Canyon, one of the world's most iconic landmarks. The perspective is from a high vantage point, looking down into the vast canyon. The canyon itself is a spectacle of geological history, carved over millions of years by the Colorado River. The rock formations, a mix of red and brown hues, are a testament to the earth's natural beauty. The sky above is a serene blend of pink and orange, indicating the time of day is either sunrise or sunset. The image is a beautiful representation of the Grand Canyon, showcasing its grandeur and the awe-inspiring scale of this natural wonder.",
+        "clipscore": 19.286030530929565,
+        "ku_score": 0.3333333333333333,
+        "time": 2.693098545074463
+      },
+      {
+        "landmark": "Grand_Canyon",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Grand_Canyon/Grand_Canyon_51287684.jpg",
+        "caption": "The image captures the breathtaking view of the Grand Canyon, one of the world's most renowned natural wonders. The canyon, a vast and deep gorge, is seen from a high vantage point, offering a panoramic view of its rugged cliffs and layers of rock. The colors of the canyon are predominantly red, orange, and brown, with patches of green vegetation dotting the landscape. The perspective of the photo is from the South Rim, which is the most accessible and popular part of the canyon for visitors. The Grand Canyon is a testament to the geological history of the region and is a symbol of the American Southwest. It was first explored by Europeans in the 19th century and has since become a symbol of the American spirit of exploration and discovery.",
+        "clipscore": 20.01490294933319,
+        "ku_score": 0.3333333333333333,
+        "time": 2.9205167293548584
+      },
+      {
+        "landmark": "Grand_Canyon",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Grand_Canyon/Grand_Canyon_51287687.jpg",
+        "caption": "The image captures the breathtaking view of the Grand Canyon, one of the world's most iconic landmarks. The perspective is from a high vantage point, looking down into the vast canyon. The canyon itself is a spectacle of nature, with its layers of red and orange rock formations that tell a geological story of millions of years. The sky above is a beautiful canvas of pink and blue hues, with the moon peeking out from behind the clouds, adding a serene touch to the scene. The image is a testament to the grandeur and majesty of this natural wonder, which has been a source of inspiration for countless artists, writers, and photographers over the years. The Grand Canyon, with its rich history and cultural significance, continues to be a symbol of the American spirit and a testament to the power of nature.",
+        "clipscore": 22.07587957382202,
+        "ku_score": 0.3333333333333333,
+        "time": 3.1064248085021973
+      },
+      {
+        "landmark": "Great_Barrier_Reef",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Great_Barrier_Reef/Great_Barrier_Reef_133629206.jpg",
+        "caption": "The image captures a vibrant underwater scene, teeming with life. Dominating the foreground is a large coral reef, its surface adorned with a variety of colorful fish. The coral, a testament to the rich biodiversity of the ocean, is a mix of green and brown hues, with hints of red and white. \n\nIn the midst of this coral reef, a long, slender fish with a blue body and a white stripe on its head stands out. It appears to be swimming towards the right side of the image. The fish's position and direction suggest it might be in motion, perhaps searching for food or exploring its surroundings.\n\nThe background of the image reveals a vast expanse of blue, punctuated by the silhouettes of other fish. These silhouettes, though not as distinct as the blue and white fish, add depth to the",
+        "clipscore": 21.29523456096649,
+        "ku_score": 0.0,
+        "time": 3.0648391246795654
+      },
+      {
+        "landmark": "Great_Barrier_Reef",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Great_Barrier_Reef/Great_Barrier_Reef_144387379.jpg",
+        "caption": "The image captures the vibrant underwater world of a coral reef. The reef is teeming with life, with various coral formations and marine creatures visible. The corals, in shades of white and blue, are the dominant feature of the image, their intricate structures creating a complex and colorful pattern.\n\nThe reef is not just a natural wonder, but also a testament to the rich biodiversity of the region. The presence of marine creatures, such as fish and crustaceans, adds to the complexity and beauty of the scene.\n\nThe image also provides a glimpse into the cultural significance of the reef. It is a common practice in many coastal communities to harvest corals for various purposes, including construction and traditional medicine. However, this practice has led to the depletion of coral reefs in some areas, highlighting the need for sustainable practices and",
+        "clipscore": 25.075089931488037,
+        "ku_score": 0.0,
+        "time": 3.3056721687316895
+      },
+      {
+        "landmark": "Great_Barrier_Reef",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Great_Barrier_Reef/Great_Barrier_Reef_86320213.jpg",
+        "caption": "The image captures a moment of a bird, specifically a black-tailed godwit, in flight against a backdrop of a clear blue sky. The bird is in the center of the frame, its wings spread wide as it soars from the left to the right. The bird's black tail contrasts sharply with its white body and wings, creating a striking silhouette against the azure expanse.\n\nThe bird is flying over a body of water, which is not visible in the image. However, the presence of the water is suggested by the bird's flight path and the direction of its gaze. The bird's wings are angled slightly upwards, indicating a sense of motion and direction.\n\nThe image does not contain any text or other objects, and the focus is solely on the bird and its flight. The relative position of the bird to the water is not visible in the image, but it can be inferred from the",
+        "clipscore": 17.258739471435547,
+        "ku_score": 0.0,
+        "time": 3.1543262004852295
+      },
+      {
+        "landmark": "Great_Wall_of_China",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Great_Wall_of_China/Great_Wall_of_China_52788986.jpg",
+        "caption": "The image captures the iconic Great Wall of China, a renowned landmark in China. The perspective of the photo is from a high vantage point, providing a bird's eye view of the wall. The wall, constructed from gray stone, winds its way through a landscape of dry, brown trees and shrubs. The path on the wall is lined with stone steps, and several people can be seen walking along it, adding a sense of scale to the image. The wall, with its rich history and cultural significance, stands as a testament to China's architectural prowess and its role in the country's past.",
+        "clipscore": 31.207430362701416,
+        "ku_score": 0.25,
+        "time": 2.303727865219116
+      },
+      {
+        "landmark": "Great_Wall_of_China",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Great_Wall_of_China/Great_Wall_of_China_53938531.jpg",
+        "caption": "The image captures the majestic Great Wall of China, a renowned landmark in China. The wall, constructed from gray stone, winds its way through the landscape, demonstrating the architectural prowess of ancient China. The perspective of the photo is from a high vantage point, offering a panoramic view of the wall as it snakes its way through the mountains. The sky above is a clear blue, providing a stark contrast to the gray stone of the wall. The image is taken from a distance, allowing for a comprehensive view of the length and scale of the wall. The Great Wall of China is a testament to China's rich history and cultural heritage, and this image provides a glimpse into its grandeur.",
+        "clipscore": 22.17278778553009,
+        "ku_score": 0.5,
+        "time": 2.572852849960327
+      },
+      {
+        "landmark": "Great_Wall_of_China",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Great_Wall_of_China/Great_Wall_of_China_53938543.jpg",
+        "caption": "The image captures the majestic Great Wall of China, a renowned landmark located in the north of China. The wall, constructed from gray stone, winds its way through the mountains, demonstrating the architectural prowess of ancient China. The perspective of the photo is from a high vantage point, providing a panoramic view of the wall as it snakes its way through the landscape. The sky above is a hazy blue, suggesting a clear day despite the overcast conditions. The image is a testament to the historical and cultural significance of the Great Wall, a symbol of China's rich history and resilience.",
+        "clipscore": 21.350473165512085,
+        "ku_score": 0.25,
+        "time": 2.2553389072418213
+      },
+      {
+        "landmark": "Ha_Long_Bay",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Ha_Long_Bay/Ha_Long_Bay_124576580.jpg",
+        "caption": "The image captures the breathtaking view of Halong Bay, a renowned landmark in Vietnam. The bay is a vast expanse of deep blue water, dotted with numerous limestone islands that rise majestically from the sea. The sky above is a clear blue, providing a beautiful contrast to the vibrant green of the islands.\n\nThe perspective of the photo is from a boat, offering a unique viewpoint of the bay. The boat is positioned in the foreground, with the islands stretching out into the distance. The calm water reflects the sky above, adding to the serene beauty of the scene.\n\nHistorically, Halong Bay has been a significant landmark in Vietnam for centuries. It was once a strategic military base for the Vietnamese navy, and it later became a UNESCO World Heritage Site in 2000. The bay is also home to the Bai Tu Long National Park,",
+        "clipscore": 25.004369020462036,
+        "ku_score": 0.6666666666666666,
+        "time": 3.156336545944214
+      },
+      {
+        "landmark": "Ha_Long_Bay",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Ha_Long_Bay/Ha_Long_Bay_124576637.jpg",
+        "caption": "The image captures the breathtaking view of Halong Bay in Vietnam. The bay is dotted with numerous limestone islands, their jagged peaks reaching towards the sky. The water is a deep blue, contrasting with the lighter blue of the sky. The perspective of the photo is from a boat, looking towards the horizon, giving a sense of the vastness of the bay. The limestone islands, with their unique formations, are a testament to the geological history of the region. Halong Bay is a UNESCO World Heritage Site, known for its natural beauty and cultural significance. It is a popular destination for tourists seeking a glimpse of Vietnam's stunning landscapes and rich history.",
+        "clipscore": 27.40952968597412,
+        "ku_score": 0.6666666666666666,
+        "time": 2.5294270515441895
+      },
+      {
+        "landmark": "Ha_Long_Bay",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Ha_Long_Bay/Ha_Long_Bay_87380323.jpg",
+        "caption": "The image captures the breathtaking view of Halong Bay in Vietnam. The bay is known for its limestone karsts, which are seen in the foreground of the image. These karsts, also known as limestone islands, are a unique geological feature of the area. They are formed due to the erosion of the limestone bedrock by the action of water over a long period of time.\n\nThe karsts are covered in lush green vegetation, adding a vibrant contrast to the clear blue water of the bay. The water is calm, reflecting the sky above and the karsts below, creating a serene and picturesque scene.\n\nHistorically, Halong Bay has been a significant landmark in Vietnam, with its rich cultural and historical significance. It was designated as a UNESCO World Heritage Site in 2000, recognizing its natural beauty and the role it has played",
+        "clipscore": 26.181340217590332,
+        "ku_score": 0.6666666666666666,
+        "time": 3.0133252143859863
+      },
+      {
+        "landmark": "Hagia_Sophia",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Hagia_Sophia/Hagia_Sophia_175969285.jpg",
+        "caption": "The image captures the majestic Hagia Sophia, a renowned landmark located in Istanbul, Turkey. The Hagia Sophia, a former Eastern Orthodox patriarchal basilica, now functions as a museum in Istanbul. The photograph is taken from a distance, providing a panoramic view of the landmark. The Hagia Sophia stands out prominently against the backdrop of the city, its large dome and minarets reaching towards the sky. The perspective of the photo suggests it was taken from a boat on the Bosphorus, a major waterway that runs through Istanbul. The sky above is a clear blue, indicating that the photo was taken during the day. The image beautifully encapsulates the historical and cultural significance of the Hagia Sophia, a symbol of Istanbul's rich heritage.",
+        "clipscore": 22.40658551454544,
+        "ku_score": 0.6,
+        "time": 2.985647439956665
+      },
+      {
+        "landmark": "Hagia_Sophia",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Hagia_Sophia/Hagia_Sophia_175969326.jpg",
+        "caption": "The image captures the majestic Hagia Sophia, a renowned landmark located in Istanbul, Turkey. The Hagia Sophia, a former Eastern Orthodox patriarchal basilica, now functions as a museum in Istanbul. The photograph is taken from a distance, offering a panoramic view of the landmark. The Hagia Sophia stands out prominently against the backdrop of the city, its large dome and minarets reaching towards the sky. The image is taken during the golden hour, just after sunrise, casting a warm glow on the landmark and the surrounding cityscape. The calm waters of the Bosphorus River flow in front of the Hagia Sophia, adding a serene touch to the bustling city life. The image beautifully encapsulates the historical and cultural significance of the Hagia Sophia in Istanbul.",
+        "clipscore": 23.043110966682434,
+        "ku_score": 0.4,
+        "time": 3.118178606033325
+      },
+      {
+        "landmark": "Hagia_Sophia",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Hagia_Sophia/Hagia_Sophia_175972648.jpg",
+        "caption": "The image captures the vibrant nightlife of Istanbul, Turkey, viewed from the Bosphorus Strait. The cityscape is illuminated by the glow of streetlights and the lights of the boats, creating a mesmerizing contrast against the deep blue of the night sky.\n\nIn the foreground, two boats are docked at the pier. The larger boat, painted in white, is adorned with a red and white striped awning, adding a pop of color to the scene. The smaller boat, painted in black, is docked next to it.\n\nThe city skyline is visible in the background, with several buildings standing tall against the night sky. Among these buildings, the Istanbul Convention and Exhibition Center (ICEC) stands out. The ICEC is a significant landmark in Istanbul, known for its modern architecture and its role in hosting various international conferences and events.",
+        "clipscore": 27.50154137611389,
+        "ku_score": 0.2,
+        "time": 3.1516621112823486
+      },
+      {
+        "landmark": "Hallstatt",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Hallstatt/Hallstatt_113927416.jpg",
+        "caption": "The image features a small, round, red glass bottle with a white cap, placed on a blue surface. The bottle is adorned with a white label that depicts a charming winter scene. The label is divided into two distinct sections.\n\nOn the left side of the label, there's a depiction of a church with a steeple, suggesting a religious theme. The church is surrounded by snow-covered trees, adding to the wintry atmosphere.\n\nOn the right side of the label, there's a depiction of a quaint village scene. The village is characterized by a white building with a red roof, which is likely a traditional Russian dacha, a type of wooden house commonly found in rural areas. The building is surrounded by snow-covered trees, and a small wooden fence can be seen in front of it.\n\nThe label also features a white ribbon tied around the bottle,",
+        "clipscore": 32.01552331447601,
+        "ku_score": 0.0,
+        "time": 3.095668315887451
+      },
+      {
+        "landmark": "Hallstatt",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Hallstatt/Hallstatt_2801744.jpg",
+        "caption": "The image captures a serene scene of a quaint village nestled in the heart of a lush, green mountainous landscape. The village is composed of several traditional wooden houses, their white and brown facades contrasting beautifully with the surrounding greenery. The architecture of the houses suggests a blend of local and European styles, indicative of a region with a rich history of cultural exchange.\n\nIn the foreground, a wooden house with a distinctive thatched roof stands out. This type of roof is often associated with traditional rural architecture and is a common feature in many mountainous regions. The house is adorned with pink flowers, adding a touch of color to the otherwise earthy tones of the village.\n\nThe village is nestled in a valley, with the mountains rising majestically in the background. The greenery is dense, with trees and bushes filling the space between the houses, creating a sense of seclusion and tranqu",
+        "clipscore": 25.311341881752014,
+        "ku_score": 0.0,
+        "time": 3.237802743911743
+      },
+      {
+        "landmark": "Hallstatt",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Hallstatt/Hallstatt_57125153.jpg",
+        "caption": "The image captures a vibrant scene in a European city, dominated by a tall, narrow building painted in a striking combination of red and white. The building's facade is adorned with a series of windows, each framed by white trim, and a large circular window at the top, adding to its distinctive character. \n\nThe building is named \"Gasthof Simony\", as indicated by the black text on the facade. This name suggests that the building might have historical significance, possibly serving as a guesthouse or a place of hospitality in the past. \n\nAdding to the charm of the building are the potted plants that line the windows, providing a touch of greenery to the otherwise monochrome structure. The building is situated next to a blue building, creating a colorful contrast that adds to the visual appeal of the scene.\n\nThe image also includes a street lamp, standing sentinel on the",
+        "clipscore": 29.127350449562073,
+        "ku_score": 0.0,
+        "time": 3.171781539916992
+      },
+      {
+        "landmark": "Hassan_II_Mosque",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Hassan_II_Mosque/Hassan_II_Mosque_154982188.jpg",
+        "caption": "The image captures the iconic Lighthouse of Alexandria, a historic landmark located in Alexandria, Egypt. The lighthouse, a tall tower with a distinctive blue and white striped pattern, stands majestically against the backdrop of the Mediterranean Sea. The sky above is a clear blue, dotted with fluffy white clouds, adding to the serene atmosphere of the scene. The perspective of the photo is from the shore, looking out towards the lighthouse, which is situated on the right side of the image. The lighthouse, with its rich history and architectural beauty, is a symbol of Alexandria's maritime heritage and a testament to the city's past.",
+        "clipscore": 26.963624358177185,
+        "ku_score": 0.0,
+        "time": 2.5767982006073
+      },
+      {
+        "landmark": "Hassan_II_Mosque",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Hassan_II_Mosque/Hassan_II_Mosque_184944972.jpg",
+        "caption": "The image captures the majestic Al-Hajar Al-Bayda, also known as the White Tower, located in Cairo, Egypt. This iconic landmark stands tall against the backdrop of a cloudy sky, its white facade contrasting sharply with the blue of the sky. The tower is adorned with intricate geometric patterns and Arabic calligraphy, a testament to the rich cultural heritage of the region. The tower's design is reminiscent of the architectural styles prevalent during the Mamluk period, a time when Cairo was a bustling center of culture and commerce. The tower's strategic location on the Nile River, overlooking the city, has made it a symbol of Cairo's historical significance and a popular tourist attraction.",
+        "clipscore": 20.33347487449646,
+        "ku_score": 0.0,
+        "time": 2.9523048400878906
+      },
+      {
+        "landmark": "Hassan_II_Mosque",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Hassan_II_Mosque/Hassan_II_Mosque_184944974.jpg",
+        "caption": "The image captures the majestic entrance to the Al-Aqsa Mosque in Jerusalem, a significant landmark in the Islamic world. The entrance is a grand archway, adorned with intricate geometric patterns and vibrant colors, predominantly in shades of blue and green. The archway is flanked by two large, ornate doors, each featuring a circular design at its center. The overall architecture of the entrance is a testament to the rich history and cultural heritage of the region. The Al-Aqsa Mosque itself is a significant religious site for Muslims, as it is believed to be the third holiest site in Islam after Mecca and Medina. The image provides a glimpse into the architectural beauty and religious significance of this landmark.",
+        "clipscore": 21.257197856903076,
+        "ku_score": 0.0,
+        "time": 2.848656177520752
+      },
+      {
+        "landmark": "Hoi_An",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Hoi_An/Hoi_An_13320206.jpg",
+        "caption": "The image captures a lively scene at a street-side café in a bustling city. The café is characterized by its rustic charm, with wooden tables and benches arranged under a large umbrella, providing shade for the patrons. The tables are adorned with red and white checkered tablecloths, adding a touch of vibrancy to the setting.\n\nIn the foreground, a glass of beer sits on one of the tables, its golden liquid contrasting with the wooden surface. The beer is accompanied by a menu, suggesting that the café offers a variety of beverages and dishes.\n\nThe café is nestled on a street lined with other shops and cafes, creating a vibrant and dynamic atmosphere. The buildings in the background, with their traditional architecture, hint at the rich history and cultural heritage of the city.\n\nThe image is",
+        "clipscore": 17.93758124113083,
+        "ku_score": 0.2,
+        "time": 3.1543235778808594
+      },
+      {
+        "landmark": "Hoi_An",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Hoi_An/Hoi_An_34228161.jpg",
+        "caption": "The image captures a lively scene at a night market in Thailand. The central figure is a man dressed in a vibrant yellow costume, complete with a blue hat, standing on a stage. He is holding a yellow fan in his right hand, which he is using to perform a dance. The stage is surrounded by a crowd of people, some of whom are holding up their cell phones, possibly capturing the performance.\n\nThe night market itself is bustling with activity. Stalls selling various goods can be seen in the background, with people milling about, adding to the lively atmosphere. The landmark in the image is Wat Arun, a famous Buddhist temple located on the west bank of the Chao Phraya River in Bangkok, Thailand. The temple is known for its distinctive prang (spires) and is a popular tourist attraction.\n\nThe image also captures the essence of",
+        "clipscore": 27.275359630584717,
+        "ku_score": 0.0,
+        "time": 3.155644655227661
+      },
+      {
+        "landmark": "Hoi_An",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Hoi_An/Hoi_An_89255334.jpg",
+        "caption": "The image captures a moment of cultural exchange at the historic Temple of the Golden Pavilion in Kyoto, Japan. The temple, a renowned landmark known for its unique golden exterior, stands majestically in the background. The temple's intricate architecture and vibrant color are a testament to the rich history and artistic heritage of Japan.\n\nIn the foreground, two individuals are standing in front of the temple. The person on the left is dressed in a white shirt and khaki shorts, while the person on the right is wearing a green shirt and black pants. They appear to be posing for a photo, perhaps capturing a memory of their visit to this iconic landmark.\n\nThe temple itself is illuminated, casting a warm glow that contrasts with the cool tones of the night sky. The surrounding area is bustling with activity, with people milling about and enjo",
+        "clipscore": 13.401010632514954,
+        "ku_score": 0.2,
+        "time": 3.2340400218963623
+      },
+      {
+        "landmark": "Iguazu_Falls",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Iguazu_Falls/Iguazu_Falls_139378847.jpg",
+        "caption": "The image captures the breathtaking view of the Iguazu Falls, a natural wonder straddling the border of Argentina and Brazil. The falls are a series of cascading waterfalls that drop from the Iguazu River into the Devil's Throat, a deep and narrow gorge. The mist from the falls creates a dramatic effect, adding to the majesty of the scene. The surrounding landscape is lush and green, with a dense forest of trees and shrubs. The perspective of the photo is from a distance, allowing for a comprehensive view of the falls and the surrounding environment. The image is a testament to the raw and untouched beauty of this world-renowned landmark.",
+        "clipscore": 20.24395614862442,
+        "ku_score": 0.6666666666666666,
+        "time": 2.5162501335144043
+      },
+      {
+        "landmark": "Iguazu_Falls",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Iguazu_Falls/Iguazu_Falls_139378952.jpg",
+        "caption": "The image captures the breathtaking view of the Iguazu Falls, a natural wonder straddling the border of Argentina and Brazil. The falls are a series of cascading waterfalls that drop from the Iguazu River into the Devil's Throat, a large natural depression. The perspective of the photo is from a high vantage point, providing a panoramic view of the falls and the surrounding lush greenery. The mist from the falls adds a mystical quality to the scene. The Iguazu Falls are a UNESCO World Heritage Site and are considered one of the most spectacular waterfalls in the world. The falls have a rich cultural and historical significance, with the indigenous Guarani people having a deep spiritual connection to the falls.",
+        "clipscore": 21.128958463668823,
+        "ku_score": 1.0,
+        "time": 2.809762716293335
+      },
+      {
+        "landmark": "Iguazu_Falls",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Iguazu_Falls/Iguazu_Falls_139378958.jpg",
+        "caption": "The image captures the majestic Angel Falls, the world's highest uninterrupted waterfall, located in the heart of Venezuela. The waterfall, cascading from a cliff face, is a spectacle of nature's grandeur. The water, a vibrant shade of white, contrasts sharply with the surrounding greenery, creating a mesmerizing sight. The cliff face, a testament to the geological history of the region, is adorned with lush vegetation, adding a touch of green to the otherwise monochrome palette. The sky overhead is a canvas of clouds, painting a serene backdrop to this natural wonder. The image is a beautiful representation of Angel Falls, encapsulating its raw and untouched beauty.",
+        "clipscore": 21.146008372306824,
+        "ku_score": 0.0,
+        "time": 2.6823554039001465
+      },
+      {
+        "landmark": "Imperial_City_Hue",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Imperial_City_Hue/Imperial_City_Hue_152506897.jpg",
+        "caption": "The image captures the majestic Imperial Citadel, a renowned landmark located in Hue, Vietnam. From an aerial perspective, the citadel stands out as a sprawling complex of traditional Vietnamese architecture, surrounded by a moat and a series of walls. The citadel is a testament to Vietnam's rich history and culture, with its intricate designs and vibrant colors reflecting the country's heritage. The moat, a common feature in ancient citadels, adds a layer of protection to the complex, while the walls enclose the citadel, providing a sense of security and isolation. The image offers a comprehensive view of the citadel, showcasing its grandeur and the historical significance it holds.",
+        "clipscore": 24.91186410188675,
+        "ku_score": 0.5,
+        "time": 2.477869987487793
+      },
+      {
+        "landmark": "Imperial_City_Hue",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Imperial_City_Hue/Imperial_City_Hue_18641804.jpg",
+        "caption": "The image showcases a vibrant and intricate mural on a wall, which is a distinctive feature of the landmark it adorns. The mural is a captivating blend of blue and gold, with a central circular motif that draws the eye. This motif is composed of a series of interconnected lines, each varying in color and pattern, creating a sense of depth and complexity.\n\nThe mural is set against a backdrop of a white wall, which is punctuated by gold accents that add a touch of opulence to the overall design. The mural is not just a work of art but also a testament to the rich cultural heritage of the landmark.\n\nThe landmark itself is a temple, a place of worship and spiritual significance. Temples have been an integral part of many cultures throughout history, serving as a hub for religious practices and community gatherings. The intricate mural",
+        "clipscore": 25.244441628456116,
+        "ku_score": 0.25,
+        "time": 3.2471611499786377
+      },
+      {
+        "landmark": "Imperial_City_Hue",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Imperial_City_Hue/Imperial_City_Hue_18641840.jpg",
+        "caption": "The image captures a serene scene in a traditional Chinese courtyard. The focal point is a large, ornate lantern, suspended from a wooden pole that stands in the center of the courtyard. The lantern, with its intricate designs and multiple arms, is a testament to the rich cultural heritage of China.\n\nThe courtyard itself is paved with gray stone tiles, adding to the timeless charm of the setting. It's surrounded by a variety of potted plants, each one a testament to the meticulous care and attention given to the landscaping. The plants, with their lush green leaves, provide a refreshing contrast to the stone tiles.\n\nIn the background, a traditional Chinese building can be seen. Its architecture, with its curved roof and wooden beams, is a reflection of the country's rich history and cultural heritage. The building's design is",
+        "clipscore": 27.03983187675476,
+        "ku_score": 0.25,
+        "time": 3.253469228744507
+      },
+      {
+        "landmark": "Luxor_Temple",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Luxor_Temple/Luxor_Temple_145532790.jpg",
+        "caption": "The image depicts a wide, empty road flanked by a low stone wall on the right side. The road is lined with palm trees, and there are no visible vehicles or pedestrians. The sky is clear and blue, suggesting a sunny day. In the distance, there are buildings that appear to be residential or possibly commercial, with a mix of architectural styles. There is a sign on the right side of the road that is partially obscured by the wall, but it seems to be a directional or informational sign.\n\nThe landmark in the image is the Great Wall of China, which is a significant historical and cultural landmark. The Great Wall is a series of walls and fortifications located in northern China, with the total length of all sections measuring over 21,000 kilometers. It is one of the most well-preserved ancient architectural structures in the world and is a UNESCO",
+        "clipscore": 22.633706033229828,
+        "ku_score": 0.0,
+        "time": 3.246961832046509
+      },
+      {
+        "landmark": "Luxor_Temple",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Luxor_Temple/Luxor_Temple_145532883.jpg",
+        "caption": "The image captures the grandeur of the Temple of Jupiter, a significant landmark located in Baalbek, Lebanon. The temple, a testament to ancient architecture, is constructed from light-colored stone, giving it a timeless and majestic appearance. The perspective of the photo is from the ground, looking up towards the towering columns that support the temple's roof. The sunlight filters through the gaps between the columns, casting a warm glow on the stone structure and creating a serene atmosphere. The Temple of Jupiter, a UNESCO World Heritage Site, is a symbol of the rich history and cultural heritage of the region.",
+        "clipscore": 14.104938507080078,
+        "ku_score": 0.0,
+        "time": 2.370173931121826
+      },
+      {
+        "landmark": "Luxor_Temple",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Luxor_Temple/Luxor_Temple_145533037.jpg",
+        "caption": "The image captures the grandeur of the Abu Simbel temple in Egypt, a remarkable landmark carved into the side of a cliff. The temple, a testament to ancient Egyptian architecture, is composed of four colossal statues of the pharaoh Ramesses II, each seated on a throne and adorned with the traditional headdress of the pharaohs. The perspective of the photo is from a low angle, emphasizing the imposing size of the statues and the intricate details of the carvings. The temple is nestled within the Abu Simbel National Park, a UNESCO World Heritage Site, and is a prime example of the rich cultural heritage of Egypt. The image is a vivid representation of the historical and cultural significance of this landmark.",
+        "clipscore": 14.877581596374512,
+        "ku_score": 0.3333333333333333,
+        "time": 2.848515033721924
+      },
+      {
+        "landmark": "Machu_Picchu",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Machu_Picchu/Machu_Picchu_159379095.jpg",
+        "caption": "The image captures the ancient Incan ruins of Machu Picchu, a significant landmark nestled in the Andes Mountains of Peru. The ruins, constructed from gray stone, are perched on a cliff face, offering a panoramic view of the surrounding landscape. The perspective of the photo is from a low angle, looking up at the ruins, emphasizing their imposing presence on the mountain. The sky above is a clear blue, with a few clouds scattered across it, adding to the serene atmosphere of the scene. The ruins themselves are a testament to the architectural prowess of the Incas, who built them without the use of modern tools or machinery. The image is a beautiful representation of this world-renowned landmark, showcasing its historical and cultural significance.",
+        "clipscore": 22.14379906654358,
+        "ku_score": 0.5,
+        "time": 2.8245067596435547
+      },
+      {
+        "landmark": "Machu_Picchu",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Machu_Picchu/Machu_Picchu_20982566.jpg",
+        "caption": "The image captures the breathtaking view of the Machu Picchu, the ancient Incan citadel nestled high in the Andes Mountains of Peru. The perspective is from a high vantage point, looking down upon the ruins, providing a panoramic view of the site. The ruins themselves are a mix of stone structures, including walls, terraces, and temples, all interspersed with lush greenery. The sky above is a clear blue, dotted with fluffy white clouds, adding to the serene beauty of the scene. The image is a testament to the architectural prowess of the Incas and the enduring allure of this world-renowned landmark.",
+        "clipscore": 19.54527348279953,
+        "ku_score": 0.5,
+        "time": 2.5901472568511963
+      },
+      {
+        "landmark": "Machu_Picchu",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Machu_Picchu/Machu_Picchu_86553374.jpg",
+        "caption": "In the image, a person is standing in front of a stone wall, which is part of a historic building. The person is dressed in traditional Andean attire, which includes a vibrant red poncho with intricate patterns, a gold-colored hat with a black feather, and a gold-colored necklace. The attire is rich in color and detail, reflecting the cultural heritage of the Andes.\n\nThe stone wall behind the person is part of a larger structure that appears to be a historic building, possibly a church or a government building. The wall is made of large, rectangular stones, typical of Andean architecture, and it adds a sense of history and tradition to the scene.\n\nThe person is holding a small statue of a llama, which is a symbol of Andean culture and history. The llama statue is a common sight in Andean cultures and is often used in religious ceremon",
+        "clipscore": 33.54813754558563,
+        "ku_score": 0.25,
+        "time": 3.173767328262329
+      },
+      {
+        "landmark": "Matterhorn",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Matterhorn/Matterhorn_147169842.jpg",
+        "caption": "The image captures the majestic Matterhorn, a renowned landmark in the Swiss Alps. The Matterhorn, a pyramid-shaped peak, stands tall against the backdrop of a clear blue sky. The perspective of the photo is from a cable car, which is ascending the mountain, providing a unique viewpoint of the peak. The surrounding landscape is a lush expanse of greenery, with the Matterhorn's snow-capped peak contrasting sharply with the verdant surroundings. The image encapsulates the awe-inspiring beauty of this world-famous landmark, which has been a symbol of Switzerland's natural beauty for centuries.",
+        "clipscore": 28.54791283607483,
+        "ku_score": 0.6666666666666666,
+        "time": 2.540384292602539
+      },
+      {
+        "landmark": "Matterhorn",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Matterhorn/Matterhorn_162168814.jpg",
+        "caption": "The image captures the majestic Mount Everest, the highest peak in the world, standing tall against the backdrop of a starry night sky. The mountain, blanketed in a thick layer of snow and ice, is the central focus of the image. Its peak, a jagged and imposing structure, is clearly visible against the darker sky. The surrounding landscape is a mix of rocky terrain and snow-covered slopes, adding to the rugged beauty of the scene.\n\nThe starry night sky above is a testament to the vastness of the mountain and the universe. The stars twinkle brightly, their light reflecting off the snow-covered mountain, creating a mesmerizing spectacle.\n\nIn terms of historical and cultural context, Mount Everest has been a symbol of exploration, adventure, and human achievement since its discovery in 1802. The first successful ascent of the",
+        "clipscore": 24.560391902923584,
+        "ku_score": 0.0,
+        "time": 3.156608819961548
+      },
+      {
+        "landmark": "Matterhorn",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Matterhorn/Matterhorn_59921617.jpg",
+        "caption": "The image captures the majestic Mount Everest, the highest peak in the world, standing tall against the backdrop of a clear blue sky. The mountain's peak is sharply pointed, a testament to the forces of nature that have shaped it over millions of years. The snow-capped peak is a striking contrast to the blue sky, creating a visually striking image. The perspective of the photo is from a low angle, looking up towards the peak, which enhances the sense of scale and grandeur of the mountain. The image is a beautiful representation of the natural world, showcasing the raw and untouched beauty of Mount Everest.",
+        "clipscore": 24.451902508735657,
+        "ku_score": 0.0,
+        "time": 2.2965087890625
+      },
+      {
+        "landmark": "Moai",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Moai/Moai_117335768.jpg",
+        "caption": "The image captures the breathtaking view of the Cape Coast of Ghana, a landmark known for its rich history and cultural significance. The perspective of the photo is from a high vantage point, offering a panoramic view of the coastline. The foreground is dominated by two large, jagged rocks that stand out against the backdrop of the ocean. These rocks, known as the \"Door of No Return\", are a symbol of the transatlantic slave trade and serve as a reminder of the tragic events that took place here centuries ago.\n\nThe ocean, a vast expanse of blue, stretches out to the horizon, its surface disturbed only by the occasional wave. The sky above is a clear blue, devoid of any clouds, suggesting a bright and sunny day. The image is a testament to the natural beauty of the Cape Coast, while also serving as a poignant reminder",
+        "clipscore": 15.844044089317322,
+        "ku_score": 0.0,
+        "time": 3.2337965965270996
+      },
+      {
+        "landmark": "Moai",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Moai/Moai_117336450.jpg",
+        "caption": "The image captures the Moai statues on Easter Island, a remote island in the Pacific Ocean. The statues, carved from stone, are a testament to the Rapa Nui culture that once thrived on the island. The statues are known for their large size and distinctive human-like features, with one statue prominently positioned in the foreground of the image. The statues are set against a backdrop of a clear blue sky, with a few clouds scattered in the distance. The perspective of the image gives a sense of the statues' grandeur and the isolation of the island. The Moai statues are a significant landmark and a symbol of the Rapa Nui people's rich history and cultural heritage.",
+        "clipscore": 26.15402638912201,
+        "ku_score": 0.5,
+        "time": 2.697143316268921
+      },
+      {
+        "landmark": "Moai",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Moai/Moai_95939123.jpg",
+        "caption": "The image depicts a natural landscape featuring a large, jagged rock formation with a rough, dark brown surface. The rock appears to be weathered and eroded, with patches of lighter-colored moss or algae growing on its surface. A thin, light-colored plant with a few leaves is growing on the rock, and there are small white flowers blooming among the greenery. The rock is situated in a grassy area with patches of dirt and sparse vegetation. The background is a softly focused green field, suggesting a rural or semi-rural setting.\n\nThere is no visible text or inscriptions on the rock or in the image. The style of the image is a realistic photograph with a focus on the rock formation, capturing the details of its texture and the surrounding environment.\n\nWithout additional context, it is difficult to provide historical or cultural information about the landmark. However, the presence",
+        "clipscore": 25.21761655807495,
+        "ku_score": 0.0,
+        "time": 3.4997105598449707
+      },
+      {
+        "landmark": "Mont_Saint_Michel",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Mont_Saint_Michel/Mont_Saint_Michel_178808560.jpg",
+        "caption": "The image captures the majestic Château de Vaux-le-Vicomte, a renowned landmark located in France. The castle, constructed from gray stone, stands tall against the backdrop of a cloudy sky. Its architectural grandeur is evident in the multiple towers and turrets that punctuate its structure. A flag, fluttering in the breeze, adds a touch of color to the otherwise monochrome palette of the castle.\n\nThe perspective of the photo is from a low angle, looking up at the castle, which enhances its imposing presence. The castle is nestled amidst lush greenery, with trees and bushes dotting the landscape around it. The image is taken from a distance, allowing for a comprehensive view of the castle and its surroundings.\n\nThe Château de Vaux-le-Vicomte is a prime example of the French Baroque style of",
+        "clipscore": 15.983089804649353,
+        "ku_score": 0.2,
+        "time": 3.2472083568573
+      },
+      {
+        "landmark": "Mont_Saint_Michel",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Mont_Saint_Michel/Mont_Saint_Michel_178808569.jpg",
+        "caption": "The image captures a moment in the heart of a historic city, where the past and present coexist. The landmark in question is the famous **Stairway of the Dead**, a narrow, winding staircase that leads up to the **Castle of the Teutonic Order**. The stairway, constructed from stone, is a testament to the architectural prowess of the medieval era.\n\nThe stairway is bustling with life, as several people are seen ascending and descending the stairs. The individuals, dressed in casual attire, carry backpacks and handbags, suggesting they might be tourists exploring the city.\n\nThe sky above is a clear blue, providing a stark contrast to the stone structures below. The perspective of the photo is from the bottom of the stairway, looking up, which emphasizes the steepness of the stairs and the grandeur of the",
+        "clipscore": 20.957286655902863,
+        "ku_score": 0.0,
+        "time": 3.252427339553833
+      },
+      {
+        "landmark": "Mont_Saint_Michel",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Mont_Saint_Michel/Mont_Saint_Michel_63666796.jpg",
+        "caption": "The image captures the historic and culturally significant landmark of the Château de Penthes, located in the heart of France. The castle, constructed from stone, stands majestically against the backdrop of a clear blue sky. The perspective of the photo is from a low angle, looking up the stairs of the castle, which adds a sense of grandeur and awe to the scene.\n\nThe castle is bustling with activity, as numerous people are seen ascending the stairs, their figures small against the imposing structure. The stairs themselves are a testament to the architectural prowess of the era, with their intricate design and sturdy construction.\n\nThe castle is nestled amidst lush greenery, with trees and bushes dotting the landscape around it. This natural setting enhances the overall beauty of the castle, making it a picturesque sight.\n\nThe image also contains a text that reads",
+        "clipscore": 25.34596025943756,
+        "ku_score": 0.2,
+        "time": 3.1736743450164795
+      },
+      {
+        "landmark": "Neuschwanstein_Castle",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Neuschwanstein_Castle/Neuschwanstein_Castle_174751572.jpg",
+        "caption": "The image captures the majestic Neuschwanstein Castle, a 19th-century Romanesque Revival palace, perched on a rugged hill above the village of Hohenschwangau near Füssen in southwest Bavaria, Germany. The castle is a symbol of the Romantic movement in art and architecture. \n\nThe castle's white facade is adorned with red accents, giving it a striking appearance. The castle's towers and turrets reach towards the sky, while the castle's courtyard is nestled amidst a lush forest. The castle is surrounded by a moat, adding to its grandeur. \n\nThe castle was built as a retreat for King Ludwig II of Bavaria and was completed in 1886. It is now a popular tourist attraction, drawing visitors from around the world to witness its architectural beauty and historical significance. The castle's",
+        "clipscore": 26.02074146270752,
+        "ku_score": 0.4,
+        "time": 3.2115120887756348
+      },
+      {
+        "landmark": "Neuschwanstein_Castle",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Neuschwanstein_Castle/Neuschwanstein_Castle_176943568.jpg",
+        "caption": "The image depicts a tranquil scene in a park. A person is seen walking on a path that is lined with trees and bushes, creating a serene and natural setting. The person is wearing a backpack and is dressed in casual attire, suggesting a leisurely stroll or hike.\n\nIn the background, there is a horse-drawn carriage, adding a touch of historical charm to the scene. The carriage is being pulled by two horses, and it appears to be in motion, suggesting that it is part of a guided tour or a special event.\n\nThe park itself is lush and green, with a variety of trees and bushes that provide a sense of depth and scale to the image. The path on which the person is walking is well-maintained, indicating that it is a popular route for visitors to explore the park.\n\nThe image does not provide any specific landmarks, but the",
+        "clipscore": 22.693030536174774,
+        "ku_score": 0.0,
+        "time": 3.238403081893921
+      },
+      {
+        "landmark": "Neuschwanstein_Castle",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Neuschwanstein_Castle/Neuschwanstein_Castle_97363980.jpg",
+        "caption": "The image captures a serene winter scene in a European village. The focal point is a traditional Swiss chalet, its white facade adorned with a large mural of a mountain landscape. The chalet is nestled amidst a snowy landscape, with a majestic mountain looming in the background. The roof of the chalet is blanketed in snow, adding to the wintry ambiance.\n\nIn front of the chalet, a small garden is illuminated by string lights, creating a warm and inviting atmosphere. The garden is dotted with potted plants, adding a touch of greenery to the otherwise white and snowy scene.\n\nThe sky above is a clear blue, providing a beautiful contrast to the snow-covered landscape. A full moon hangs in the sky, casting a soft glow on the snow-covered village and chalet.\n\nThe image is taken from a low angle, which enh",
+        "clipscore": 28.371670842170715,
+        "ku_score": 0.0,
+        "time": 3.155604124069214
+      },
+      {
+        "landmark": "Niagara_Falls",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Niagara_Falls/Niagara_Falls_53690425.jpg",
+        "caption": "The image captures the iconic Lion Gate at Mycenae, Greece. The gate, a testament to ancient architecture, is constructed of large stone blocks and is adorned with a lion's head on the top, symbolizing the strength and power of the Mycenaean civilization. The gate is nestled amidst lush greenery, with trees and bushes encircling it, adding a touch of nature to the historical landmark. The perspective of the photo is from a low angle, looking up at the gate, which enhances its imposing presence. The gate is situated in the foreground of the image, while the dense foliage of trees and bushes fills the background, creating a sense of depth and perspective. The image beautifully juxtaposes the ancient past with the vibrant present, offering a glimpse into the rich history and cultural heritage of Greece.",
+        "clipscore": 7.878667116165161,
+        "ku_score": 0.0,
+        "time": 3.1309266090393066
+      },
+      {
+        "landmark": "Niagara_Falls",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Niagara_Falls/Niagara_Falls_57275682.jpg",
+        "caption": "The image captures the iconic Stonehenge, a prehistoric monument located in Wiltshire, England. The monument is composed of a ring of standing stones, each around 13 feet high, 7 feet wide, and weighing around 25 tons. The stones are set within earthworks and are surrounded by a circular ditch, with an inner circular earthwork. The image is taken from a low angle, looking up at the stones, which gives a sense of their impressive size and the scale of the monument. The stones are covered in a layer of green moss, indicating that the photo was taken in the spring or summer months. The surrounding landscape is lush and green, with patches of grass and shrubs. The image does not contain any text or additional objects, and the focus is solely on the monument itself. The historical and cultural context of Stonehenge is significant, as it is one of the most famous prehistoric",
+        "clipscore": 16.25654399394989,
+        "ku_score": 0.0,
+        "time": 3.2936806678771973
+      },
+      {
+        "landmark": "Niagara_Falls",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Niagara_Falls/Niagara_Falls_67778430.jpg",
+        "caption": "The image captures a serene scene of a duck swimming in a body of water. The duck, with its dark feathers, is the central figure in the image, floating on the water's surface. The water is a light blue-green color, suggesting it might be a calm, still lake or river.\n\nIn the background, there's a small island with a lighthouse on it. The lighthouse, a common symbol of guidance and safety, is a beacon for sailors and a landmark for the surrounding area. Historically, lighthouses have been built along coastlines and in harbors to help mariners navigate safely through treacherous waters.\n\nThe image evokes a sense of tranquility and the beauty of nature. The duck's peaceful demeanor and the lighthouse's steadfast presence in the background create a harmonious balance in the composition of the image",
+        "clipscore": 24.660708010196686,
+        "ku_score": 0.0,
+        "time": 3.1593122482299805
+      },
+      {
+        "landmark": "Petra",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Petra/Petra_67549540.jpg",
+        "caption": "The image captures the breathtaking view of the Wadi Rum Protected Area in Jordan. This vast desert landscape is a testament to the rugged beauty of the Middle East. The sandy terrain is dotted with large, jagged rock formations that rise majestically against the clear blue sky. The perspective of the photo is from a low angle, looking up at the towering cliffs, which adds a sense of awe and scale to the scene.\n\nThe Wadi Rum Protected Area is a UNESCO World Heritage Site and is considered one of the most important archaeological sites in the world. It was once the domain of the nomadic Bedouin tribes who roamed the deserts of Jordan and Saudi Arabia. The area is rich in history, with evidence of human habitation dating back to the Neolithic period.\n\nThe rock formations, known as \"jebel,\" are a significant",
+        "clipscore": 21.965721249580383,
+        "ku_score": 0.4,
+        "time": 3.2339260578155518
+      },
+      {
+        "landmark": "Petra",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Petra/Petra_67549545.jpg",
+        "caption": "The image captures the breathtaking view of the ancient city of Petra, a renowned landmark nestled in the heart of Jordan. From a high vantage point, the viewer's gaze is drawn downwards, following the winding path that once served as the main thoroughfare of the city. The cityscape is a testament to the architectural prowess of the Nabateans, who carved the city into the sandstone cliffs.\n\nThe city is a maze of narrow alleys and passageways, punctuated by the remnants of the city's past. The structures, now weathered by time, stand as silent witnesses to the city's rich history. The color palette of the image is dominated by the earthy tones of the sandstone cliffs, punctuated by the occasional splash of greenery that adds a touch of life to the otherwise monoch",
+        "clipscore": 22.119411826133728,
+        "ku_score": 0.4,
+        "time": 3.2322380542755127
+      },
+      {
+        "landmark": "Petra",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Petra/Petra_67549639.jpg",
+        "caption": "The image captures the breathtaking view of the Wadi Rum Protected Area in Jordan. The perspective is from a cave entrance, which frames the vast desert landscape. The desert is a light beige color, with patches of greenery scattered throughout, indicating the presence of life in this harsh environment.\n\nIn the center of the image, there's a rock formation that stands out. It's a large, rounded boulder with a cave-like opening, which is a common feature in the Wadi Rum desert. This rock formation is a testament to the geological history of the area and is a popular spot for visitors to explore.\n\nThe sky above is a clear blue, with a few clouds scattered across it, adding depth to the scene. The sun is shining brightly, casting a warm glow on the landscape and highlighting the rugged beauty of the desert.\n\nThe Wadi Rum Protected Area is a",
+        "clipscore": 23.22041094303131,
+        "ku_score": 0.2,
+        "time": 3.2330143451690674
+      },
+      {
+        "landmark": "Petronas_Towers",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Petronas_Towers/Petronas_Towers_176517857.jpg",
+        "caption": "The image captures the majestic Petronas Twin Towers, a renowned landmark in Kuala Lumpur, Malaysia. The towers, standing at a height of 452 meters, are a testament to modern architecture and engineering. The photo is taken from a low angle, emphasizing the towering height of the towers and their distinctive design. The towers are adorned with a series of rectangular windows, punctuated by a series of spires at the top, adding to their grandeur. The sky in the background is a clear blue, providing a stark contrast to the dark gray of the towers. The image encapsulates the awe-inspiring scale and architectural prowess of the Petronas Twin Towers, a symbol of Malaysia's progress and development.",
+        "clipscore": 25.047898292541504,
+        "ku_score": 0.25,
+        "time": 2.966806411743164
+      },
+      {
+        "landmark": "Petronas_Towers",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Petronas_Towers/Petronas_Towers_52918997.jpg",
+        "caption": "The image captures the majestic Petronas Twin Towers, a renowned landmark in Kuala Lumpur, Malaysia. The towers, standing tall at 452 meters, are a testament to modern architecture and engineering. The exterior of the towers is adorned with a grid of windows, reflecting the surrounding cityscape and adding to their grandeur. The towers are crowned with a spire at the top, reaching even higher into the sky. The sky in the background is a clear blue, providing a stark contrast to the gray and cloudy day. The image is taken from a distance, allowing for a comprehensive view of the towers and their surroundings. The Petronas Twin Towers, with their unique design and imposing stature, are a symbol of Kuala Lumpur's modernity and progress.",
+        "clipscore": 24.03140664100647,
+        "ku_score": 0.25,
+        "time": 3.0166842937469482
+      },
+      {
+        "landmark": "Petronas_Towers",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Petronas_Towers/Petronas_Towers_53056363.jpg",
+        "caption": "The image captures the iconic Petronas Twin Towers, a landmark located in Kuala Lumpur, Malaysia. The towers, standing at a height of 452 meters, are a symbol of modern Malaysia and are known for their distinctive architecture. The towers are constructed from steel and glass, with a unique design that features a series of setbacks and a series of sky bridges connecting the two towers at the 41st and 42nd floors.\n\nThe towers are situated in the heart of the city, surrounded by a lush green park that provides a stark contrast to the urban landscape. The park is a popular spot for locals and tourists alike, who come to admire the towers and enjoy the serene atmosphere.\n\nThe image is taken from a high angle, providing a panoramic view of the towers and the park. The sky is a",
+        "clipscore": 26.42872929573059,
+        "ku_score": 0.25,
+        "time": 3.0229926109313965
+      },
+      {
+        "landmark": "Phong_Nha_Cave",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Phong_Nha_Cave/Phong_Nha_Cave_109485541.jpg",
+        "caption": "The image captures the breathtaking view of the Wadi Dhahr Canyon in Jordan. This natural wonder is known for its unique geological formations, which are composed of a mix of sandstone and limestone. The canyon is characterized by its narrow, winding passageways and towering rock formations that reach up to 100 meters in height. The lighting in the canyon is dim, creating a mystical atmosphere that adds to the allure of the place. The image is taken from a low angle, which emphasizes the grandeur of the canyon and its towering formations. The perspective also allows for a glimpse of the people exploring the canyon, adding a sense of scale to the image. The Wadi Dhahr Canyon is a significant landmark in Jordan, attracting tourists and adventurers alike who seek to experience the natural beauty and cultural rich",
+        "clipscore": 17.53835529088974,
+        "ku_score": 0.0,
+        "time": 3.2419276237487793
+      },
+      {
+        "landmark": "Phong_Nha_Cave",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Phong_Nha_Cave/Phong_Nha_Cave_15699934.jpg",
+        "caption": "The image captures the breathtaking view of the Antelope Canyon, a renowned landmark located in Arizona, USA. The canyon is a slot canyon, characterized by its narrow passageways and high, vertical walls. The lighting in the canyon is unique, with the sunlight streaming in from the top, creating a mesmerizing effect of light and shadow. The photograph is taken from a low angle, which emphasizes the height of the canyon walls and the depth of the passageways. The people in the image are seen walking along the path, their figures small in comparison to the grandeur of the canyon. The image beautifully encapsulates the natural beauty and the awe-inspiring experience of visiting this world-renowned landmark.",
+        "clipscore": 15.167494118213654,
+        "ku_score": 0.0,
+        "time": 2.8477060794830322
+      },
+      {
+        "landmark": "Phong_Nha_Cave",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Phong_Nha_Cave/Phong_Nha_Cave_161297122.jpg",
+        "caption": "The image captures the breathtaking view of the Skaftafell Ice Cave, a renowned landmark located in Iceland. The cave, known for its unique ice formations, is illuminated by a warm light that contrasts with the cool tones of the cave's interior. The perspective of the photo is from the entrance of the cave, looking upwards towards the ceiling, which is adorned with stalactites and stalagmites. The cave's interior is a spectacle of nature's artistry, with the ice formations taking on various shapes and sizes. The image is a testament to the awe-inspiring beauty of this natural wonder, which has been a source of fascination for visitors for centuries.",
+        "clipscore": 11.550246924161911,
+        "ku_score": 0.0,
+        "time": 2.5751748085021973
+      },
+      {
+        "landmark": "Plitvice_Lakes",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Plitvice_Lakes/Plitvice_Lakes_107020106.jpg",
+        "caption": "The image captures the serene beauty of the Plitvice Lakes National Park in Croatia. The park is renowned for its cascading waterfalls and turquoise lakes, which are interconnected by a series of waterfalls and natural dams. The perspective of the photo is from the shore, looking out towards the water, providing a panoramic view of the landscape. The water appears to be a deep blue, reflecting the clear sky above. The surrounding vegetation is lush and green, adding to the natural beauty of the scene. The Plitvice Lakes National Park is a UNESCO World Heritage Site, and it is considered one of the most beautiful landscapes in Europe. The park is a popular tourist destination, attracting visitors from around the world to witness its stunning natural beauty.",
+        "clipscore": 23.931728303432465,
+        "ku_score": 0.75,
+        "time": 2.8887572288513184
+      },
+      {
+        "landmark": "Plitvice_Lakes",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Plitvice_Lakes/Plitvice_Lakes_107461639.jpg",
+        "caption": "The image captures the breathtaking view of the Plitvice Lakes National Park in Croatia. The park is renowned for its cascading waterfalls and lush greenery, which are clearly visible in the photo. The waterfalls, with their white and green hues, are the main attraction of the park. They are surrounded by a variety of plants and trees, including moss and ferns, adding to the natural beauty of the scene. The park is a UNESCO World Heritage Site, and its unique geological features and biodiversity make it a popular destination for tourists and nature enthusiasts alike. The image provides a glimpse into the serene and picturesque landscape of this world-renowned landmark.",
+        "clipscore": 22.625328600406647,
+        "ku_score": 0.75,
+        "time": 2.6602659225463867
+      },
+      {
+        "landmark": "Plitvice_Lakes",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Plitvice_Lakes/Plitvice_Lakes_149558351.jpg",
+        "caption": "The image captures the breathtaking view of the Rainbow Falls, a renowned landmark nestled in the heart of the Olympic National Park in Washington State, USA. The falls, known for their vibrant rainbow hue, are a popular destination for hikers and nature enthusiasts alike. The perspective of the photo is from a high vantage point, offering a panoramic view of the falls cascading down the cliff face. The surrounding landscape is a lush tapestry of greenery, with trees and foliage filling the foreground, providing a stark contrast to the clear blue sky above. The image beautifully encapsulates the serene and awe-inspiring beauty of this natural wonder.",
+        "clipscore": 12.446627020835876,
+        "ku_score": 0.0,
+        "time": 2.532135009765625
+      },
+      {
+        "landmark": "Prague_Castle",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Prague_Castle/Prague_Castle_110785061.jpg",
+        "caption": "The image captures the grandeur of the entrance to the Hermitage Museum in St. Petersburg, Russia. The perspective is from the ground, looking up towards the ornate ceiling and archway. The archway is adorned with intricate gold and white detailing, featuring a series of columns and a large golden eagle at the center. The floor beneath is a rich red, contrasting with the white walls of the museum. The Hermitage Museum, founded in 1764, is one of the largest and oldest museums in the world, housing a vast collection of art and artifacts from around the world. The architectural style of the entrance reflects the opulence and grandeur of the Russian Empire during the time of its construction. The Hermitage Museum is a significant landmark in St. Petersburg, known for its stunning architecture and world-class collections.",
+        "clipscore": 23.86876940727234,
+        "ku_score": 0.0,
+        "time": 3.0093607902526855
+      },
+      {
+        "landmark": "Prague_Castle",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Prague_Castle/Prague_Castle_25511056.jpg",
+        "caption": "The image captures a serene scene in a courtyard of a historic building. The courtyard is paved with cobblestones, adding a touch of antiquity to the setting. Six wooden tables, each adorned with a metal frame, are arranged in a semi-circle around a central fountain. The tables are empty, suggesting a quiet moment in the day.\n\nThe building itself is a testament to history, with its white facade punctuated by arched windows and a stone tower. The architecture suggests a blend of styles, possibly indicative of the region's historical and cultural context.\n\nIn the background, a stone archway leads the eye towards a darker, more mysterious space. This archway, along with the fountain and the tables, creates a harmonious balance within the courtyard. The overall scene exudes a sense of tranquility and timelessness, as",
+        "clipscore": 29.321962594985962,
+        "ku_score": 0.0,
+        "time": 3.186110496520996
+      },
+      {
+        "landmark": "Prague_Castle",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Prague_Castle/Prague_Castle_58174334.jpg",
+        "caption": "The image captures the majestic Prague Castle, a significant landmark in the Czech Republic. The castle, a grand structure with a yellow facade, stands tall against the backdrop of a clear blue sky. The castle's architecture is characterized by multiple windows and statues, adding to its grandeur. The perspective of the photo is from a low angle, which enhances the imposing stature of the castle. In the distance, the silhouette of a church steeple can be seen, adding depth to the scene. The castle, with its rich history and cultural significance, is a testament to the architectural prowess of the past.",
+        "clipscore": 21.518801152706146,
+        "ku_score": 0.5,
+        "time": 2.3115761280059814
+      },
+      {
+        "landmark": "Pyramids_of_Giza",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Pyramids_of_Giza/Pyramids_of_Giza_162997809.jpg",
+        "caption": "The image captures the iconic Great Pyramids of Giza, a significant landmark in Egypt. The pyramids, constructed from large blocks of stone, stand majestically against the backdrop of a clear blue sky. The pyramids are adorned with vibrant banners and blankets, adding a splash of color to the otherwise monochrome structure.\n\nIn the foreground, a group of people can be seen, their figures dwarfed by the towering pyramids. They appear to be tourists, exploring the site and taking in the historical significance of the landmark. The perspective of the image is from a low angle, emphasizing the grandeur of the pyramids and making them appear even more imposing.\n\nThe image also captures the essence of Egyptian culture, with camels and horses adding to the authenticity of the scene. The camels, with their distinctive hum",
+        "clipscore": 25.06503462791443,
+        "ku_score": 0.2,
+        "time": 3.049154281616211
+      },
+      {
+        "landmark": "Pyramids_of_Giza",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Pyramids_of_Giza/Pyramids_of_Giza_181641388.jpg",
+        "caption": "The image captures the grandeur of the Great Pyramids of Giza, one of the most iconic landmarks in Egypt. The pyramids, constructed from large stone blocks, rise majestically against the backdrop of the clear blue sky. The perspective of the photo is from a low angle, looking up towards the pyramids, emphasizing their impressive height and architectural prowess.\n\nThe pyramids are not just a testament to ancient engineering but also hold significant cultural and historical importance. They were built as tombs for the pharaohs of the Old Kingdom of Egypt, with the Great Pyramids being the largest and most well-preserved. The pyramids have withstood the test of time, standing as a symbol of Egypt's rich history and a testament to the ingenuity of its ancient civilization.\n\nThe image also captures a group of people, possibly tourists, walking around the",
+        "clipscore": 26.02773904800415,
+        "ku_score": 0.2,
+        "time": 3.1470136642456055
+      },
+      {
+        "landmark": "Pyramids_of_Giza",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Pyramids_of_Giza/Pyramids_of_Giza_53238520.jpg",
+        "caption": "The image captures the majestic Great Pyramid of Giza, a renowned landmark located in Egypt. The pyramid, constructed from large blocks of stone, stands tall against the backdrop of a clear blue sky. Its triangular shape is a testament to the architectural prowess of the ancient Egyptians. The pyramid's shadow is cast on the ground, adding depth to the scene. In the foreground, the cityscape of modern Cairo unfolds, with buildings and trees dotting the landscape. The juxtaposition of the ancient monument with the contemporary cityscape creates a striking contrast, highlighting the enduring legacy of the pyramid in the heart of a bustling modern city.",
+        "clipscore": 22.93444573879242,
+        "ku_score": 0.4,
+        "time": 2.55181622505188
+      },
+      {
+        "landmark": "Santorini",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Santorini/Santorini_148153192.jpg",
+        "caption": "The image captures the historic and picturesque village of Oia, Santorini, Greece. The village is nestled on the edge of a cliff, offering breathtaking views of the Aegean Sea. The architecture of the village is characterized by white-washed houses with blue doors and windows, a testament to the traditional Cycladic style.\n\nIn the foreground, a white donkey stands on a cobblestone street, adding a touch of rustic charm to the scene. The donkey is adorned with a saddle, suggesting it might be used for transportation or tourism purposes.\n\nThe village is surrounded by a rocky landscape, with a few trees scattered around, providing a stark contrast to the white buildings. The sky above is a clear blue, indicating a sunny day.\n\nThe image is taken from a high vantage point, looking down on the village, which gives a comprehensive view",
+        "clipscore": 28.956633806228638,
+        "ku_score": 0.6666666666666666,
+        "time": 3.2825682163238525
+      },
+      {
+        "landmark": "Santorini",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Santorini/Santorini_76411465.jpg",
+        "caption": "The image captures the breathtaking view of the Meteora Rock Monasteries in central Greece. The perspective is from a high vantage point, looking down upon the rocky cliffs that house the monasteries. The cliffs, composed of large, jagged rocks, rise dramatically from the surrounding landscape, creating a stark contrast with the lush greenery of the trees in the foreground. The monasteries, perched precariously on the edges of the cliffs, are a testament to the resilience and faith of the monks who have called these inhospitable rocks home for centuries. The image is a stunning representation of the natural beauty and historical significance of this world-renowned landmark.",
+        "clipscore": 14.079482853412628,
+        "ku_score": 0.3333333333333333,
+        "time": 2.670905590057373
+      },
+      {
+        "landmark": "Santorini",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Santorini/Santorini_76411466.jpg",
+        "caption": "The image captures the breathtaking view of the Cape Greco Peninsula in Cyprus. The peninsula, a natural landmark, is characterized by its rugged cliffs and rocky coastline. The cliffs, a mix of brown and green hues, are adorned with patches of green vegetation, adding a touch of life to the otherwise stark landscape.\n\nThe peninsula is situated on the eastern coast of Cyprus, with the Mediterranean Sea forming its natural boundary. The sea, a deep blue, is dotted with small boats, hinting at the local fishing industry.\n\nThe perspective of the image is from a high vantage point, providing a panoramic view of the peninsula. This viewpoint allows for a comprehensive appreciation of the peninsula's unique geological features and its proximity to the sea.\n\nIn terms of historical and cultural",
+        "clipscore": 14.499856531620026,
+        "ku_score": 0.0,
+        "time": 3.2327847480773926
+      },
+      {
+        "landmark": "Sigiriya",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Sigiriya/Sigiriya_123061772.jpg",
+        "caption": "The image depicts a pair of figures that appear to be from an Indian temple, specifically from the Khajuraho Group of Monuments in Madhya Pradesh, India. The figures are painted in a traditional Indian style, with vibrant colors and intricate details.\n\nThe figure on the left is adorned with a crown and is holding a lotus flower, a symbol often associated with knowledge and enlightenment in Indian art. The figure on the right is also wearing a crown and is holding a lotus flower, but in this case, the flower is being offered to the viewer.\n\nThe figures are depicted in a dynamic pose, with one figure appearing to be in a dance-like stance and the other in a more serene posture. The background is a warm orange color, which is typical of the temple's architecture.\n\nThe Khajuraho Group of Monuments is a group of Hindu",
+        "clipscore": 25.55902600288391,
+        "ku_score": 0.0,
+        "time": 3.1506006717681885
+      },
+      {
+        "landmark": "Sigiriya",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Sigiriya/Sigiriya_164885444.jpg",
+        "caption": "The image captures the breathtaking view of the Tiwanaku ruins in Bolivia. From a high vantage point, the viewer's gaze is drawn downwards to the ancient stone structures that have withstood the test of time. The ruins, a testament to the architectural prowess of the Tiwanaku civilization, are nestled amidst a lush expanse of greenery, with trees and bushes dotting the landscape. The perspective of the image offers a unique view of the ruins, allowing one to appreciate their scale and the intricate details of their design. The Tiwanaku ruins, a UNESCO World Heritage Site, are a significant landmark in Bolivia, reflecting the rich cultural heritage of the region.",
+        "clipscore": 14.54651951789856,
+        "ku_score": 0.25,
+        "time": 2.7647266387939453
+      },
+      {
+        "landmark": "Sigiriya",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Sigiriya/Sigiriya_90217714.jpg",
+        "caption": "The image captures a breathtaking view of the Sacred Valley of the Incas, a UNESCO World Heritage Site located in Peru. The perspective is from a high vantage point, offering a panoramic view of the valley below. The Sacred Valley is a fertile plain nestled between the towering Andes Mountains, which are shrouded in a blanket of clouds. The mountains rise majestically in the background, their peaks obscured by the dense fog that permeates the valley.\n\nThe valley itself is a lush expanse of green, dotted with small settlements and terraced fields. The Incan ruins of Machu Picchu, the \"Lost City of the Incas,\" are visible in the distance, adding a touch of historical significance to the scene. The image is a testament to the rich cultural heritage of the Incas and the stunning natural beauty of the Andes",
+        "clipscore": 6.549838185310364,
+        "ku_score": 0.25,
+        "time": 3.062448740005493
+      },
+      {
+        "landmark": "Stonehenge",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Stonehenge/Stonehenge_122191741.jpg",
+        "caption": "The image captures a lively scene at Stonehenge, a prehistoric monument located in Wiltshire, England. The monument, a circular arrangement of standing stones, is the focal point of the image. The stones, weathered by time, stand tall against the backdrop of a clear blue sky dotted with fluffy white clouds.\n\nThe perspective of the photo is from a distance, allowing for a comprehensive view of the monument and the people gathered around it. The people, dressed in casual attire, are scattered across the grassy field in front of the monument, some standing closer to the stones while others are further away.\n\nThe image is taken from a low angle, which emphasizes the monument's grandeur and the scale of the stones. The colors in the image are vibrant, with the green of the grass contrasting against the gray of the stones and the blue of the sky.\n\nIn terms of historical",
+        "clipscore": 23.337964713573456,
+        "ku_score": 0.2,
+        "time": 3.1597344875335693
+      },
+      {
+        "landmark": "Stonehenge",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Stonehenge/Stonehenge_129928963.jpg",
+        "caption": "The image captures the iconic Stonehenge, a prehistoric monument located in Wiltshire, England. The monument is composed of a ring of standing stones, each varying in size, with the tallest standing at 13 feet. The stones are arranged in a circular pattern, with the largest stones at the center. The perspective of the photo is from a low angle, looking up at the monument, which emphasizes its grandeur and the sense of awe it inspires. The black and white color scheme adds a timeless quality to the image, highlighting the enduring significance of this landmark. The image also showcases the shadows cast by the stones, adding depth and texture to the scene. The historical and cultural context of Stonehenge is rich and complex, with theories about its purpose and significance ranging from a temple for the worship of the sun to a burial ground for the ancient inhabitants of the region. The monument has been a source of",
+        "clipscore": 23.902754485607147,
+        "ku_score": 0.2,
+        "time": 3.235262632369995
+      },
+      {
+        "landmark": "Stonehenge",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Stonehenge/Stonehenge_129928971.jpg",
+        "caption": "The image captures the iconic Stonehenge, a prehistoric monument located in Wiltshire, England. The monument, composed of large stones, stands as a testament to the architectural prowess of the Neolithic people who built it. The perspective of the photo is from a low angle, looking up at the towering stones, emphasizing their grandeur and the mystery that surrounds their purpose. The black and white color scheme adds a timeless quality to the scene, transporting the viewer back to the era when these stones were first erected. The image also includes a person in the foreground, providing a sense of scale and human presence in the vast landscape of the monument. Stonehenge, with its unique design and historical significance, continues to be a symbol of human achievement and the passage of time.",
+        "clipscore": 23.65041971206665,
+        "ku_score": 0.2,
+        "time": 2.8772146701812744
+      },
+      {
+        "landmark": "Sydney_Opera_House",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Sydney_Opera_House/Sydney_Opera_House_127477118.jpg",
+        "caption": "The image captures the iconic Sydney Opera House, a renowned landmark in Australia. The Opera House, a marvel of modern architecture, is composed of a series of white, sail-like structures that curve gracefully along the waterfront. The photograph is taken from a distance, allowing for a comprehensive view of the entire structure. The sky above is a clear blue, providing a striking contrast to the white of the Opera House. The water in the foreground adds a serene element to the scene. The Opera House, with its unique design, stands as a testament to the blend of modern and traditional architecture in Sydney.",
+        "clipscore": 21.152488887310028,
+        "ku_score": 0.4,
+        "time": 2.1899826526641846
+      },
+      {
+        "landmark": "Sydney_Opera_House",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Sydney_Opera_House/Sydney_Opera_House_163273894.jpg",
+        "caption": "The image captures the iconic Sydney Opera House, a renowned landmark in Sydney, Australia. The Opera House is a modernist architectural marvel, characterized by its distinctive white sail-like roofs that resemble the sails of a ship. The photograph is taken from a distance, providing a panoramic view of the Opera House and the surrounding area. The Opera House is nestled on the edge of a harbor, with a bridge arching over it, adding to the picturesque scene. The sky overhead is filled with clouds, suggesting a partly cloudy day. The Opera House, with its unique design, stands as a testament to the city's modern architectural prowess and its commitment to the arts.",
+        "clipscore": 23.094677925109863,
+        "ku_score": 0.4,
+        "time": 2.6170787811279297
+      },
+      {
+        "landmark": "Sydney_Opera_House",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Sydney_Opera_House/Sydney_Opera_House_164339273.jpg",
+        "caption": "The image captures the iconic Sydney Opera House, a renowned landmark in Sydney, Australia. The Opera House is a modernist architectural marvel, characterized by its distinctive white sail-like roofs that are composed of precast concrete panels. The building is situated on a peninsula that juts out into the harbor, providing a stunning view of the surrounding water. The Opera House is a symbol of Australia's modern architectural prowess and has become a cultural and tourist attraction, hosting numerous performances and events each year. The image is taken from a distance, allowing for a comprehensive view of the entire structure, set against the backdrop of the clear blue sky and the calm waters of the harbor. The perspective emphasizes the Opera House's unique design and its harmonious integration with the natural landscape.",
+        "clipscore": 23.658664524555206,
+        "ku_score": 0.4,
+        "time": 2.8333206176757812
+      },
+      {
+        "landmark": "Taj_Mahal",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Taj_Mahal/Taj_Mahal_73871228.jpg",
+        "caption": "The image captures the majestic Red Fort in Delhi, India, a significant landmark known for its historical and cultural importance. The fort, a large rectangular structure, is constructed from red sandstone, giving it a distinctive and imposing appearance. The fort's layout is characterized by a series of concentric circles, with the main entrance at the center, leading to multiple palaces and administrative buildings.\n\nThe fort is surrounded by a large, well-maintained lawn, which is dotted with trees and shrubs, adding a touch of greenery to the otherwise red and brown landscape. The sky above is a clear blue, with a few clouds scattered across it, suggesting a pleasant day.\n\nThe fort's historical and cultural context is significant. It was built by the Mughal Emperor Shah Jahan in the 17th century and served as the capital of the Mughal Empire until the British East India Company took control",
+        "clipscore": 23.74912053346634,
+        "ku_score": 0.2,
+        "time": 3.2312567234039307
+      },
+      {
+        "landmark": "Taj_Mahal",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Taj_Mahal/Taj_Mahal_73871231.jpg",
+        "caption": "The image depicts the Red Fort in Delhi, India. The fort, a significant landmark in the country, is a large, rectangular fortification constructed by the Mughal Emperor Shah Jahan in the 17th century. The fort is known for its red sandstone walls and its strategic location on the banks of the Yamuna River. The fort is surrounded by a moat and is encircled by a wide, deep, and wide river. The fort is a UNESCO World Heritage Site and is a symbol of India's rich history and cultural heritage. The fort is a popular tourist destination and is a testament to the architectural prowess of the Mughal Empire. The image captures the grandeur of the fort, showcasing its imposing red sandstone walls and the vast expanse of the moat and river that surrounds it.",
+        "clipscore": 23.609746992588043,
+        "ku_score": 0.4,
+        "time": 3.062514066696167
+      },
+      {
+        "landmark": "Taj_Mahal",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Taj_Mahal/Taj_Mahal_73872026.jpg",
+        "caption": "The image captures the majestic Red Fort in Delhi, India, a significant landmark known for its rich history and architectural grandeur. The fort, constructed from red sandstone, stands tall against the backdrop of a cloudy sky. The fort's large, ornate gate, known as the Lahori Gate, is prominently featured in the foreground. This gate is a testament to the fort's Mughal architecture, characterized by its intricate carvings and detailed designs.\n\nThe fort's layout is clearly visible, with multiple buildings and structures scattered throughout the complex. These structures, some of which are still in use today, provide a glimpse into the fort's past as a bustling center of administration and power.\n\nIn the foreground, a group of people can be seen, adding a sense of scale to the image. Their presence also highlights the fort's continued relevance in",
+        "clipscore": 16.77383780479431,
+        "ku_score": 0.2,
+        "time": 3.294450521469116
+      },
+      {
+        "landmark": "Temple_of_Heaven",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Temple_of_Heaven/Temple_of_Heaven_35884807.jpg",
+        "caption": "The image captures the majestic Temple of Heaven, a renowned landmark located in Beijing, China. The temple, a testament to China's rich history and architectural prowess, is constructed from white stone, giving it a timeless and serene appearance. The temple's distinctive roof, curved and adorned with blue tiles, adds a touch of color to the otherwise monochrome structure.\n\nThe temple is nestled amidst lush green trees, creating a harmonious blend of nature and architecture. The perspective of the photo is from a low angle, which enhances the grandeur of the temple and allows the viewer to appreciate its scale and intricate details.\n\nThe sky above is a clear blue, dotted with fluffy white clouds, providing a beautiful backdrop to the temple. The image beautifully encapsulates the essence of this worldwide landmark, offering a g",
+        "clipscore": 19.806036353111267,
+        "ku_score": 0.2,
+        "time": 3.156428337097168
+      },
+      {
+        "landmark": "Temple_of_Heaven",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Temple_of_Heaven/Temple_of_Heaven_53938323.jpg",
+        "caption": "The image captures the majestic Temple of Heaven, a renowned landmark located in Beijing, China. The temple, a large and imposing structure, is characterized by its distinctive blue roof and white walls. The temple's architectural style is reminiscent of traditional Chinese design, with its multiple eaves and ornate decorations.\n\nThe temple is nestled amidst lush greenery, with trees and shrubs surrounding it, adding a touch of nature to the man-made marvel. The perspective of the photo is from a high vantage point, providing a panoramic view of the temple and its surroundings.\n\nThe temple is not just a historical and cultural landmark, but also a place of worship and celebration. It has been a venue for various ceremonies and rituals throughout Chinese history, including the annual Imperial Sacrificial Rites.\n\nIn the foreground of the",
+        "clipscore": 19.194629788398743,
+        "ku_score": 0.2,
+        "time": 3.1561920642852783
+      },
+      {
+        "landmark": "Temple_of_Heaven",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Temple_of_Heaven/Temple_of_Heaven_53938357.jpg",
+        "caption": "The image captures the majestic Temple of Heaven, a renowned landmark in Beijing, China. The temple, a large, rectangular structure, is constructed from red bricks and features a distinctive blue roof. The temple's architectural style is reminiscent of traditional Chinese design, with intricate details and a harmonious blend of colors.\n\nThe temple is nestled amidst lush green trees, creating a serene and tranquil atmosphere. A stone walkway, lined with trees, leads up to the temple, inviting visitors to explore its grandeur. The perspective of the photo is from the ground, looking up towards the temple, emphasizing its imposing size and architectural beauty.\n\nThe Temple of Heaven is a significant historical and cultural landmark in China, as it was the site where the Emperors of the Ming and Qing dynasties would come to offer sacrifices to the gods.",
+        "clipscore": 20.599612593650818,
+        "ku_score": 0.2,
+        "time": 3.153607130050659
+      },
+      {
+        "landmark": "Terracotta_Army",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Terracotta_Army/Terracotta_Army_139438144.jpg",
+        "caption": "The image depicts a bustling scene at the entrance of the Temple of Heaven, a renowned landmark in Beijing, China. The temple, a large, imposing structure with a gray roof and a prominent golden eave, stands as a testament to the architectural prowess of the Ming Dynasty (1368-1644). The temple's intricate design and the golden characters on the roof are indicative of the rich cultural heritage of China.\n\nThe entrance is teeming with people, all dressed in casual attire, suggesting a day of leisure or tourism. The crowd is diverse, with individuals of various ages and genders, all seemingly engrossed in the grandeur of the temple.\n\nThe sky above is a clear blue, providing a stark contrast to the gray of the temple and the green of the trees in the background. The trees, along with",
+        "clipscore": 19.433653354644775,
+        "ku_score": 0.25,
+        "time": 3.2369813919067383
+      },
+      {
+        "landmark": "Terracotta_Army",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Terracotta_Army/Terracotta_Army_139467554.jpg",
+        "caption": "The image depicts a scene of two large, rectangular stone plaques with Chinese characters inscribed on them. The plaques are situated on a dirt ground, with a concrete curb visible in the foreground. The characters on the plaques are in a traditional Chinese script, which is known as \"seal script\" or \"clerical script.\" This script was widely used in East Asia for official documents and calligraphy from the Han Dynasty (206 BCE - 220 CE) until the Ming Dynasty (1368-1644).\n\nThe plaques are positioned in such a way that they appear to be leaning against each other, with the one on the left slightly ahead of the one on the right. The characters are clearly legible and appear to be in good condition, suggesting that the plaques are well-maintained.\n\nWithout additional context, it is",
+        "clipscore": 29.8494815826416,
+        "ku_score": 0.0,
+        "time": 3.232753038406372
+      },
+      {
+        "landmark": "Terracotta_Army",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Terracotta_Army/Terracotta_Army_48964648.jpg",
+        "caption": "The image captures the grandeur of the Imperial Citadel in Hue, Vietnam. The citadel, a UNESCO World Heritage Site, stands majestically against the backdrop of a cloudy sky. The citadel is a complex of buildings and structures that were once the residence of the Vietnamese Emperors. The photo is taken from a high vantage point, providing a panoramic view of the citadel and its surroundings. The citadel is surrounded by lush greenery, with trees and bushes dotting the landscape. The architecture of the citadel is a blend of traditional Vietnamese and Chinese styles, reflecting the cultural influences of the time. The image is a testament to the rich history and cultural heritage of Vietnam.",
+        "clipscore": 20.013223588466644,
+        "ku_score": 0.25,
+        "time": 2.5868282318115234
+      },
+      {
+        "landmark": "Times_Square",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Times_Square/Times_Square_177382062.jpg",
+        "caption": "The image captures a vibrant scene from a parade in New York City. The focal point is a man standing in the foreground, holding a large blue and white sign with Chinese characters. He is wearing a black cap and a black jacket, and he appears to be participating in the parade.\n\nThe background is bustling with activity typical of a city street during a parade. There are several other people, some of whom are also holding signs, suggesting a theme or message they are conveying. The street is lined with towering buildings, including the Chase Manhattan Building, a prominent landmark in New York City.\n\nThe Chase Manhattan Building, now known as JPMorgan Chase & Co., is a historic skyscraper located at 1 Chase Manhattan Plaza at the corner of Broadway and Liberty Street in the Financial District of Manhattan. It was completed in",
+        "clipscore": 20.994985103607178,
+        "ku_score": 0.0,
+        "time": 3.2476589679718018
+      },
+      {
+        "landmark": "Times_Square",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Times_Square/Times_Square_31882761.jpg",
+        "caption": "The image captures the bustling heart of New York City, specifically Times Square, a renowned landmark known for its vibrant energy and the iconic billboards that line its streets. The perspective of the photo is from the street level, looking up towards the towering skyscrapers that dominate the skyline. The billboards, a testament to the city's advertising culture, are a riot of colors and images, reflecting the diverse interests of the city's inhabitants.\n\nThe street itself is a hive of activity, with people going about their day, adding a dynamic element to the scene. The buildings, a mix of modern and traditional architecture, tower over the street, their glass and steel facades reflecting the city's constant evolution.\n\nIn the background, the One Times Square building stands out with its distinctive red and white striped facade. This building, completed in 1904",
+        "clipscore": 23.8314688205719,
+        "ku_score": 0.3333333333333333,
+        "time": 3.1552011966705322
+      },
+      {
+        "landmark": "Times_Square",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Times_Square/Times_Square_71288966.jpg",
+        "caption": "The image captures a lively scene from a parade in New York City. The focal point of the image is a statue of the Statue of Liberty, a symbol of freedom and democracy. The statue is adorned with a peace sign, a universal symbol of peace and goodwill. \n\nIn the foreground, a group of people are seen celebrating the occasion. One individual stands out, donning a Statue of Liberty costume and holding a peace sign. This person is surrounded by other parade-goers, all of whom are also holding peace signs, adding to the festive atmosphere.\n\nThe backdrop of the image is a bustling city street, lined with buildings and illuminated by the bright lights of the parade. The presence of the Statue of Liberty and the peace signs suggest a celebration of peace and unity, a common theme in parades. The image encapsulates the",
+        "clipscore": 28.67526113986969,
+        "ku_score": 0.0,
+        "time": 3.1550841331481934
+      },
+      {
+        "landmark": "Tower_of_London",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Tower_of_London/Tower_of_London_146412029.jpg",
+        "caption": "The image captures a moment of military discipline and tradition, featuring a group of soldiers in ceremonial uniforms standing in a neat row on a grassy field. The soldiers are adorned in black jackets with red piping and white hats, a uniform that is often associated with ceremonial or formal occasions. The uniforms are meticulously maintained, reflecting the high standards of the military.\n\nThe soldiers are positioned in front of a grand building, which is a prime example of the Gothic Revival architectural style. This style was popular in the 19th century and is characterized by pointed arches, ribbed vaults, and intricate detailing. The building's facade is white, with black accents adding to its grandeur.\n\nThe location of the building and the soldiers suggests that this could be a significant military installation or a site of historical importance. The presence of the soldiers in their ceremon",
+        "clipscore": 24.73524510860443,
+        "ku_score": 0.0,
+        "time": 3.0630385875701904
+      },
+      {
+        "landmark": "Tower_of_London",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Tower_of_London/Tower_of_London_157781040.jpg",
+        "caption": "The image captures the majestic Kensington Palace, a significant landmark in London, England. The palace, constructed from light-colored stone, stands tall against the backdrop of a clear sky. Its architectural style is reminiscent of the 17th century, with multiple towers and spires reaching towards the heavens. The palace is nestled amidst lush green trees, adding a touch of nature to the urban landscape. In the foreground, the calm waters of the River Thames flow gently, reflecting the grandeur of the palace. The perspective of the photo is from the riverbank, offering a unique view of the palace and its surroundings. The image beautifully encapsulates the historical and cultural richness of London.",
+        "clipscore": 13.590475916862488,
+        "ku_score": 0.0,
+        "time": 2.663461685180664
+      },
+      {
+        "landmark": "Tower_of_London",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Tower_of_London/Tower_of_London_2047659.jpg",
+        "caption": "The image captures the majestic Windsor Castle, a renowned landmark located in Windsor, England. The castle, constructed from gray stone, stands tall against the backdrop of a clear blue sky. Its most striking feature is a towering stone keep, complete with battlements and a crenellated roof, a testament to the medieval architecture that once dominated the landscape.\n\nThe castle is encircled by a black wrought iron fence, adding a touch of elegance to the otherwise imposing structure. A blue lamp post stands sentinel on the right side of the image, its vibrant color contrasting with the gray stone of the castle.\n\nThe image is taken from a low angle, which enhances the castle's grandeur and makes it appear even more formidable. The perspective also allows for a clear view of the castle's intricate details, from the crenellations on the roof",
+        "clipscore": 21.67370915412903,
+        "ku_score": 0.0,
+        "time": 3.1730217933654785
+      },
+      {
+        "landmark": "Uluru",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Uluru/Uluru_128130419.jpg",
+        "caption": "The image captures the majestic Uluru, a renowned landmark in the Northern Territory of Australia. The rock formation, a significant cultural and spiritual site for the Indigenous Anangu people, stands tall against the backdrop of a clear blue sky. The perspective of the photo is from a distance, allowing for a full view of the rock's distinctive red hue. The surrounding landscape is a mix of dry grass and shrubs, indicative of the arid environment of the region. In the foreground, a group of people can be seen, likely tourists visiting the site, adding a sense of scale to the image. The image is a testament to the natural beauty and cultural significance of Uluru.",
+        "clipscore": 26.2248694896698,
+        "ku_score": 0.5,
+        "time": 2.4703638553619385
+      },
+      {
+        "landmark": "Uluru",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Uluru/Uluru_129973202.jpg",
+        "caption": "The image captures the majestic Uluru, a renowned landmark in the Northern Territory of Australia. The rock formation, a significant cultural and historical site, stands tall against the backdrop of a clear blue sky. The perspective of the photo is from a distance, allowing the viewer to appreciate the full grandeur of the rock. The rock itself is a rich red color, contrasting with the surrounding landscape of dry, arid grasslands. The person in the foreground, appearing small in comparison to the massive rock, adds a sense of scale to the image. The rock formation is surrounded by a scattering of trees and bushes, adding a touch of green to the otherwise barren landscape. The image beautifully encapsulates the stark beauty of Uluru and its significance in Australian culture and history.",
+        "clipscore": 26.867079734802246,
+        "ku_score": 0.5,
+        "time": 2.7923765182495117
+      },
+      {
+        "landmark": "Uluru",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Uluru/Uluru_48838506.jpg",
+        "caption": "The image captures the majestic Uluru, a renowned landmark in the Northern Territory of Australia. This massive sandstone formation stands as a testament to the geological history of the region, with its rich red-brown hues contrasting beautifully against the clear blue sky. The perspective of the photo is from a distance, allowing for a full view of the formation and its surroundings. The rock formation is adorned with intricate patterns and markings, a result of the erosion of the rock over time. The surrounding landscape is a mix of sparse vegetation and rocky terrain, adding to the rugged beauty of the scene. The image is a vivid portrayal of this iconic landmark, showcasing its natural beauty and cultural significance.",
+        "clipscore": 24.497607350349426,
+        "ku_score": 0.5,
+        "time": 2.733879327774048
+      },
+      {
+        "landmark": "Victoria_Falls",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Victoria_Falls/Victoria_Falls_105361205.jpg",
+        "caption": "The image captures the breathtaking view of the Iguazu Falls, a natural wonder straddling the border of Argentina and Brazil. The falls are a series of cascading waterfalls and rapids that drop from the Iguazu River into the Devil's Throat, a large natural depression. The perspective of the photo is from the Argentine side, offering a panoramic view of the falls. The water appears to be in motion, with white foam and rapids visible, indicating the powerful force of the falls. The surrounding landscape is lush with greenery, including trees and bushes, adding to the natural beauty of the scene. The image is a testament to the raw and untouched beauty of this landmark, which has been a source of inspiration for many artists and writers throughout history.",
+        "clipscore": 20.478154718875885,
+        "ku_score": 0.0,
+        "time": 2.850409746170044
+      },
+      {
+        "landmark": "Victoria_Falls",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Victoria_Falls/Victoria_Falls_106690779.jpg",
+        "caption": "The image captures the majestic Angel Falls, the world's highest uninterrupted waterfall, located in the heart of Venezuela. The waterfall is seen cascading down a cliff face, its white water contrasting with the surrounding greenery. A rainbow, a result of the sunlight refracting through the waterfall's mist, adds a touch of magic to the scene. The perspective of the photo is from a distance, allowing for a full view of the waterfall and its surroundings. The image is a testament to the natural beauty of Angel Falls and the awe-inspiring power of nature.",
+        "clipscore": 16.7380154132843,
+        "ku_score": 0.0,
+        "time": 2.324388265609741
+      },
+      {
+        "landmark": "Victoria_Falls",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Victoria_Falls/Victoria_Falls_87179823.jpg",
+        "caption": "The image captures a serene sunset over a body of water, possibly a lake or a river. The sun is low in the sky, casting a warm glow over the water and the surrounding landscape. The sky is a beautiful canvas of orange and yellow hues, with a few clouds scattered across it, adding depth to the scene.\n\nIn the foreground, there is a boat with a cabin, which is a common sight in many lakeside or riverside locations. The boat is not in motion, suggesting it might be docked or anchored.\n\nThe landmark in the image is a lighthouse, standing tall on the far shore of the water. Lighthouses have been historically used as navigational aids for maritime pilots at sea or on inland waterways. They are typically built on prominent landmarks, such as cliffs or islands, to guide ships and prevent them from running aground or colliding with other vessels",
+        "clipscore": 21.668773889541626,
+        "ku_score": 0.0,
+        "time": 3.540811538696289
+      },
+      {
+        "landmark": "Zhangjiajie",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Zhangjiajie/Zhangjiajie_138506274.jpg",
+        "caption": "The image captures the majestic Huangshan, a renowned landmark in China. This UNESCO World Heritage Site is known for its unique granite pillars that rise dramatically from the surrounding landscape. The perspective of the image is from a high vantage point, providing a panoramic view of the mountain range. The vegetation is lush and green, with trees and shrubs dotting the landscape, adding a sense of tranquility to the scene. The sky above is a clear blue, providing a beautiful contrast to the verdant greenery below. The image is a testament to the natural beauty and geological diversity of China.",
+        "clipscore": 24.341806769371033,
+        "ku_score": 0.25,
+        "time": 2.337151527404785
+      },
+      {
+        "landmark": "Zhangjiajie",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Zhangjiajie/Zhangjiajie_138506278.jpg",
+        "caption": "The image captures the breathtaking view of the Guilin-Li River Cruise in China. From a high vantage point, the viewer's gaze is drawn upwards, following the contours of the landscape. The river, a serene blue, meanders through the scene, its path marked by the towering limestone cliffs that rise majestically on either side. These cliffs, a testament to the geological history of the region, are adorned with lush greenery, adding a touch of life to the otherwise stark landscape. The sky above is a clear blue, dotted with a few wispy clouds, completing the picturesque scene. The image is a beautiful representation of the natural beauty of China's Guilin-Li River Cruise, a renowned landmark known for its stunning scenery and cultural significance.",
+        "clipscore": 20.981867611408234,
+        "ku_score": 0.0,
+        "time": 2.9892892837524414
+      },
+      {
+        "landmark": "Zhangjiajie",
+        "image_path": "/home/chuphamdinhtu/DAM-RAG/data/tests/Zhangjiajie/Zhangjiajie_157856458.jpg",
+        "caption": "The image captures the majestic Lion Rock, a renowned landmark located in the Guilin-Li River Gorge region of China. The rock, which is the central focus of the image, is a towering structure that stands out against the backdrop of the surrounding landscape. The rock's surface is adorned with a variety of plants and trees, adding a touch of greenery to the otherwise rugged terrain.\n\nThe rock is situated in a valley, with a river flowing through it, providing a serene and picturesque setting. The perspective of the image is from a distance, allowing for a comprehensive view of the rock and its surroundings. The sky above is overcast, casting a soft light over the scene and enhancing the overall mood of the image.\n\nThe Lion Rock is a significant landmark in China, known for its unique geological formations and its cultural significance. It is believed to have been formed",
+        "clipscore": 22.14055061340332,
+        "ku_score": 0.0,
+        "time": 3.250593900680542
+      }
+    ]
+  }
+}

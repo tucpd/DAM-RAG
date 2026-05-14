@@ -125,9 +125,9 @@ def collect_all_images(
                     'image_path': str(img_file),
                 }
                 # Gop thong tin tu landmark_info
-                for key in ['location', 'country', 'year_built', 'architect', 
-                            'style', 'height', 'unesco_status', 'visitors_per_year',
-                            'significance', 'description', 'coordinates']:
+                for key in ['location', 'country', 'category', 'year_built', 'architect',
+                            'style', 'height', 'area', 'geological_age', 'unesco_status',
+                            'visitors_per_year', 'significance', 'description', 'coordinates']:
                     if key in landmark_info and landmark_info[key]:
                         img_metadata[key] = landmark_info[key]
             

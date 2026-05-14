@@ -167,7 +167,6 @@ class VectorRetriever:
         print(f"Đã load index: {retriever.index.ntotal} vectors")
         return retriever
 
-
 def main():
     """
     Test retriever

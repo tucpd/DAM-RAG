@@ -201,16 +201,24 @@ class DAMInference:
             else:
                 knowledge_text += f"{i}. {name}\n"
             
+            # Apply category-aware filter: drop year_built for natural landmarks
+            item_filtered = item.copy()
+            if item_filtered.get("category") == "natural":
+                item_filtered.pop("year_built", None)
+
             # Details
-            if 'description' in item and item['description']:
-                desc = item['description'][:300]  # Giới hạn độ dài
+            if 'description' in item_filtered and item_filtered['description']:
+                desc = item_filtered['description'][:300]  # Giới hạn độ dài
                 knowledge_text += f"   - {desc}\n"
             
-            if 'year_built' in item and item['year_built']:
-                knowledge_text += f"   - Built: {item['year_built']}\n"
+            if 'year_built' in item_filtered and item_filtered['year_built']:
+                knowledge_text += f"   - Built: {item_filtered['year_built']}\n"
+                
+            if 'geological_age' in item_filtered and item_filtered['geological_age']:
+                knowledge_text += f"   - Geological age: {item_filtered['geological_age']}\n"
             
-            if 'style' in item and item['style']:
-                knowledge_text += f"   - Architectural style: {item['style']}\n"
+            if 'style' in item_filtered and item_filtered['style']:
+                knowledge_text += f"   - Architectural style: {item_filtered['style']}\n"
             
             knowledge_text += "\n"
         
@@ -238,6 +246,7 @@ Write a detailed, engaging travel caption (80-200 words) that:
 - Incorporates relevant historical and cultural context from the landmark information above
 - Provides helpful insights for travelers
 - Uses a professional yet inviting tone
+- IMPORTANT: For natural landmarks (bays, mountains, forests, etc.), NEVER state a construction or founding year. Describe their geological or ecological characteristics instead.
 
 Travel Caption:"""
         
@@ -257,7 +266,8 @@ Caption:"""
 Landmark information:
 {knowledge_text}
 
-Write a travel caption (80-200 words) describing the image and incorporating the landmark context.
+Write a travel caption (80-200 words) describing the image and incorporating the landmark context. 
+IMPORTANT: For natural landmarks, NEVER state a construction year. Describe geology or ecology instead.
 
 Caption:"""
         

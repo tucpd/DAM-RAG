@@ -136,20 +136,21 @@ def compute_clipscore(embedder, image, caption_text):
     Returns:
         float: CLIPScore
     """
-    # Embed image
-    img_inputs = embedder.processor(
-        images=image, return_tensors="pt"
-    ).to(embedder.device)
-    img_features = embedder.model.get_image_features(**img_inputs)
-    img_features = F.normalize(img_features, p=2, dim=-1)
+    with torch.no_grad():
+        # Embed image
+        img_inputs = embedder.processor(
+            images=image, return_tensors="pt"
+        ).to(embedder.device)
+        img_features = embedder.model.get_image_features(**img_inputs)
+        img_features = F.normalize(img_features, p=2, dim=-1)
 
-    # Embed text
-    txt_inputs = embedder.processor(
-        text=caption_text, return_tensors="pt",
-        padding=True, truncation=True, max_length=77
-    ).to(embedder.device)
-    txt_features = embedder.model.get_text_features(**txt_inputs)
-    txt_features = F.normalize(txt_features, p=2, dim=-1)
+        # Embed text
+        txt_inputs = embedder.processor(
+            text=caption_text, return_tensors="pt",
+            padding=True, truncation=True, max_length=77
+        ).to(embedder.device)
+        txt_features = embedder.model.get_text_features(**txt_inputs)
+        txt_features = F.normalize(txt_features, p=2, dim=-1)
 
     # Cosine similarity
     cos_sim = (img_features @ txt_features.T).item()
@@ -280,7 +281,7 @@ def compute_retrieval_accuracy(retriever, embedder, test_images, top_k_list=[1, 
 # Data Collection
 # ============================================================
 
-def collect_test_images(tests_dir="data/tests", metadata_dir="data/metadata"):
+def collect_test_images(tests_dir=None, metadata_dir=None):
     """
     Thu thap danh sach anh test tu thu muc data/tests/
     (da duoc tach truoc boi split_test_data.py)
@@ -288,6 +289,12 @@ def collect_test_images(tests_dir="data/tests", metadata_dir="data/metadata"):
     Returns:
         list of dicts: [{'image_path', 'landmark', 'metadata'}, ...]
     """
+    project_root = Path(__file__).parent.parent
+    if tests_dir is None:
+        tests_dir = project_root / "data" / "tests"
+    if metadata_dir is None:
+        metadata_dir = project_root / "data" / "metadata"
+        
     tests_path = Path(tests_dir)
     metadata_path = Path(metadata_dir)
     test_images = []
@@ -409,12 +416,19 @@ def run_text_query_rag(dam, embedder, retriever, image, mask=None, top_k=3):
 def run_evaluation(
     top_k=3,
     device="cuda",
-    output_file="evaluation/results.json"
+    output_file=None
 ):
     """
     Chay toan bo evaluation pipeline
     Test images duoc doc tu data/tests/ (da tach truoc)
     """
+    project_root = Path(__file__).parent.parent
+    if output_file is None:
+        output_file = project_root / "evaluation" / "results.json"
+    else:
+        output_file = Path(output_file)
+        if not output_file.is_absolute():
+            output_file = project_root / output_file
     print("=" * 70)
     print("DAM-RAG EVALUATION")
     print("=" * 70)
@@ -445,7 +459,8 @@ def run_evaluation(
     embedder = VisualEmbedder(device=device)
 
     print("  Loading FAISS retriever...")
-    retriever = VectorRetriever.load("data/vector_index", use_gpu=False)
+    index_path = project_root / "data" / "vector_index"
+    retriever = VectorRetriever.load(str(index_path), use_gpu=False)
     print(f"  FAISS loaded: {retriever.index.ntotal} vectors")
 
     print(f"  Models loaded in {time() - t0:.1f}s")
@@ -660,12 +675,19 @@ def run_scalability_analysis(
     kb_sizes=[10, 20, 54],
     top_k=3,
     device="cuda",
-    output_file="evaluation/scalability_results.json"
+    output_file=None
 ):
     """
     Phan tich anh huong cua KB size den retrieval accuracy va CLIPScore
     Test voi cac tap con cua knowledge base
     """
+    project_root = Path(__file__).parent.parent
+    if output_file is None:
+        output_file = project_root / "evaluation" / "scalability_results.json"
+    else:
+        output_file = Path(output_file)
+        if not output_file.is_absolute():
+            output_file = project_root / output_file
     print("=" * 70)
     print("SCALABILITY ANALYSIS")
     print("=" * 70)
@@ -675,12 +697,13 @@ def run_scalability_analysis(
     embedder = VisualEmbedder(device=device)
 
     # Lay danh sach tat ca landmarks tu test set
-    tests_path = Path("data/tests")
+    tests_path = project_root / "data" / "tests"
     all_landmarks = sorted([d.name for d in tests_path.iterdir() if d.is_dir()])
     print(f"Total landmarks available: {len(all_landmarks)}")
-
+    
     # Load full retriever
-    full_retriever = VectorRetriever.load("data/vector_index", use_gpu=False)
+    index_path = project_root / "data" / "vector_index"
+    full_retriever = VectorRetriever.load(str(index_path), use_gpu=False)
 
     # Thu thap test images
     all_test_images = collect_test_images()
@@ -790,11 +813,12 @@ if __name__ == "__main__":
             device=args.device,
             output_file="evaluation/scalability_results.json",
         )
-    elif args.mode == "retrieval_only":
         # Chi chay retrieval accuracy
         print("Loading models...")
+        project_root = Path(__file__).parent.parent
         embedder = VisualEmbedder(device=args.device)
-        retriever = VectorRetriever.load("data/vector_index", use_gpu=False)
+        index_path = project_root / "data" / "vector_index"
+        retriever = VectorRetriever.load(str(index_path), use_gpu=False)
         test_images = collect_test_images()
         print(f"Test images: {len(test_images)}")
 

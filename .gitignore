@@ -210,3 +210,6 @@ outputs/
 modules/retrieval/crawler_v1_backup.py
 crawl_extra.py
 agentic.md
+agentic copy.md
+.claude/
+openspec/

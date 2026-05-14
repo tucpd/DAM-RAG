@@ -46,6 +46,26 @@ class LLMSynthesizer:
         self.temperature = temperature
         self.max_tokens = max_tokens
     
+    def _filter_metadata_by_category(self, item: Dict) -> Dict:
+        """
+        Lọc metadata theo category để tránh hallucination.
+
+        - Với landmark tự nhiên (category='natural'): loại bỏ year_built / inception
+          vì kỳ quan thiên nhiên không có năm xây dựng.
+        - Với landmark nhân tạo (category='built'): giữ nguyên.
+
+        Args:
+            item: Metadata dict của một retrieved knowledge entry
+
+        Returns:
+            Bản sao đã được lọc
+        """
+        filtered = item.copy()
+        if filtered.get("category") == "natural":
+            filtered.pop("year_built", None)
+            filtered.pop("inception", None)
+        return filtered
+
     def _build_prompt(
         self,
         dam_caption: str,
@@ -54,7 +74,7 @@ class LLMSynthesizer:
     ) -> str:
         """
         Xây dựng prompt cho LLM
-        
+
         Args:
             dam_caption: Caption từ DAM (mô tả hình ảnh chi tiết)
             retrieved_knowledge: List các knowledge snippets từ RAG
@@ -62,13 +82,18 @@ class LLMSynthesizer:
         """
         # Build knowledge context
         knowledge_text = ""
-        for i, item in enumerate(retrieved_knowledge, 1):
-            knowledge_text += f"\n{i}. {item['name']} ({item['location']})"
+        for i, raw_item in enumerate(retrieved_knowledge, 1):
+            item = self._filter_metadata_by_category(raw_item)
+            knowledge_text += f"\n{i}. {item['name']} ({item.get('location', '')})"
             if 'description' in item:
                 knowledge_text += f"\n   {item['description'][:200]}..."
+            # year_built: only present for built landmarks after filtering
             if 'year_built' in item:
                 knowledge_text += f"\n   Built: {item['year_built']}"
-            if 'style' in item:
+            # geological_age: only present for natural landmarks
+            if 'geological_age' in item:
+                knowledge_text += f"\n   Geological age: {item['geological_age']}"
+            if item.get('style'):
                 knowledge_text += f"\n   Style: {item['style']}"
             knowledge_text += "\n"
         
@@ -89,6 +114,7 @@ Write a travel caption (80-200 words) that:
 3. Use an informative, engaging tone suitable for travelers
 4. Keep it concise and interesting
 5. Write in English
+6. IMPORTANT: For natural landmarks (bays, mountains, national parks, etc.), NEVER state a construction or founding year. Describe their geological or ecological characteristics instead.
 
 Focus on accuracy and helpfulness for travelers. Do not make up information not provided above.
 

@@ -302,11 +302,11 @@ if __name__ == "__main__":
     
     # Danh sách ảnh test từ các địa điểm khác nhau
     test_images = [
-        "data/images/Ha_Long_Bay/Ha_Long_Bay_124576511.jpg",
-        "data/images/Taj_Mahal/Taj_Mahal_161821764.jpg",
-        "data/images/Colosseum/Colosseum_126815922.jpg",
-        "data/images/Machu_Picchu/Machu_Picchu_129953067.jpg",
-        "data/images/Great_Wall_of_China/Great_Wall_of_China_117434912.jpg",
+        "data/tests/Ha_Long_Bay/Ha_Long_Bay_124576580.jpg",
+        # "data/images/Taj_Mahal/Taj_Mahal_161821764.jpg",
+        # "data/images/Colosseum/Colosseum_126815922.jpg",
+        # "data/images/Machu_Picchu/Machu_Picchu_129953067.jpg",
+        # "data/images/Great_Wall_of_China/Great_Wall_of_China_117434912.jpg",
     ]
     
     # Lọc ra những ảnh có tồn tại

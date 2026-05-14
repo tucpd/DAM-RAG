@@ -20,31 +20,33 @@ from evaluation.evaluate import compute_clipscore, compute_ku_score
 
 def main():
     device = "cuda"
+    project_root = Path(__file__).parent.parent
     
     # 3 landmarks x 1 anh moi landmark
     examples = [
         {
             "landmark": "Ha_Long_Bay",
-            "image": "data/tests/Ha_Long_Bay/Ha_Long_Bay_124576580.jpg",
-            "metadata_path": "data/metadata/Ha_Long_Bay/landmark_info.json",
+            "image": str(project_root / "data/tests/Ha_Long_Bay/Ha_Long_Bay_124576580.jpg"),
+            "metadata_path": str(project_root / "data/metadata/Ha_Long_Bay/landmark_info.json"),
         },
-        {
-            "landmark": "Taj_Mahal",
-            "image": "data/tests/Taj_Mahal/Taj_Mahal_73871228.jpg",
-            "metadata_path": "data/metadata/Taj_Mahal/landmark_info.json",
-        },
-        {
-            "landmark": "Machu_Picchu",
-            "image": "data/tests/Machu_Picchu/Machu_Picchu_159379095.jpg",
-            "metadata_path": "data/metadata/Machu_Picchu/landmark_info.json",
-        },
+        # {
+        #     "landmark": "Taj_Mahal",
+        #     "image": str(project_root / "data/tests/Taj_Mahal/Taj_Mahal_73871228.jpg"),
+        #     "metadata_path": str(project_root / "data/metadata/Taj_Mahal/landmark_info.json"),
+        # },
+        # {
+        #     "landmark": "Machu_Picchu",
+        #     "image": str(project_root / "data/tests/Machu_Picchu/Machu_Picchu_159379095.jpg"),
+        #     "metadata_path": str(project_root / "data/metadata/Machu_Picchu/landmark_info.json"),
+        # },
     ]
     
     # Load models
     print("Loading models...")
     dam = DAMInference(device=device)
     embedder = VisualEmbedder(device=device)
-    retriever = VectorRetriever.load("data/vector_index", use_gpu=False)
+    index_path = project_root / "data/vector_index"
+    retriever = VectorRetriever.load(str(index_path), use_gpu=False)
     
     results = []
     
@@ -138,7 +140,7 @@ def main():
         results.append(result)
     
     # Save results
-    output_path = Path("evaluation/qualitative_examples.json")
+    output_path = project_root / "evaluation/qualitative_examples.json"
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     
